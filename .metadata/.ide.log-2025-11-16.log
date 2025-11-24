@@ -1,0 +1,359 @@
+2025-11-17 12:18:54,490 [INFO] WebApp:194 - Connection lost
+2025-11-17 12:19:08,943 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:05:21,222 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:05:28,913 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:33:39,446 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:33:40,006 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:37:58,960 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:37:59,018 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:39:13,915 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:39:14,034 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:39:18,323 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:39:18,489 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:44:05,787 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:44:05,934 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:45:09,838 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:45:10,117 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:46:57,823 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:46:58,406 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:57:45,293 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:57:45,806 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:58:07,246 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:58:07,689 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:59:16,734 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:59:16,881 [INFO] WebApp:191 - Connection restablished
+2025-11-17 13:59:56,236 [INFO] WebApp:194 - Connection lost
+2025-11-17 13:59:56,406 [INFO] WebApp:191 - Connection restablished
+2025-11-17 14:00:23,272 [INFO] WebApp:194 - Connection lost
+2025-11-17 14:00:23,353 [INFO] WebApp:191 - Connection restablished
+2025-11-17 14:02:12,225 [INFO] WebApp:194 - Connection lost
+2025-11-17 14:02:12,441 [INFO] WebApp:191 - Connection restablished
+2025-11-17 14:02:19,249 [INFO] WebApp:194 - Connection lost
+2025-11-17 14:02:19,673 [INFO] WebApp:191 - Connection restablished
+2025-11-17 14:02:23,793 [INFO] WebApp:194 - Connection lost
+2025-11-17 14:02:23,998 [INFO] WebApp:191 - Connection restablished
+2025-11-17 14:04:02,728 [INFO] WebApp:194 - Connection lost
+2025-11-17 14:04:03,149 [INFO] WebApp:191 - Connection restablished
+2025-11-17 18:30:37,089 [INFO] WebApp:194 - Connection lost
+2025-11-17 18:30:48,125 [INFO] WebApp:191 - Connection restablished
+2025-11-17 18:30:48,376 [INFO] WebApp:194 - Connection lost
+2025-11-17 18:30:49,275 [INFO] WebApp:191 - Connection restablished
+2025-11-17 19:34:01,503 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 545655168 Bytes (1073741824)
+2025-11-17 19:34:09,446 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 583403904 Bytes (1073741824)
+2025-11-17 19:34:19,148 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 684743248 Bytes (1073741824)
+2025-11-17 19:34:23,684 [INFO] ProjectBuilder:2382 - IP not ready for code generation: DSIHOST
+2025-11-17 19:34:23,684 [INFO] ProjectBuilder:2382 - IP not ready for code generation: RCC
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USBH_HS
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SDMMC
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DCMIPP
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: PCIE
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: STGEN
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GIC
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USB3DR
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: BSEC
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DSIHOST
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DDR_CTRL_PHY
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M33
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CSI
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC2
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RIF
+2025-11-17 19:35:27,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ETH
+2025-11-17 19:35:27,728 [INFO] CodeGenerator:882 - code generatio: config db path: C:\Program\ST\STM32CubeIDE\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.1.202504091515\\db\
+2025-11-17 19:35:27,884 [WARN] IP:2250 - PLLNDIV not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - RefClkin not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - PLLODF not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - PLLIDF not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - HighSpeedClockfromDSI_noparam not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - LaneByteClockfromDSI_noparam not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - LaneByteClockfromPLLR_noparam not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - TXEscapeCkdiv not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - TransmissionEscapeClockfromDSI_noparam not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - TransmissionEscapeClockfromPLLR_noparam not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - EscapeClockDivider_noparam not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - TimeoutCkdiv not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - TimeOutClockfromDSI_noparamfortimeout not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - TimeOutClockfromDSI_noparam not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - TimeOutClockfromPLLR_noparam not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - NumberOfLanes not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - AutomaticClockLaneControl not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - PhyDataRate not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - PHYFrequencyRange not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - PHYLowPowerOffset not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - BTA_FlowControl not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - CRCX_FlowControl not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - CRCEIE not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - ECCX_FlowControl not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,884 [WARN] IP:2250 - ECCEIE not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - ETRX_FlowControl not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - EOTPEIE not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - PSEIE not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - PBUE not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - AEIE not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - PEXIE not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - ETTX_FlowControl not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - SWAP_CLOCK_LANE_State not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - SWAP_DATA_LANE0_State not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - SWAP_DATA_LANE1_State not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - INVERT_CLOCK_LANE_State not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - INVERT_DATA_LANE0_State not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - INVERT_DATA_LANE1_State not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - HighSpeedTransmissionTimeout not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - HighSpeedTransmissionTimeout_ns not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LowPowerReceptionTimeout not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LowPowerReceptionTimeout_ns not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - HighSpeedReadTimeout not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - HighSpeedReadTimeout_ns not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LowPowerReadTimeout not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LowPowerReadTimeout_ns not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - HighSpeedWriteTimeout not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - HighSpeedWriteTimeout_ns not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LowPowerWriteTimeout not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LowPowerWriteTimeout_ns not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - BTATimeout not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - BTATimeout_ns not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - GCEIE not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - AcknowledgeRequest not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPGenShortWriteNoP not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPGenShortWriteOneP not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPGenShortWriteTwoP not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPGenShortReadNoP not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPGenShortReadOneP not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPGenShortReadTwoP not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPGenLongWrite not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPDcsShortWriteNoP not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPDcsShortWriteOneP not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPDcsShortReadNoP not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPDcsLongWrite not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:27,900 [WARN] IP:2250 - LPMaxReadPacket not found: check if there is a RefParameter without a condition.
+2025-11-17 19:35:30,306 [INFO] DdrService:387 - [DDR SERVICE(MCU)] Computed DDR Size = 0x100000000
+2025-11-17 19:35:30,306 [INFO] DdrService:387 - [DDR SERVICE(MCU)] Computed DDR Size = 0x100000000
+2025-11-17 19:35:30,306 [INFO] DdrService:387 - [DDR SERVICE(MCU)] Computed DDR Size = 0x100000000
+2025-11-17 19:35:30,306 [INFO] DdrService:387 - [DDR SERVICE(MCU)] Computed DDR Size = 0x100000000
+2025-11-17 19:35:31,686 [INFO] CodeGenerator:1609 - *******************Project context A35 ROM selected
+2025-11-17 19:35:31,686 [INFO] CodeGenerator:1609 - *******************Project context A35S selected
+2025-11-17 19:35:31,686 [INFO] CodeGenerator:1609 - *******************Project context A35S selected
+2025-11-17 19:35:31,686 [INFO] CodeGenerator:1609 - *******************Project context A35NS selected
+2025-11-17 19:35:31,686 [INFO] CodeGenerator:1609 - *******************Project context A35NS selected
+2025-11-17 19:35:31,686 [INFO] CodeGenerator:1609 - *******************Project context M33NS selected
+2025-11-17 19:35:32,890 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\MXTmpFiles\license.tmp_save
+2025-11-17 19:35:36,551 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\MXTmpFiles\license.tmp
+2025-11-17 19:35:38,387 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\MXTmpFiles\gpio.tmp_save
+2025-11-17 19:35:39,193 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\MXTmpFiles\gpio.tmp
+2025-11-17 19:35:39,261 [WARN] IPConfigManager:103 - WARNING: Missing Config File for NVIC2 ip!!
+2025-11-17 19:35:40,067 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Src\stm32mp2xx_it.c_save
+2025-11-17 19:35:47,853 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Src\stm32mp2xx_it.c
+2025-11-17 19:35:48,103 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Inc\stm32mp2xx_it.h_save
+2025-11-17 19:35:49,276 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Inc\stm32mp2xx_it.h
+2025-11-17 19:35:51,347 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Src\stm32mp2xx_hal_msp.c_save
+2025-11-17 19:35:51,567 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Src\stm32mp2xx_hal_msp.c
+2025-11-17 19:35:51,594 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\MXTmpFiles\system.tmp_save
+2025-11-17 19:35:51,741 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\MXTmpFiles\system.tmp
+2025-11-17 19:35:51,900 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Inc\stm32mp2xx_hal_conf.h_save
+2025-11-17 19:35:52,034 [INFO] CodeEngine:343 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Inc\stm32mp2xx_hal_conf.h
+2025-11-17 19:35:52,146 [WARN] IPConfigManager:3790 - IP not found : NVIC
+2025-11-17 19:35:52,180 [WARN] CodeGenerator:4198 - IP not found : null
+2025-11-17 19:35:52,360 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Inc\main.h_save
+2025-11-17 19:35:52,796 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Inc\main.h
+2025-11-17 19:35:53,127 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Src\main.c_save
+2025-11-17 19:35:53,571 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CM33\Core\Src\main.c
+2025-11-17 19:35:53,839 [INFO] DTGenerator:243 - 
+
+>>> DTGen : IN
+
+2025-11-17 19:35:57,124 [INFO] GenProcessManager:166 - 
+2025-11-17 19:35:57,124 [INFO] GenProcessManager:167 - Launching process: kernel-dtsBind
+
+2025-11-17 19:35:57,124 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=kernel-dtsBind - Output=kernel
+=======================
+
+2025-11-17 19:35:57,124 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=kernel-dtsBind - FW=LINUX - matchingCtxt=CortexA35NSOS
+
+2025-11-17 19:35:58,921 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\kernel\stm32mp257f-firmware-mx.dts_save
+2025-11-17 19:36:01,294 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\kernel\stm32mp257f-firmware-mx.dts
+2025-11-17 19:36:01,309 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:01,309 [INFO] GenProcessManager:167 - Launching process: resmem-kernel-dtsBind
+
+2025-11-17 19:36:01,309 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=optee-resmem-dtsBind - Output=kernel
+=======================
+
+2025-11-17 19:36:01,309 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=optee-resmem-dtsBind - Output=u-boot
+=======================
+
+2025-11-17 19:36:01,309 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=optee-resmem-dtsBind - FW=LINUX - matchingCtxt=
+
+2025-11-17 19:36:01,637 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\kernel\stm32mp257f-firmware-mx-resmem.dtsi_save
+2025-11-17 19:36:01,872 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\kernel\stm32mp257f-firmware-mx-resmem.dtsi
+2025-11-17 19:36:01,966 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:01,966 [INFO] GenProcessManager:167 - Launching process: uboot-dtsBind
+
+2025-11-17 19:36:01,966 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=uboot-dtsBind - Output=u-boot
+=======================
+
+2025-11-17 19:36:01,966 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=uboot-dtsBind - FW=U-BOOT - matchingCtxt=CortexA35NSSSBL
+
+2025-11-17 19:36:02,059 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\u-boot\stm32mp257f-firmware-mx.dts_save
+2025-11-17 19:36:02,824 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\u-boot\stm32mp257f-firmware-mx.dts
+2025-11-17 19:36:02,824 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:02,824 [INFO] GenProcessManager:167 - Launching process: uboot-dtsiBind
+
+2025-11-17 19:36:02,824 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=uboot-dtsiBind - Output=u-boot
+=======================
+
+2025-11-17 19:36:02,824 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=uboot-dtsiBind - FW=U-BOOT - matchingCtxt=
+
+2025-11-17 19:36:03,932 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\u-boot\stm32mp257f-firmware-mx-u-boot.dtsi_save
+2025-11-17 19:36:04,698 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\u-boot\stm32mp257f-firmware-mx-u-boot.dtsi
+2025-11-17 19:36:04,698 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:04,698 [INFO] GenProcessManager:167 - Launching process: tfa-ddrConfigGen
+
+2025-11-17 19:36:04,698 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=tfa-ddrConfigGen - Output=tf-a
+=======================
+
+2025-11-17 19:36:05,042 [INFO] DdrService:387 - [DDR SERVICE(MCU)] Computed DDR Size = 0x100000000
+2025-11-17 19:36:05,257 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:05,257 [INFO] GenProcessManager:167 - Launching process: MakeFileKernel
+
+2025-11-17 19:36:05,257 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=MakeFileKernel - Output=kernel
+=======================
+
+2025-11-17 19:36:05,257 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\kernel\Makefile_save
+2025-11-17 19:36:05,445 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\kernel\Makefile
+2025-11-17 19:36:05,445 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:05,445 [INFO] GenProcessManager:167 - Launching process: MakeFileU-BOOT
+
+2025-11-17 19:36:05,445 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=MakeFileU-BOOT - Output=u-boot
+=======================
+
+2025-11-17 19:36:05,570 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\u-boot\Makefile_save
+2025-11-17 19:36:05,648 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\u-boot\Makefile
+2025-11-17 19:36:05,648 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:05,648 [INFO] GenProcessManager:167 - Launching process: ConfMk
+
+2025-11-17 19:36:05,648 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=ConfMk - Output=optee-os
+=======================
+
+2025-11-17 19:36:05,648 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\conf.mk_save
+2025-11-17 19:36:05,726 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\conf.mk
+2025-11-17 19:36:05,726 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:05,726 [INFO] GenProcessManager:167 - Launching process: tfa-dtsBind
+
+2025-11-17 19:36:05,726 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=tfa-dtsBind - Output=tf-a
+=======================
+
+2025-11-17 19:36:05,726 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=tfa-dtsBind - FW=TF-A - matchingCtxt=CortexA35SFSBLA
+
+2025-11-17 19:36:05,836 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\tf-a\stm32mp257f-firmware-mx.dts_save
+2025-11-17 19:36:05,961 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\tf-a\stm32mp257f-firmware-mx.dts
+2025-11-17 19:36:05,976 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:05,976 [INFO] GenProcessManager:167 - Launching process: fwconfig-dtsBind
+
+2025-11-17 19:36:05,976 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=fwconfig-dtsBind - Output=tf-a
+=======================
+
+2025-11-17 19:36:05,976 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=fwconfig-dtsBind - FW=TF-A - matchingCtxt=CortexA35SFSBLA
+
+2025-11-17 19:36:06,007 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\tf-a\stm32mp257f-firmware-mx-fw-config.dts_save
+2025-11-17 19:36:06,176 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\tf-a\stm32mp257f-firmware-mx-fw-config.dts
+2025-11-17 19:36:06,176 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:06,176 [INFO] GenProcessManager:167 - Launching process: rcc-dtsBind
+
+2025-11-17 19:36:06,176 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=rcc-dtsBind - Output=tf-a
+=======================
+
+2025-11-17 19:36:06,176 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=rcc-dtsBind - FW=TF-A - matchingCtxt=CortexA35SFSBLA
+
+2025-11-17 19:36:06,320 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\tf-a\stm32mp257f-firmware-mx-rcc.dtsi_save
+2025-11-17 19:36:06,992 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\tf-a\stm32mp257f-firmware-mx-rcc.dtsi
+2025-11-17 19:36:06,992 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:06,992 [INFO] GenProcessManager:167 - Launching process: rcc-optee-dtsBind
+
+2025-11-17 19:36:06,992 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=rcc-optee-dtsBind - Output=optee-os
+=======================
+
+2025-11-17 19:36:06,992 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=rcc-optee-dtsBind - FW=OP-TEE - matchingCtxt=CortexA35SSecureOS
+
+2025-11-17 19:36:07,086 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\stm32mp257f-firmware-mx-rcc.dtsi_save
+2025-11-17 19:36:07,646 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\stm32mp257f-firmware-mx-rcc.dtsi
+2025-11-17 19:36:07,646 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:07,646 [INFO] GenProcessManager:167 - Launching process: optee-dtsBind
+
+2025-11-17 19:36:07,646 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=optee-dtsBind - Output=optee-os
+=======================
+
+2025-11-17 19:36:07,646 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=optee-dtsBind - FW=OP-TEE - matchingCtxt=CortexA35SSecureOS
+
+2025-11-17 19:36:07,911 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\stm32mp257f-firmware-mx.dts_save
+2025-11-17 19:36:08,162 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\stm32mp257f-firmware-mx.dts
+2025-11-17 19:36:08,162 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:08,162 [INFO] GenProcessManager:167 - Launching process: optee-resmem-dtsBind
+
+2025-11-17 19:36:08,162 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=optee-resmem-dtsBind - Output=optee-os
+=======================
+
+2025-11-17 19:36:08,162 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=optee-resmem-dtsBind - FW=OP-TEE - matchingCtxt=
+
+2025-11-17 19:36:08,222 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\stm32mp257f-firmware-mx-resmem.dtsi_save
+2025-11-17 19:36:08,381 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\stm32mp257f-firmware-mx-resmem.dtsi
+2025-11-17 19:36:08,396 [INFO] GenProcessManager:166 - 
+2025-11-17 19:36:08,396 [INFO] GenProcessManager:167 - Launching process: rif-dtsBind
+
+2025-11-17 19:36:08,396 [INFO] GenerationProcess:393 - 
+
+GenProcess for OUTPUT : processName=rif-dtsBind - Output=optee-os
+=======================
+
+2025-11-17 19:36:08,396 [INFO] GenProcessDtsBind:272 -   >>> FW bind process - processName=rif-dtsBind - FW=OP-TEE - matchingCtxt=CortexA35SSecureOS
+
+2025-11-17 19:36:08,506 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\stm32mp257f-firmware-mx-rif.dtsi_save
+2025-11-17 19:36:09,052 [INFO] CodeEngine:287 - Generated code: C:\Users\danie\Documents\GitHub\Watermelon-Wine-Zero-1A\firmware\CA35\DeviceTree\firmware\optee-os\stm32mp257f-firmware-mx-rif.dtsi
+2025-11-17 19:36:09,057 [INFO] DTGenerator:344 - 
+
+>>> DTGen : OUT
+
+2025-11-17 19:36:13,971 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 4590mS.
+2025-11-17 19:36:14,018 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-11-17 19:36:14,815 [INFO] ConfigFileManager:1590 - The Die is : DIE505
+2025-11-17 19:36:42,781 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 28763mS.
+2025-11-17 19:36:42,781 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-11-17 19:36:42,781 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-11-17 19:38:36,770 [INFO] McuFinderGlobals:63 - Set McuFinder mode to 2 (CubeIDE integrated)
+2025-11-17 19:38:36,808 [INFO] UserAuth:484 - Internet connection configuration mode: 1
+2025-11-17 19:38:39,316 [INFO] UserAuth:171 - activating auth plugin
+2025-11-17 19:38:39,759 [INFO] UserAuth:484 - Internet connection configuration mode: 1
