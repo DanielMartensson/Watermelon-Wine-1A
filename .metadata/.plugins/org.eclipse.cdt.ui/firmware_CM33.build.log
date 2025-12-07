@@ -1,0 +1,10 @@
+17:44:28 **** Incremental Build of configuration Debug for project firmware_CM33 ****
+make -j8 all 
+arm-none-eabi-size  firmware_CM33.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6440	     24	   1568	   8032	   1f60	firmware_CM33.elf
+Finished building: default.size.stdout
+ 
+
+17:44:29 Build Finished. 0 errors, 0 warnings. (took 327ms)
+

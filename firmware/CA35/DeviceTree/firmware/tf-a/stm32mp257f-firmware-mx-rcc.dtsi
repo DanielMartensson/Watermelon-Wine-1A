@@ -33,7 +33,7 @@
 	/* USER CODE END clk_lse */
 };
 &clk_hse {
-	status = "disabled";
+	clock-frequency = <16000000>;
 
 	/* USER CODE BEGIN clk_hse */
 	/* USER CODE END clk_hse */
