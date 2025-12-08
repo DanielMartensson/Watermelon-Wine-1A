@@ -175,6 +175,27 @@
 		};
 	};
 
+	fdcan1_pins_mx: fdcan1_mx-0 {
+		pins1 {
+			pinmux = <STM32_PINMUX('G', 11, AF7)>; /* FDCAN1_TX */
+			bias-disable;
+			drive-push-pull;
+			slew-rate = <0>;
+		};
+		pins2 {
+			pinmux = <STM32_PINMUX('G', 12, AF7)>; /* FDCAN1_RX */
+			bias-disable;
+			drive-push-pull;
+		};
+	};
+
+	fdcan1_sleep_pins_mx: fdcan1_sleep_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('G', 11, ANALOG)>, /* FDCAN1_TX */
+					 <STM32_PINMUX('G', 12, ANALOG)>; /* FDCAN1_RX */
+		};
+	};
+
 	i2c1_pins_mx: i2c1_mx-0 {
 		pins {
 			pinmux = <STM32_PINMUX('G', 13, AF9)>, /* I2C1_SCL */
@@ -242,6 +263,23 @@
 			pinmux = <STM32_PINMUX('B', 0, ANALOG)>, /* I2S2_CK */
 					 <STM32_PINMUX('B', 2, ANALOG)>, /* I2S2_SDO */
 					 <STM32_PINMUX('B', 3, ANALOG)>; /* I2S2_WS */
+		};
+	};
+
+	i3c3_pins_mx: i3c3_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('G', 1, AF3)>, /* I3C3_SCL */
+					 <STM32_PINMUX('G', 2, AF3)>; /* I3C3_SDA */
+			bias-pull-up;
+			drive-push-pull;
+			slew-rate = <3>;
+		};
+	};
+
+	i3c3_sleep_pins_mx: i3c3_sleep_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('G', 1, ANALOG)>, /* I3C3_SCL */
+					 <STM32_PINMUX('G', 2, ANALOG)>; /* I3C3_SDA */
 		};
 	};
 
@@ -357,6 +395,25 @@
 };
 
 &pinctrl_z {
+
+	spi8_pins_z_mx: spi8_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('Z', 2, AF3)>, /* SPI8_SCK */
+					 <STM32_PINMUX('Z', 7, AF3)>, /* SPI8_MOSI */
+					 <STM32_PINMUX('Z', 8, AF3)>; /* SPI8_MISO */
+			bias-disable;
+			drive-push-pull;
+			slew-rate = <0>;
+		};
+	};
+
+	spi8_sleep_pins_z_mx: spi8_sleep_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('Z', 2, ANALOG)>, /* SPI8_SCK */
+					 <STM32_PINMUX('Z', 7, ANALOG)>, /* SPI8_MOSI */
+					 <STM32_PINMUX('Z', 8, ANALOG)>; /* SPI8_MISO */
+		};
+	};
 
 	/* USER CODE BEGIN pinctrl_z */
 	/* USER CODE END pinctrl_z */
@@ -479,6 +536,9 @@
 };
 
 &i3c3 {
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&i3c3_pins_mx>;
+	pinctrl-1 = <&i3c3_sleep_pins_mx>;
 	status = "okay";
 
 	/* USER CODE BEGIN i3c3 */
@@ -500,6 +560,9 @@
 };
 
 &m_can1 {
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&fdcan1_pins_mx>;
+	pinctrl-1 = <&fdcan1_sleep_pins_mx>;
 	status = "okay";
 
 	/* USER CODE BEGIN m_can1 */
@@ -536,6 +599,9 @@
 };
 
 &spi8 {
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&spi8_pins_z_mx>;
+	pinctrl-1 = <&spi8_sleep_pins_z_mx>;
 	status = "okay";
 
 	/* USER CODE BEGIN spi8 */

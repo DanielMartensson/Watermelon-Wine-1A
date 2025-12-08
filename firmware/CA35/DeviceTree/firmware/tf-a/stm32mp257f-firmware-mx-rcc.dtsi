@@ -33,7 +33,7 @@
 	/* USER CODE END clk_lse */
 };
 &clk_hse {
-	clock-frequency = <16000000>;
+	clock-frequency = <24000000>;
 
 	/* USER CODE BEGIN clk_hse */
 	/* USER CODE END clk_hse */
@@ -51,9 +51,9 @@
 		FLEXGEN_CFG(5, XBAR_SRC_HSI, 0, 0)
 		FLEXGEN_CFG(6, XBAR_SRC_HSI, 0, 0)
 		FLEXGEN_CFG(33, XBAR_SRC_HSI_KER, 0, 0)
-		FLEXGEN_CFG(43, XBAR_SRC_PLL8, 0, 24)
-		FLEXGEN_CFG(44, XBAR_SRC_PLL8, 0, 7)
-		FLEXGEN_CFG(45, XBAR_SRC_PLL8, 0, 3)
+		FLEXGEN_CFG(43, XBAR_SRC_HSI_KER, 0, 24)
+		FLEXGEN_CFG(44, XBAR_SRC_HSI_KER, 0, 7)
+		FLEXGEN_CFG(45, XBAR_SRC_HSI_KER, 0, 3)
 		FLEXGEN_CFG(63, XBAR_SRC_HSI_KER, 0, 0)
 	>;
 
@@ -72,33 +72,33 @@
 	>;
 
 	pll1:st,pll-1 {
-		st,pll = <&pll1_cfg_1600MHz>;
+		st,pll = <&pll1_cfg_816MHz>;
 
-		pll1_cfg_1600MHz: pll1-cfg-1600MHz{
-			cfg = <25 1 1 1>;
-			src = <MUX_CFG(MUX_MUXSEL5, MUXSEL_HSI)>;
+		pll1_cfg_816MHz: pll1-cfg-816MHz{
+			cfg = <34 1 1 1>;
+			src = <MUX_CFG(MUX_MUXSEL5, MUXSEL_HSE)>;
 		};
 		/* USER CODE BEGIN pll1 */
 		/* USER CODE END pll1 */
 	};
 
 	pll2:st,pll-2 {
-		st,pll = <&pll2_cfg_1600MHz>;
+		st,pll = <&pll2_cfg_816MHz>;
 
-		pll2_cfg_1600MHz: pll2-cfg-1600MHz{
-			cfg = <25 1 1 1>;
-			src = <MUX_CFG(MUX_MUXSEL6, MUXSEL_HSI)>;
+		pll2_cfg_816MHz: pll2-cfg-816MHz{
+			cfg = <34 1 1 1>;
+			src = <MUX_CFG(MUX_MUXSEL6, MUXSEL_HSE)>;
 		};
 		/* USER CODE BEGIN pll2 */
 		/* USER CODE END pll2 */
 	};
 
 	pll8:st,pll-8 {
-		st,pll = <&pll8_cfg_1600MHz>;
+		st,pll = <&pll8_cfg_816MHz>;
 
-		pll8_cfg_1600MHz: pll8-cfg-1600MHz{
-			cfg = <25 1 1 1>;
-			src = <MUX_CFG(MUX_MUXSEL4, MUXSEL_HSI)>;
+		pll8_cfg_816MHz: pll8-cfg-816MHz{
+			cfg = <34 1 1 1>;
+			src = <MUX_CFG(MUX_MUXSEL4, MUXSEL_HSE)>;
 		};
 		/* USER CODE BEGIN pll8 */
 		/* USER CODE END pll8 */
