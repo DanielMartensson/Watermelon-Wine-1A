@@ -1,0 +1,39 @@
+From da6cf21b8d033b962f3b05ed011315912d0fe953 Mon Sep 17 00:00:00 2001
+From: Christophe Guibout <christophe.guibout@st.com>
+Date: Fri, 15 Oct 2021 09:52:41 +0200
+Subject: [PATCH] support bin extension
+
+Avoid these following errors:
+ Unsupported image /run/rauc/bundle/fip-stm32mp135f-dk-optee.bin
+ for slot type raw
+
+ Unsupported image fip.bin for slot type nor
+
+Change-Id: I464b7207671784ad08732960d9badd02e2ad00cf
+---
+ src/update_handler.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/update_handler.c b/src/update_handler.c
+index 2fce4896..e7c44a35 100644
+--- a/src/update_handler.c
++++ b/src/update_handler.c
+@@ -2579,6 +2579,7 @@ typedef struct {
+ RaucUpdatePair updatepairs[] = {
+ 	{"*.ext4.caibx", "ext4", img_to_fs_handler},
+ 	{"*.ext4.caibx", "raw", img_to_raw_handler},
++	{"*.bin", "raw", img_to_raw_handler},
+ 	{"*.vfat.caibx", "raw", img_to_raw_handler},
+ 	{"*.ubifs.caibx", "ubivol", img_to_ubivol_handler},
+ 	{"*.ubifs.caibx", "ubifs", img_to_ubifs_handler},
+@@ -2616,6 +2617,7 @@ RaucUpdatePair updatepairs[] = {
+ 	{"*.ubifs", "ubifs", img_to_ubifs_handler},
+ 	{"*.img", "ext4", img_to_fs_handler},
+ 	{"*.img", "nor", img_to_nor_handler},
++	{"*.bin", "nor", img_to_nor_handler},
+ 	{"*.img", "nand", img_to_nand_handler},
+ 	{"*.img", "ubifs", img_to_ubifs_handler},
+ 	{"*.img", "ubivol", img_to_ubivol_handler},
+-- 
+2.43.0
+
