@@ -32,6 +32,13 @@
 	};
 
 	/* USER CODE BEGIN root */
+	aliases{
+		serial0 = &usart6;
+	};
+
+	chosen{
+		stdout-path = "serial0:115200n8";
+	};
 	/* USER CODE END root */
 
 	clocks{
@@ -464,6 +471,7 @@
 	status = "okay";
 
 	/* USER CODE BEGIN eth1 */
+
 	/* USER CODE END eth1 */
 };
 
@@ -543,13 +551,6 @@
 
 	/* USER CODE BEGIN i3c3 */
 	/* USER CODE END i3c3 */
-};
-
-&icache {
-	status = "okay";
-
-	/* USER CODE BEGIN icache */
-	/* USER CODE END icache */
 };
 
 &ltdc {
@@ -647,13 +648,6 @@
 	/* USER CODE END usbh */
 };
 
-&vrefbuf {
-	status = "okay";
-
-	/* USER CODE BEGIN vrefbuf */
-        vdda-supply = <&vdd>;
-	/* USER CODE END vrefbuf */
-};
 
 /* USER CODE BEGIN addons */
 /* USER CODE END addons */

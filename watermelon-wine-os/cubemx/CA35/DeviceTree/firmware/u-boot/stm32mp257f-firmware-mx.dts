@@ -32,17 +32,86 @@
 	};
 
 	/* USER CODE BEGIN root */
+	aliases{
+		serial0 = &usart6;
+	};
+
+	chosen{
+		stdout-path = "serial0:115200n8";
+	};
 	/* USER CODE END root */
 
 	clocks{
 
 		/* USER CODE BEGIN clocks */
+		clk_ext_camera:clk-ext-camera{
+			#clock-cells = <0>;
+			compatible = "fixed-clock";
+			clock-frequency = <24000000>;
+		};
+
+		clk_ext_cec:clk-ext-cec{
+			#clock-cells = <0>;
+			compatible = "fixed-clock";
+			clock-frequency = <24000000>;
+		};
 		/* USER CODE END clocks */
 	};
 
 }; /*root*/
 
 &pinctrl {
+
+	i2c1_pins_mx: i2c1_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('G', 13, AF9)>, /* I2C1_SCL */
+					 <STM32_PINMUX('I', 1, AF9)>; /* I2C1_SDA */
+			bias-disable;
+			drive-open-drain;
+			slew-rate = <0>;
+		};
+	};
+
+	i2c1_sleep_pins_mx: i2c1_sleep_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('G', 13, ANALOG)>, /* I2C1_SCL */
+					 <STM32_PINMUX('I', 1, ANALOG)>; /* I2C1_SDA */
+		};
+	};
+
+	i2c2_pins_mx: i2c2_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('F', 0, AF9)>, /* I2C2_SDA */
+					 <STM32_PINMUX('F', 2, AF9)>; /* I2C2_SCL */
+			bias-disable;
+			drive-open-drain;
+			slew-rate = <0>;
+		};
+	};
+
+	i2c2_sleep_pins_mx: i2c2_sleep_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('F', 0, ANALOG)>, /* I2C2_SDA */
+					 <STM32_PINMUX('F', 2, ANALOG)>; /* I2C2_SCL */
+		};
+	};
+
+	i2c7_pins_mx: i2c7_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('D', 14, AF10)>, /* I2C7_SDA */
+					 <STM32_PINMUX('D', 15, AF10)>; /* I2C7_SCL */
+			bias-disable;
+			drive-open-drain;
+			slew-rate = <0>;
+		};
+	};
+
+	i2c7_sleep_pins_mx: i2c7_sleep_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('D', 14, ANALOG)>, /* I2C7_SDA */
+					 <STM32_PINMUX('D', 15, ANALOG)>; /* I2C7_SCL */
+		};
+	};
 
 	sdmmc1_pins_mx: sdmmc1_mx-0 {
 		pins1 {
@@ -139,6 +208,20 @@
 	/* USER CODE END pinctrl_z */
 };
 
+&csi {
+	status = "okay";
+
+	/* USER CODE BEGIN csi */
+	/* USER CODE END csi */
+};
+
+&gpu {
+	status = "okay";
+
+	/* USER CODE BEGIN gpu */
+	/* USER CODE END gpu */
+};
+
 &hpdma {
 	status = "okay";
 
@@ -158,6 +241,36 @@
 
 	/* USER CODE BEGIN hpdma3 */
 	/* USER CODE END hpdma3 */
+};
+
+&i2c1 {
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&i2c1_pins_mx>;
+	pinctrl-1 = <&i2c1_sleep_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN i2c1 */
+	/* USER CODE END i2c1 */
+};
+
+&i2c2 {
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&i2c2_pins_mx>;
+	pinctrl-1 = <&i2c2_sleep_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN i2c2 */
+	/* USER CODE END i2c2 */
+};
+
+&i2c7 {
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&i2c7_pins_mx>;
+	pinctrl-1 = <&i2c7_sleep_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN i2c7 */
+	/* USER CODE END i2c7 */
 };
 
 &sdmmc1 {
@@ -180,6 +293,20 @@
 
 	/* USER CODE BEGIN usart6 */
 	/* USER CODE END usart6 */
+};
+
+&usb2_phy1 {
+	status = "okay";
+
+	/* USER CODE BEGIN usb2_phy1 */
+	/* USER CODE END usb2_phy1 */
+};
+
+&usbh {
+	status = "okay";
+
+	/* USER CODE BEGIN usbh */
+	/* USER CODE END usbh */
 };
 
 /* USER CODE BEGIN addons */
