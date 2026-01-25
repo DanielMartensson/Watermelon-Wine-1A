@@ -311,7 +311,7 @@
 	dma-names = "rx", "tx";
 	access-controllers = <&rifsc 36>;
 	power-domains = <&d1_pd>;
-	akeup-source;
+	wakeup-source;
 	/* USER CODE END usart6 */
 };
 
