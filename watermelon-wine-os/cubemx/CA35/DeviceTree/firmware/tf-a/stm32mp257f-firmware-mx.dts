@@ -304,6 +304,14 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usart6 */
+	reg = <0x40220000 0x400>;
+	interrupts-extended = <&exti1 29 IRQ_TYPE_LEVEL_HIGH>;
+	clocks = <&rcc CK_KER_USART6>;
+	dmas = <&hpdma 19 0x20 0x10012>, <&hpdma 20 0x20 0x3021>;
+	dma-names = "rx", "tx";
+	access-controllers = <&rifsc 36>;
+	power-domains = <&d1_pd>;
+	akeup-source;
 	/* USER CODE END usart6 */
 };
 
