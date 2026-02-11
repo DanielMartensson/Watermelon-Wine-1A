@@ -38,7 +38,7 @@
 	/* USER CODE BEGIN root */
 	
 	aliases{
-		serial0 = &usart2;
+		serial0 = &usart6;
 	};
 
 	chosen{
@@ -81,15 +81,29 @@
 
 	usart2_pins_mx: usart2_mx-0 {
 		pins1 {
-			pinmux = <STM32_PINMUX('A', 15, AF6)>; /* USART2_RX */
-			bias-disable;
-			drive-push-pull;
-		};
-		pins2 {
-			pinmux = <STM32_PINMUX('C', 1, AF6)>; /* USART2_TX */
+			pinmux = <STM32_PINMUX('A', 4, AF6)>; /* USART2_TX */
 			bias-disable;
 			drive-push-pull;
 			slew-rate = <0>;
+		};
+		pins2 {
+			pinmux = <STM32_PINMUX('A', 8, AF8)>; /* USART2_RX */
+			bias-disable;
+			drive-push-pull;
+		};
+	};
+
+	usart6_pins_mx: usart6_mx-0 {
+		pins1 {
+			pinmux = <STM32_PINMUX('F', 13, AF3)>; /* USART6_TX */
+			bias-pull-up;
+			drive-push-pull;
+			slew-rate = <0>;
+		};
+		pins2 {
+			pinmux = <STM32_PINMUX('F', 14, AF3)>; /* USART6_RX */
+			bias-pull-up;
+			drive-push-pull;
 		};
 	};
 
@@ -265,6 +279,15 @@
 
 	/* USER CODE BEGIN usart2 */
 	/* USER CODE END usart2 */
+};
+
+&usart6 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&usart6_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN usart6 */
+	/* USER CODE END usart6 */
 };
 
 /* USER CODE BEGIN addons */
