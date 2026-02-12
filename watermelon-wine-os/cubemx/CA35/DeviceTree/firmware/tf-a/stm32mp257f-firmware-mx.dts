@@ -18,9 +18,10 @@
 #include "stm32mp25xf.dtsi"
 #include "stm32mp257f-firmware-mx-rcc.dtsi"
 #include "stm32mp25xxak-pinctrl.dtsi"
-#include "stm32mp25-ddr.dtsi"
+/*#include "stm32mp25-ddr.dtsi"*/
 
 /* USER CODE BEGIN includes */
+include "stm32mp25-lpddr4-1x32Gbits-1x32bits-1200MHz.dtsi"
 /* USER CODE END includes */
 
 / {
