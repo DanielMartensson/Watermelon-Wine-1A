@@ -56,13 +56,6 @@
 	/* USER CODE END bsec */
 };
 
-&hash {
-	status = "okay";
-
-	/* USER CODE BEGIN hash */
-	/* USER CODE END hash */
-};
-
 &hpdma1 {
 	status = "okay";
 
@@ -98,13 +91,6 @@
 	/* USER CODE END m33_rproc */
 };
 
-&pka {
-	status = "okay";
-
-	/* USER CODE BEGIN pka */
-	/* USER CODE END pka */
-};
-
 &rcc {
 	status = "okay";
 
@@ -117,13 +103,6 @@
 
 	/* USER CODE BEGIN risaf5 */
 	/* USER CODE END risaf5 */
-};
-
-&saes {
-	status = "okay";
-
-	/* USER CODE BEGIN saes */
-	/* USER CODE END saes */
 };
 
 /* USER CODE BEGIN addons */
