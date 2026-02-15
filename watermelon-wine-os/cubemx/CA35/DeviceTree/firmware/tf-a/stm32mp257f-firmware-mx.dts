@@ -136,6 +136,13 @@
 	/* USER CODE END ddr */
 };
 
+&hash {
+	status = "okay";
+
+	/* USER CODE BEGIN hash */
+	/* USER CODE END hash */
+};
+
 &i2c7 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c7_pins_mx>;
@@ -250,11 +257,32 @@
 	/* USER CODE END icache */
 };
 
+&pka {
+	status = "okay";
+
+	/* USER CODE BEGIN pka */
+	/* USER CODE END pka */
+};
+
 &rcc {
 	status = "okay";
 
 	/* USER CODE BEGIN rcc */
 	/* USER CODE END rcc */
+};
+
+&rng {
+	status = "okay";
+
+	/* USER CODE BEGIN rng */
+	/* USER CODE END rng */
+};
+
+&saes {
+	status = "okay";
+
+	/* USER CODE BEGIN saes */
+	/* USER CODE END saes */
 };
 
 &sdmmc1 {
