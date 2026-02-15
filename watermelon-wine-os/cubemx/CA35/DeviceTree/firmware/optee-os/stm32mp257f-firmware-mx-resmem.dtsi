@@ -184,6 +184,22 @@
 			/* USER CODE END gpu_reserved */
 		};
 
+		vdec_reserved: vdec-reserved@fe800000 {
+			reg = <0x0 0xfe800000 0x0 0x0000>;
+			no-map;
+
+			/* USER CODE BEGIN vdec_reserved */
+			/* USER CODE END vdec_reserved */
+		};
+
+		venc_reserved: venc-reserved@fe800000 {
+			reg = <0x0 0xfe800000 0x0 0x0000>;
+			no-map;
+
+			/* USER CODE BEGIN venc_reserved */
+			/* USER CODE END venc_reserved */
+		};
+
 		ltdc_sec_layer: ltdc-sec-layer@fe800000 {
 			reg = <0x0 0xfe800000 0x0 0x800000>;
 			no-map;
@@ -198,14 +214,6 @@
 
 			/* USER CODE BEGIN ltdc_sec_rotation */
 			/* USER CODE END ltdc_sec_rotation */
-		};
-
-		linuxkernel2: linuxkernel2@100000000 {
-			reg = <0x00000001 0x00000000 0x0 0x80000000>;
-			no-map;
-
-			/* USER CODE BEGIN linuxkernel2 */
-			/* USER CODE END linuxkernel2 */
 		};
 
 		pcie_device: pcie-device@10000000 {

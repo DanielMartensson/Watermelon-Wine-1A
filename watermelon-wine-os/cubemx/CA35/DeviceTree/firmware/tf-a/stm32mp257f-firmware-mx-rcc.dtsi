@@ -87,10 +87,10 @@
 	};
 
 	pll2:st,pll-2 {
-		st,pll = <&pll2_cfg_222MHz>;
+		st,pll = <&pll2_cfg_600MHz>;
 
-		pll2_cfg_222MHz: pll2-cfg-222MHz{
-			cfg = <37 1 1 4>;
+		pll2_cfg_600MHz: pll2-cfg-600MHz{
+			cfg = <50 1 1 2>;
 			src = <MUX_CFG(MUX_MUXSEL6, MUXSEL_HSE)>;
 		};
 		/* USER CODE BEGIN pll2 */
