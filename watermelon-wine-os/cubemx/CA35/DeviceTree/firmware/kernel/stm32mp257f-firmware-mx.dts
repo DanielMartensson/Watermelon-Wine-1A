@@ -687,6 +687,7 @@
 	status = "okay";
 
 	/* USER CODE BEGIN vrefbuf */
+	status = "disable";
 	/* USER CODE END vrefbuf */
 };
 

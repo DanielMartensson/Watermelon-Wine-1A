@@ -95,6 +95,8 @@
 	status = "okay";
 
 	/* USER CODE BEGIN rcc */
+	clocks = <&clk_hse>, <&clk_hsi>, <&clk_lsi>, <&clk_msi>, <&clk_i2sin>;
+	clock-names = "clk-hse", "clk-hsi", "clk-lsi", "clk-msi", "clk-i2sin";
 	/* USER CODE END rcc */
 };
 

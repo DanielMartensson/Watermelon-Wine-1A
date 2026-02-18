@@ -247,6 +247,7 @@
 	status = "okay";
 
 	/* USER CODE BEGIN icache */
+	status = "disable";
 	/* USER CODE END icache */
 };
 
