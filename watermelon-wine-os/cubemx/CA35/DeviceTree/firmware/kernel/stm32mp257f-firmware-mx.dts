@@ -489,6 +489,13 @@
 	/* USER CODE END dcmipp */
 };
 
+&dsi {
+	status = "okay";
+
+	/* USER CODE BEGIN dsi */
+	/* USER CODE END dsi */
+};
+
 &eth1 {
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&eth1_clk_pins_mx>, <&eth1_mdio_pins_mx>, <&eth1_rgmii_pins_mx>;
@@ -681,14 +688,6 @@
 
 	/* USER CODE BEGIN usbh */
 	/* USER CODE END usbh */
-};
-
-&vrefbuf {
-	status = "okay";
-
-	/* USER CODE BEGIN vrefbuf */
-	status = "disable";
-	/* USER CODE END vrefbuf */
 };
 
 /* USER CODE BEGIN addons */

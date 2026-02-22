@@ -243,14 +243,6 @@
 	/* USER CODE END i2c7 */
 };
 
-&icache {
-	status = "okay";
-
-	/* USER CODE BEGIN icache */
-	status = "disable";
-	/* USER CODE END icache */
-};
-
 &rcc {
 	status = "okay";
 
