@@ -69,7 +69,6 @@
 		DIV_CFG(DIV_APB4, 0)
 		DIV_CFG(DIV_APBDBG, 0)
 	>;
-
 	st,kerclk = <
 		MUX_CFG(MUX_D3PER, MUX_D3PER_MSI)
 

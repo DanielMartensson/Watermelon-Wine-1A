@@ -67,6 +67,10 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
+  #if defined(DEBUG)
+    volatile uint32_t debug = 1;
+    while(debug);   // waiting for ST-LINK attachment. User can change "debug" to 0 to continue the execution.
+  #endif
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -77,8 +81,15 @@ int main(void)
 
   /* USER CODE END Init */
 
-  /* Configure the system clock */
-  SystemClock_Config();
+    /* Configure the system clock */
+  if(IS_DEVELOPER_BOOT_MODE())
+  {
+    SystemClock_Config();
+  }
+  else
+  {
+   SystemCoreClockUpdate();
+  }
 
   /* USER CODE BEGIN SysInit */
 
