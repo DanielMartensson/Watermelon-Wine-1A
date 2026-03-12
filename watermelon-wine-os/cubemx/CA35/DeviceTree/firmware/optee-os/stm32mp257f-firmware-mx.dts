@@ -400,13 +400,6 @@
 	/* USER CODE END iwdg1 */
 };
 
-&ltdc {
-	status = "okay";
-
-	/* USER CODE BEGIN ltdc */
-	/* USER CODE END ltdc */
-};
-
 &m33_rproc {
 	status = "okay";
 
