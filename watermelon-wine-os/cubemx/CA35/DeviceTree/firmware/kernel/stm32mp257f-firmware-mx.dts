@@ -458,6 +458,13 @@
 	/* USER CODE END combophy */
 };
 
+&cryp1 {
+	status = "okay";
+
+	/* USER CODE BEGIN cryp1 */
+	/* USER CODE END cryp1 */
+};
+
 &csi {
 	status = "okay";
 

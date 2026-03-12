@@ -136,6 +136,13 @@
 	/* USER CODE END pinctrl_z */
 };
 
+&cryp1 {
+	status = "okay";
+
+	/* USER CODE BEGIN cryp1 */
+	/* USER CODE END cryp1 */
+};
+
 &hpdma {
 	status = "okay";
 

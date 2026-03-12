@@ -42,6 +42,14 @@
 	chosen {
 		stdout-path = "serial0:115200n8";
 	};
+	
+	shadow-prov {
+		compatible = "st,provisioning";
+		hconf1_prov {
+			nvmem-cells = <&hconf1_otp>;
+			st,shadow-value = <0x00018DB6>;
+		};
+	};
 	/* USER CODE END root */
 
 }; /*root*/
@@ -77,6 +85,13 @@
 
 	/* USER CODE BEGIN bsec */
 	/* USER CODE END bsec */
+};
+
+&hash {
+	status = "okay";
+
+	/* USER CODE BEGIN hash */
+	/* USER CODE END hash */
 };
 
 &hpdma1 {
@@ -377,6 +392,14 @@
 	/* USER CODE END i2c7 */
 };
 
+&iwdg1 {
+	status = "okay";
+
+	/* USER CODE BEGIN iwdg1 */
+	timeout-sec = <32>;
+	/* USER CODE END iwdg1 */
+};
+
 &ltdc {
 	status = "okay";
 
@@ -389,6 +412,13 @@
 
 	/* USER CODE BEGIN m33_rproc */
 	/* USER CODE END m33_rproc */
+};
+
+&pka {
+	status = "okay";
+
+	/* USER CODE BEGIN pka */
+	/* USER CODE END pka */
 };
 
 &pwr {
@@ -493,6 +523,13 @@
 	/* USER CODE END risaf5 */
 };
 
+&saes {
+	status = "okay";
+
+	/* USER CODE BEGIN saes */
+	/* USER CODE END saes */
+};
+
 &vrefbuf {
 	status = "okay";
 
@@ -501,8 +538,61 @@
 };
 
 /* USER CODE BEGIN addons */
+&cpu0 {
+	cpu-supply = <&vddcpu>;
+};
+
+&scmi_regulator {
+	regulators {
+		regulator@b {
+			reg = <VOLTD_SCMI_STPMIC2_BUCK2>;
+			voltd-supply = <&vddcore>;
+		};
+
+		regulator@e {
+			reg = <VOLTD_SCMI_STPMIC2_BUCK5>;
+			voltd-supply = <&v1v8>;
+		};
+
+		regulator@10 {
+			reg = <VOLTD_SCMI_STPMIC2_BUCK7>;
+			voltd-supply = <&v3v3>;
+		};
+
+		regulator@15 {
+			reg = <VOLTD_SCMI_STPMIC2_LDO5>;
+			voltd-supply = <&v5v_hdmi>;
+		};
+
+		regulator@16 {
+			reg = <VOLTD_SCMI_STPMIC2_LDO6>;
+			voltd-supply = <&v5v_vconn>;
+		};
+
+		regulator@12 {
+			reg = <VOLTD_SCMI_STPMIC2_LDO2>;
+			voltd-supply = <&vdd_emmc>;
+		};
+
+		regulator@14 {
+			reg = <VOLTD_SCMI_STPMIC2_LDO4>;
+			voltd-supply = <&vdd3v3_usb>;
+		};
+
+		regulator@17 {
+			reg = <VOLTD_SCMI_STPMIC2_LDO7>;
+			voltd-supply = <&vdd_sdcard>;
+		};
+	};
+};
+
+
 &tamp {	
 	status = "disabled";
+};
+
+&risaf2 {
+	status = "okay";
 };
 /* USER CODE END addons */
 
