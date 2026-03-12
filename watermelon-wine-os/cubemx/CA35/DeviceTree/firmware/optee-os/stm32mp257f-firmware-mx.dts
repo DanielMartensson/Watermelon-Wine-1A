@@ -502,7 +502,7 @@
 
 /* USER CODE BEGIN addons */
 &tamp {	
-	status = "disable";
+	status = "disabled";
 };
 /* USER CODE END addons */
 
