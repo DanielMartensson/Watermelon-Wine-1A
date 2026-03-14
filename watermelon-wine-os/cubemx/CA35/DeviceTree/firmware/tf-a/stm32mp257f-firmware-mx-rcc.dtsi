@@ -70,6 +70,7 @@
 		DIV_CFG(DIV_APBDBG, 0)
 	>;
 	st,kerclk = <
+		MUX_CFG(MUX_RTC, MUX_RTC_LSI)
 		MUX_CFG(MUX_D3PER, MUX_D3PER_MSI)
 
 	>;
