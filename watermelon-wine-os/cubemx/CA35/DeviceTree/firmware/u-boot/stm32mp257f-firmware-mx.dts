@@ -39,6 +39,48 @@
 	chosen{
 		stdout-path = "serial0:115200n8";
 	};
+	
+	hdmi: connector {
+		compatible = "hdmi-connector";
+		label = "hdmi";
+		type = "a";
+		hdmi-pwr-supply = <&scmi_v5v_hdmi>;
+
+		port {
+			hdmi_connector_in: endpoint {
+				remote-endpoint = <&adv7535_out>;
+			};
+		};
+	};
+	
+	dmic0: dmic-0 {
+		compatible = "dmic-codec";
+		#sound-dai-cells = <1>;
+		sound-name-prefix = "dmic0";
+		vref-supply = <&scmi_v3v3>;
+		status = "okay";
+
+		port {
+			dmic0_endpoint: endpoint {
+				remote-endpoint = <&mdf_endpoint0>;
+			};
+		};
+	};
+
+	dmic1: dmic-1 {
+		compatible = "dmic-codec";
+		#sound-dai-cells = <1>;
+		sound-name-prefix = "dmic1";
+		vref-supply = <&scmi_v3v3>;
+		status = "okay";
+
+		port {
+			dmic1_endpoint: endpoint {
+				remote-endpoint = <&mdf_endpoint1>;
+			};
+		};
+	};
+	
 	/* USER CODE END root */
 
 	clocks{
@@ -647,7 +689,7 @@
 		clock-names = "cec";
 		interrupt-parent = <&gpiob>;
 		interrupts = <4 IRQ_TYPE_EDGE_FALLING>;
-		reset-gpios = <&gpiob 6 GPIO_ACTIVE_LOW>;
+		/*reset-gpios = <&gpiob 6 GPIO_ACTIVE_LOW>;*/
 		avdd-supply = <&scmi_v1v8>;
 		dvdd-supply = <&scmi_v1v8>;
 		pvdd-supply = <&scmi_v1v8>;
