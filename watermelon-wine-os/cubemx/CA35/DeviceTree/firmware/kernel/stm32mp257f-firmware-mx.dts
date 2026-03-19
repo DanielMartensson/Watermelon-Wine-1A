@@ -39,11 +39,65 @@
 	chosen{
 		stdout-path = "serial0:115200n8";
 	};
+	
+	hdmi: connector {
+		compatible = "hdmi-connector";
+		label = "hdmi";
+		type = "a";
+		hdmi-pwr-supply = <&scmi_v5v_hdmi>;
+
+		port {
+			hdmi_connector_in: endpoint {
+				remote-endpoint = <&adv7535_out>;
+			};
+		};
+	};
+	
+	
+	dmic0: dmic-0 {
+		compatible = "dmic-codec";
+		#sound-dai-cells = <1>;
+		sound-name-prefix = "dmic0";
+		vref-supply = <&scmi_v3v3>;
+		status = "okay";
+
+		port {
+			dmic0_endpoint: endpoint {
+				remote-endpoint = <&mdf_endpoint0>;
+			};
+		};
+	};
+
+	dmic1: dmic-1 {
+		compatible = "dmic-codec";
+		#sound-dai-cells = <1>;
+		sound-name-prefix = "dmic1";
+		vref-supply = <&scmi_v3v3>;
+		status = "okay";
+
+		port {
+			dmic1_endpoint: endpoint {
+				remote-endpoint = <&mdf_endpoint1>;
+			};
+		};
+	};
+	
 	/* USER CODE END root */
 
 	clocks{
 
 		/* USER CODE BEGIN clocks */
+		clk_ext_camera: clk-ext-camera {
+			#clock-cells = <0>;
+			compatible = "fixed-clock";
+			clock-frequency = <24000000>;
+		};
+
+		clk_ext_cec: clk-ext-cec {
+			#clock-cells = <0>;
+			compatible = "fixed-clock";
+			clock-frequency = <24000000>;
+		};
 		/* USER CODE END clocks */
 	};
 
@@ -455,6 +509,7 @@
 	status = "okay";
 
 	/* USER CODE BEGIN combophy */
+	st,ssc-on;
 	/* USER CODE END combophy */
 };
 
@@ -469,6 +524,18 @@
 	status = "okay";
 
 	/* USER CODE BEGIN csi */
+	ports {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		port@0 {
+			reg = <0>;
+			csi_sink: endpoint {
+				remote-endpoint = <&imx335_ep>;
+				data-lanes = <1 2>;
+				bus-type = <4>;
+			};
+		};
+	};
 	/* USER CODE END csi */
 };
 
@@ -483,7 +550,25 @@
 	status = "okay";
 
 	/* USER CODE BEGIN dsi */
+	ports {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		port@1 {
+			reg = <1>;
+			dsi_out1: endpoint {
+				remote-endpoint = <&adv7535_in>;
+			};
+		};
+	};
 	/* USER CODE END dsi */
+};
+
+&dts {
+	status = "okay";
+
+	/* USER CODE BEGIN dts */
+	/* USER CODE END dts */
 };
 
 &eth1 {
@@ -493,6 +578,24 @@
 	status = "okay";
 
 	/* USER CODE BEGIN eth1 */
+	phy-mode = "rgmii-id";
+	max-speed = <1000>;
+	phy-handle = <&phy1_eth1>;
+	st,eth-ptp-from-rcc;
+
+	mdio1 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		compatible = "snps,dwmac-mdio";
+		phy1_eth1: ethernet-phy@1 {
+			compatible = "ethernet-phy-id001c.c916";
+			/*reset-gpios =  <&gpioa 2 GPIO_ACTIVE_LOW>;*/
+			reset-assert-us = <10000>;
+			reset-deassert-us = <80000>;
+			realtek,eee-disable;
+			reg = <1>;
+		};
+	};
 	/* USER CODE END eth1 */
 };
 
@@ -500,6 +603,7 @@
 	status = "okay";
 
 	/* USER CODE BEGIN gpu */
+	contiguous-area = <&gpu_reserved>;
 	/* USER CODE END gpu */
 };
 
@@ -541,6 +645,75 @@
 	status = "okay";
 
 	/* USER CODE BEGIN i2c2 */
+	/* spare dmas for other usage */
+	/delete-property/dmas;
+	/delete-property/dma-names;
+
+	imx335: camera@1a {
+		compatible = "sony,imx335";
+		reg = <0x1a>;
+		clocks = <&clk_ext_camera>;
+		avdd-supply = <&scmi_v3v3>;
+		ovdd-supply = <&scmi_v3v3>;
+		dvdd-supply = <&scmi_v3v3>;
+		reset-gpios = <&gpiob 1 (GPIO_ACTIVE_LOW | GPIO_PUSH_PULL)>;
+		powerdown-gpios = <&gpiob 11 (GPIO_ACTIVE_HIGH | GPIO_PUSH_PULL)>;
+		status = "okay";
+
+		port {
+			imx335_ep: endpoint {
+				remote-endpoint = <&csi_sink>;
+				clock-lanes = <0>;
+				data-lanes = <1 2>;
+				link-frequencies = /bits/ 64 <594000000>;
+			};
+		};
+	};
+
+	adv7535: hdmi@3d {
+		compatible = "adi,adv7535";
+		reg = <0x3d>, <0x3c>, <0x3f>, <0x38>;
+		reg-names = "main", "cec", "edid", "packet";
+		status = "okay";
+		adi,dsi-lanes = <4>;
+		clocks = <&clk_ext_cec>;
+		clock-names = "cec";
+		interrupt-parent = <&gpiob>;
+		interrupts = <4 IRQ_TYPE_EDGE_FALLING>;
+		/*reset-gpios = <&gpiob 6 GPIO_ACTIVE_LOW>;*/
+		avdd-supply = <&scmi_v1v8>;
+		dvdd-supply = <&scmi_v1v8>;
+		pvdd-supply = <&scmi_v1v8>;
+		a2vdd-supply = <&scmi_v1v8>;
+		v3p3-supply = <&scmi_v3v3>;
+		v1p2-supply = <&scmi_v1v8>;
+
+		ports {
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			port@0 {
+				reg = <0>;
+				adv7535_in: endpoint {
+					remote-endpoint = <&dsi_out1>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				adv7535_out: endpoint {
+					remote-endpoint = <&hdmi_connector_in>;
+				};
+			};
+
+			port@2 {
+				reg = <2>;
+				adv7535_tx_endpoint: endpoint {
+					remote-endpoint = <&i2s2_endpoint>;
+				};
+			};
+		};
+	};
 	/* USER CODE END i2c2 */
 };
 
@@ -551,6 +724,13 @@
 	status = "okay";
 
 	/* USER CODE BEGIN i2s2 */
+	i2s2_port: port {
+		i2s2_endpoint: endpoint {
+			remote-endpoint = <&adv7535_tx_endpoint>;
+			format = "i2s";
+			mclk-fs = <256>;
+		};
+	};
 	/* USER CODE END i2s2 */
 };
 
@@ -607,6 +787,18 @@
 	status = "okay";
 
 	/* USER CODE BEGIN sdmmc1 */
+	cd-gpios = <&gpiod 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	disable-wp;
+	st,neg-edge;
+	bus-width = <4>;
+	vmmc-supply = <&scmi_vdd_sdcard>;
+	vqmmc-supply = <&scmi_vddio1>;
+	sd-uhs-sdr12;
+	sd-uhs-sdr25;
+	sd-uhs-sdr50;
+	sd-uhs-ddr50;
+	sd-uhs-sdr104;
+	status = "okay";
 	/* USER CODE END sdmmc1 */
 };
 
@@ -646,6 +838,7 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usb2_phy1 */
+	vdd33-supply = <&scmi_vdd3v3_usb>;
 	/* USER CODE END usb2_phy1 */
 };
 
@@ -653,6 +846,7 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usb2_phy2 */
+	vdd33-supply = <&scmi_vdd3v3_usb>;
 	/* USER CODE END usb2_phy2 */
 };
 
@@ -660,6 +854,20 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usb3dr */
+	usbh_ehci: usb@482f0000 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		/* onboard HUB */
+		hub@1 {
+			compatible = "usb424,2514";
+			reg = <1>;
+			vdd-supply = <&scmi_v3v3>;
+		};
+	};
+
+	usbh_ohci: usb@482e0000 {
+		status = "disabled";
+	};
 	/* USER CODE END usb3dr */
 };
 
@@ -667,9 +875,75 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usbh */
+	usbh_ehci: usb@482f0000 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		/* onboard HUB */
+		hub@1 {
+			compatible = "usb424,2514";
+			reg = <1>;
+			vdd-supply = <&scmi_v3v3>;
+		};
+	};
+
+	usbh_ohci: usb@482e0000 {
+		status = "disabled";
+	};
 	/* USER CODE END usbh */
 };
 
+&vdec {
+	status = "okay";
+
+	/* USER CODE BEGIN vdec */
+	/* USER CODE END vdec */
+};
+
+&venc {
+	status = "okay";
+
+	/* USER CODE BEGIN venc */
+	/* USER CODE END venc */
+};
+
 /* USER CODE BEGIN addons */
+&scmi_regu {
+	scmi_vddio1: regulator@0 {
+		regulator-min-microvolt = <1800000>;
+		regulator-max-microvolt = <3300000>;
+	};
+	scmi_vddcore: regulator@b {
+		reg = <VOLTD_SCMI_STPMIC2_BUCK2>;
+		regulator-name = "vddcore";
+	};
+	scmi_v1v8: regulator@e {
+		reg = <VOLTD_SCMI_STPMIC2_BUCK5>;
+		regulator-name = "v1v8";
+	};
+	scmi_v3v3: regulator@10 {
+		reg = <VOLTD_SCMI_STPMIC2_BUCK7>;
+		regulator-name = "v3v3";
+	};
+	scmi_vdd_emmc: regulator@12 {
+		reg = <VOLTD_SCMI_STPMIC2_LDO2>;
+		regulator-name = "vdd_emmc";
+	};
+	scmi_vdd3v3_usb: regulator@14 {
+		reg = <VOLTD_SCMI_STPMIC2_LDO4>;
+		regulator-name = "vdd3v3_usb";
+	};
+	scmi_v5v_hdmi: regulator@15 {
+		reg = <VOLTD_SCMI_STPMIC2_LDO5>;
+		regulator-name = "v5v_hdmi";
+	};
+	scmi_v5v_vconn: regulator@16 {
+		reg = <VOLTD_SCMI_STPMIC2_LDO6>;
+		regulator-name = "v5v_vconn";
+	};
+	scmi_vdd_sdcard: regulator@17 {
+		reg = <VOLTD_SCMI_STPMIC2_LDO7>;
+		regulator-name = "vdd_sdcard";
+	};
+};
 /* USER CODE END addons */
 

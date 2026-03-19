@@ -522,6 +522,13 @@
 	/* USER CODE END risaf5 */
 };
 
+&rtc {
+	status = "okay";
+
+	/* USER CODE BEGIN rtc */
+	/* USER CODE END rtc */
+};
+
 &saes {
 	status = "okay";
 
@@ -539,6 +546,10 @@
 /* USER CODE BEGIN addons */
 &cpu0 {
 	cpu-supply = <&vddcpu>;
+};
+
+&risaf2 {
+	status = "okay";
 };
 
 &scmi_regulator {
@@ -589,12 +600,11 @@
 	status = "disabled";
 };
 
+/*
 &rtc {
 	status = "disabled";
 };
+*/
 
-&risaf2 {
-	status = "okay";
-};
 /* USER CODE END addons */
 
