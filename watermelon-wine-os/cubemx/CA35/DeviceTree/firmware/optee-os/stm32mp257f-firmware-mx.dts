@@ -20,6 +20,12 @@
 #include "stm32mp25xxak-pinctrl.dtsi"
 
 /* USER CODE BEGIN includes */
+#include <dt-bindings/mfd/st,stpmic2.h>
+#include <dt-bindings/regulator/st,stm32mp25-regulator.h>
+#include <dt-bindings/soc/stm32mp-provisioning.h>
+#include "stm32mp25-pinctrl.dtsi"
+#include "stm32mp25-st-scmi-cfg.dtsi"
+#include "stm32mp25xxal-pinctrl.dtsi"
 /* USER CODE END includes */
 
 / {
@@ -579,8 +585,11 @@
 	};
 };
 
-
 &tamp {	
+	status = "disabled";
+};
+
+&rtc {
 	status = "disabled";
 };
 
