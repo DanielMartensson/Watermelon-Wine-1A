@@ -600,11 +600,9 @@
 	status = "disabled";
 };
 
-/*
 &rtc {
 	status = "disabled";
 };
-*/
 
 /* USER CODE END addons */
 

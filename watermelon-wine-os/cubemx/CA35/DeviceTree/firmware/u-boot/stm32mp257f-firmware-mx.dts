@@ -17,6 +17,11 @@
 #include "stm32mp25xxak-pinctrl.dtsi"
 
 /* USER CODE BEGIN includes */
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/input/input.h>
+#include <dt-bindings/leds/common.h>
+#include <dt-bindings/rtc/rtc-stm32.h>
+#include "stm32mp25-pinctrl.dtsi"
 /* USER CODE END includes */
 
 / {
@@ -49,34 +54,6 @@
 		port {
 			hdmi_connector_in: endpoint {
 				remote-endpoint = <&adv7535_out>;
-			};
-		};
-	};
-	
-	dmic0: dmic-0 {
-		compatible = "dmic-codec";
-		#sound-dai-cells = <1>;
-		sound-name-prefix = "dmic0";
-		vref-supply = <&scmi_v3v3>;
-		status = "okay";
-
-		port {
-			dmic0_endpoint: endpoint {
-				remote-endpoint = <&mdf_endpoint0>;
-			};
-		};
-	};
-
-	dmic1: dmic-1 {
-		compatible = "dmic-codec";
-		#sound-dai-cells = <1>;
-		sound-name-prefix = "dmic1";
-		vref-supply = <&scmi_v3v3>;
-		status = "okay";
-
-		port {
-			dmic1_endpoint: endpoint {
-				remote-endpoint = <&mdf_endpoint1>;
 			};
 		};
 	};
@@ -537,6 +514,14 @@
 				bus-type = <4>;
 			};
 		};
+
+		port@1{
+			reg = <1>;
+
+			csi_source:endpoint{
+				remote-endpoint = <&dcmipp_0>;
+			};
+		};
 	};
 	/* USER CODE END csi */
 };
@@ -782,17 +767,14 @@
 	status = "okay";
 
 	/* USER CODE BEGIN sdmmc1 */
-	cd-gpios = <&gpiod 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	cap-sd-highspeed;
+	broken-cd;
+	/* cd-gpios = <&gpiod 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
 	disable-wp;
 	st,neg-edge;
 	bus-width = <4>;
 	vmmc-supply = <&scmi_vdd_sdcard>;
 	vqmmc-supply = <&scmi_vddio1>;
-	sd-uhs-sdr12;
-	sd-uhs-sdr25;
-	sd-uhs-sdr50;
-	sd-uhs-ddr50;
-	sd-uhs-sdr104;
 	status = "okay";
 	/* USER CODE END sdmmc1 */
 };
@@ -853,16 +835,6 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usb3dr */
-	dwc3: usb@48300000 {
-		phys            = <&usb2_phy2>, <&combophy PHY_TYPE_USB3>;
-		phy-names       = "usb2-phy", "usb3-phy";
-		usb-role-switch;
-		port {
-			dwc3_ep: endpoint {
-				remote-endpoint = <&typec_ep>;
-			};
-		};
-	};
 	/* USER CODE END usb3dr */
 };
 

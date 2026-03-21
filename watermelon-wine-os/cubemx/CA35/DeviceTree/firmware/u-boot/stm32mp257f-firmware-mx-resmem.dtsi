@@ -133,7 +133,7 @@
                         no-map;
                 };
 
-                linux,cma{
+                linux,cma {
                         compatible = "shared-dma-pool";
                         reusable;
                         alloc-ranges = <0 0x80000000 0 0x80000000>;

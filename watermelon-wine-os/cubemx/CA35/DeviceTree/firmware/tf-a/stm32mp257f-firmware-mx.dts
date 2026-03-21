@@ -278,13 +278,6 @@
 	/* USER CODE END rng */
 };
 
-&rtc {
-	status = "okay";
-
-	/* USER CODE BEGIN rtc */
-	/* USER CODE END rtc */
-};
-
 &saes {
 	status = "okay";
 
