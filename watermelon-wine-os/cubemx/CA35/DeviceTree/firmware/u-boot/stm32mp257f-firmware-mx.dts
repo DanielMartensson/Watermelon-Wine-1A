@@ -787,8 +787,8 @@
 	st,neg-edge;
 	bus-width = <4>;
 	no-1-8-v;
-	/delete-property/ vmmc-supply;
-	/delete-property/ vqmmc-supply;
+	vmmc-supply = <&scmi_v3v3>;
+	vqmmc-supply = <&scmi_vdd_emmc>;
 	/delete-property/ sd-uhs-sdr12;
 	/delete-property/ sd-uhs-sdr25;
 	/delete-property/ sd-uhs-sdr50;
