@@ -57,7 +57,7 @@
 			};
 		};
 	};
-	
+		
 	/* USER CODE END root */
 
 	clocks{
@@ -763,14 +763,18 @@
 	status = "okay";
 
 	/* USER CODE BEGIN sdmmc1 */
-	cap-sd-highspeed;
-	broken-cd;
-	/* cd-gpios = <&gpiod 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+	cd-gpios = <&gpiod 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	disable-wp;
 	st,neg-edge;
 	bus-width = <4>;
-	vmmc-supply = <&scmi_vdd_sdcard>;
-	vqmmc-supply = <&scmi_vddio1>;
+	no-1-8-v;
+	vmmc-supply = <&scmi_v3v3>;
+	vqmmc-supply = <&scmi_vdd_emmc>;
+	/delete-property/ sd-uhs-sdr12;
+	/delete-property/ sd-uhs-sdr25;
+	/delete-property/ sd-uhs-sdr50;
+	/delete-property/ sd-uhs-ddr50;
+	/delete-property/ sd-uhs-sdr104;
 	status = "okay";
 	/* USER CODE END sdmmc1 */
 };
@@ -844,6 +848,10 @@
 			vdd-supply = <&scmi_v3v3>;
 		};
 	};
+
+	usbh_ohci: usb@482e0000 {
+		status = "disabled";
+	};
 	/* USER CODE END usbh */
 };
 
@@ -900,10 +908,4 @@
 		regulator-name = "vdd_sdcard";
 	};
 };
-
-&usbh_ohci {
-	status = "disabled";
-};
-
 /* USER CODE END addons */
-
