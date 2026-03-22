@@ -318,6 +318,7 @@
 				regulator-min-microvolt = <3300000>;
 				regulator-max-microvolt = <3300000>;
 				regulator-over-current-protection;
+				regulator-always-on;
 				st,pwrctrl-sel = <3>;
 				st,pwrctrl-reset;
 			};
@@ -491,24 +492,29 @@
 	st,clk_opp {
 		st,ck_cpu1 {
 			cfg_1 {
+				hz = <816000000>;
+				st,pll = <&pll1_cfg_816MHz>;
+			};
+
+			cfg_2 {
 				hz = <1500000000>;
 				st,pll = <&pll1_cfg_1500Mhz>;
 			};
 
-			cfg_2 {
+			cfg_3 {
 				hz = <1200000000>;
 				st,pll = <&pll1_cfg_1200Mhz>;
 			};
 		};
 		st,ck_gpu {
 			cfg_1 {
-				hz = <800000000>;
-				st,pll = <&pll3_cfg_800Mhz>;
+				hz = <408000000>;
+				st,pll = <&pll3_cfg_408MHz>;
 			};
 
 			cfg_2 {
-				hz = <900000000>;
-				st,pll = <&pll3_cfg_900Mhz>;
+				hz = <800000000>;
+				st,pll = <&pll3_cfg_800Mhz>;
 			};
 		};
 	};
