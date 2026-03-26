@@ -492,29 +492,19 @@
 	st,clk_opp {
 		st,ck_cpu1 {
 			cfg_1 {
-				hz = <816000000>;
-				st,pll = <&pll1_cfg_816MHz>;
+				hz = <1500000000>;
+				st,pll = <&pll1_cfg_1500MHz>;
 			};
 
 			cfg_2 {
-				hz = <1500000000>;
-				st,pll = <&pll1_cfg_1500Mhz>;
-			};
-
-			cfg_3 {
 				hz = <1200000000>;
-				st,pll = <&pll1_cfg_1200Mhz>;
+				st,pll = <&pll1_cfg_1200MHz>;
 			};
 		};
 		st,ck_gpu {
 			cfg_1 {
-				hz = <408000000>;
-				st,pll = <&pll3_cfg_408MHz>;
-			};
-
-			cfg_2 {
 				hz = <800000000>;
-				st,pll = <&pll3_cfg_800Mhz>;
+				st,pll = <&pll3_cfg_800MHz>;
 			};
 		};
 	};

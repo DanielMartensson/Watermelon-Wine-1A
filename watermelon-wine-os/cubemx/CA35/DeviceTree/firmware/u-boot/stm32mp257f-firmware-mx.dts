@@ -765,6 +765,7 @@
 	/delete-property/ sd-uhs-sdr50;
 	/delete-property/ sd-uhs-ddr50;
 	/delete-property/ sd-uhs-sdr104;
+	cap-sd-highspeed;
 	status = "okay";
 	/* USER CODE END sdmmc1 */
 };
@@ -903,3 +904,4 @@
 	};
 };
 /* USER CODE END addons */
+

@@ -16,7 +16,6 @@
 
 		/* USER CODE BEGIN reserved-memory */
 		/*Applicative memory mapping can be defined in this section deduced from OP-TEE one*/
-
                 tfa_bl31:tfa-bl31@a000000{
                         reg = <0x0 0xa000000 0x0 0x20000>;
                         no-map;
