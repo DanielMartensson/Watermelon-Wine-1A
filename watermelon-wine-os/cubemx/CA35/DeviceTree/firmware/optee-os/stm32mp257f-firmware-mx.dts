@@ -285,9 +285,10 @@
 				regulator-name = "v3v3";
 				regulator-min-microvolt = <3300000>;
 				regulator-max-microvolt = <3300000>;
-				regulator-always-on;
+				/* regulator-always-on; */
 				regulator-over-current-protection;
-				st,pwrctrl-sel = <1>;
+				/* st,pwrctrl-sel = <1>; */
+				st,pwrctrl-sel = <3>;
 				st,pwrctrl-enable;
 
 				default {
@@ -314,11 +315,11 @@
 				st,mask-reset;
 			};
 			vdd_emmc: ldo2 {
-				regulator-name = "vdd_SD_card_temporary";
+				regulator-name = "vdd_emmc";
 				regulator-min-microvolt = <3300000>;
 				regulator-max-microvolt = <3300000>;
 				regulator-over-current-protection;
-				regulator-always-on;
+				/* regulator-always-on; */
 				st,pwrctrl-sel = <3>;
 				st,pwrctrl-reset;
 			};

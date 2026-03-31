@@ -211,7 +211,7 @@
 				regulator-always-on;
 			};
 			vdd_emmc: ldo2 {
-				regulator-name = "vdd_SD_card_temporary";
+				regulator-name = "vdd_emmc";
 				regulator-min-microvolt = <3300000>;
 				regulator-max-microvolt = <3300000>;
 				regulator-always-on;
@@ -241,7 +241,7 @@
 			vddio_sdcard: ldo8 {
 				regulator-name = "vddio_sdcard";
 				st,regulator-bypass-microvolt = <3300000>;
-				regulator-min-microvolt = <1800000>;
+				regulator-min-microvolt = <3300000>;
 				regulator-max-microvolt = <3300000>;
 				regulator-always-on;
 			};
@@ -293,10 +293,10 @@
 	/* USER CODE BEGIN sdmmc1 */
 	st,neg-edge;
 	bus-width = <4>;
-	vmmc-supply = <&vdd_sdcard>;
-	vqmmc-supply = <&vddio1>;
-	/delete-property/cap-sd-highspeed;
-	/delete-property/cap-mmc-highspeed;
+	vmmc-supply = <&v3v3>;
+	vqmmc-supply = <&vdd_emmc>;
+	cap-sd-highspeed;
+	/delete-property/ cap-mmc-highspeed;
 	/* USER CODE END sdmmc1 */
 };
 
