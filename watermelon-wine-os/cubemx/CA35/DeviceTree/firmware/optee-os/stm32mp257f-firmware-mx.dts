@@ -288,9 +288,10 @@
 				/* regulator-always-on; */
 				regulator-over-current-protection;
 				/* st,pwrctrl-sel = <1>; */
+				st,regulator-bypass-microvolt = <3300000>;
 				st,pwrctrl-sel = <3>;
 				st,pwrctrl-enable;
-
+				/*
 				default {
 					regulator-on-in-suspend;
 					regulator-suspend-microvolt = <3300000>;
@@ -305,6 +306,7 @@
 				off {
 					regulator-off-in-suspend;
 				};
+				*/
 			};
 			vdda1v8_aon: ldo1 {
 				regulator-name = "vdda1v8_aon";
@@ -315,11 +317,11 @@
 				st,mask-reset;
 			};
 			vdd_emmc: ldo2 {
-				regulator-name = "vdd_emmc";
-				regulator-min-microvolt = <3300000>;
+				regulator-name = "vddio_sdcard_emmc_ldo2";
+				regulator-min-microvolt = <1800000>;
 				regulator-max-microvolt = <3300000>;
 				regulator-over-current-protection;
-				/* regulator-always-on; */
+				st,regulator-bypass-microvolt = <3300000>;
 				st,pwrctrl-sel = <3>;
 				st,pwrctrl-reset;
 			};
@@ -454,7 +456,7 @@
 		status = "okay";
 		regulator-min-microvolt = <1800000>;
 		regulator-max-microvolt = <3300000>;
-		vddio1-supply = <&vddio_sdcard>;
+		vddio1-supply = <&vdd_emmc>;
 	};
 
 	vddio2: vddio2 {
@@ -576,10 +578,12 @@
 			voltd-supply = <&v5v_vconn>;
 		};
 
+		/*
 		regulator@12 {
 			reg = <VOLTD_SCMI_STPMIC2_LDO2>;
 			voltd-supply = <&vdd_emmc>;
 		};
+		*/
 
 		regulator@14 {
 			reg = <VOLTD_SCMI_STPMIC2_LDO4>;

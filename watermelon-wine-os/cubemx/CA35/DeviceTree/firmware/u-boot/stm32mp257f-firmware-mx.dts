@@ -757,15 +757,8 @@
 	disable-wp;
 	st,neg-edge;
 	bus-width = <4>;
-	no-1-8-v;
 	vmmc-supply = <&scmi_v3v3>;
-	vqmmc-supply = <&scmi_vdd_emmc>;
-	/delete-property/ sd-uhs-sdr12;
-	/delete-property/ sd-uhs-sdr25;
-	/delete-property/ sd-uhs-sdr50;
-	/delete-property/ sd-uhs-ddr50;
-	/delete-property/ sd-uhs-sdr104;
-	cap-sd-highspeed;
+	vqmmc-supply = <&scmi_vddio1>;
 	status = "okay";
 	/* USER CODE END sdmmc1 */
 };
@@ -882,10 +875,12 @@
 		reg = <VOLTD_SCMI_STPMIC2_BUCK7>;
 		regulator-name = "v3v3";
 	};
+	/*
 	scmi_vdd_emmc: regulator@12 {
 		reg = <VOLTD_SCMI_STPMIC2_LDO2>;
 		regulator-name = "vdd_emmc";
 	};
+	*/
 	scmi_vdd3v3_usb: regulator@14 {
 		reg = <VOLTD_SCMI_STPMIC2_LDO4>;
 		regulator-name = "vdd3v3_usb";
