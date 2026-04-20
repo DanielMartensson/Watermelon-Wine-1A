@@ -720,6 +720,13 @@
 	/* USER CODE END i3c3 */
 };
 
+&ipcc1 {
+	status = "okay";
+
+	/* USER CODE BEGIN ipcc1 */
+	/* USER CODE END ipcc1 */
+};
+
 &ltdc {
 	status = "okay";
 
@@ -739,6 +746,8 @@
 
 &m33_rproc {
 	status = "okay";
+
+	/*Restriction: "memory-region" property is not managed - please to use User-Section if needed*/
 
 	/* USER CODE BEGIN m33_rproc */
 	/* USER CODE END m33_rproc */

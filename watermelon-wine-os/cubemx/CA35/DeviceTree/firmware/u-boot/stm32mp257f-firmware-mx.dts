@@ -724,6 +724,13 @@
 	/* USER CODE END i3c3 */
 };
 
+&ipcc1 {
+	status = "okay";
+
+	/* USER CODE BEGIN ipcc1 */
+	/* USER CODE END ipcc1 */
+};
+
 &m_can1 {
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&fdcan1_pins_mx>;

@@ -73,27 +73,27 @@
 		};
 
 		cm33_retram: cm33-retram@a080000 {
-			reg = <0x0 0xa080000 0x0 0x20000>;
+			reg = <0x0 0xa080000 0x0 0x1f000>;
 			no-map;
 
 			/* USER CODE BEGIN cm33_retram */
 			/* USER CODE END cm33_retram */
 		};
 
-		test51: test51@a09f000 {
-			reg = <0x0 0xa09f000 0x0 0x20000>;
+		ddr_param: ddr-param@a09f000 {
+			reg = <0x0 0xa09f000 0x0 0x1000>;
 			no-map;
 
-			/* USER CODE BEGIN test51 */
-			/* USER CODE END test51 */
+			/* USER CODE BEGIN ddr_param */
+			/* USER CODE END ddr_param */
 		};
 
-		test52: test52@a0bf000 {
-			reg = <0x0 0xa0bf000 0x0 0x1000>;
+		erase_vderam: erase-vderam@a09f000 {
+			reg = <0x0 0xa09f000 0x0 0x21000>;
 			no-map;
 
-			/* USER CODE BEGIN test52 */
-			/* USER CODE END test52 */
+			/* USER CODE BEGIN erase_vderam */
+			/* USER CODE END erase_vderam */
 		};
 
 		bl31_lowpower: bl31-lowpower@42000000 {
@@ -112,12 +112,12 @@
 			/* USER CODE END tfm_its */
 		};
 
-		mm_ospi2: mm-ospi2@60000000 {
+		mm_ospi1: mm-ospi1@60000000 {
 			reg = <0x0 0x60000000 0x0 0x10000000>;
 			no-map;
 
-			/* USER CODE BEGIN mm_ospi2 */
-			/* USER CODE END mm_ospi2 */
+			/* USER CODE BEGIN mm_ospi1 */
+			/* USER CODE END mm_ospi1 */
 		};
 
 		tfm_code: tfm-code@80000000 {
@@ -200,22 +200,6 @@
 			/* USER CODE END gpu_reserved */
 		};
 
-		vdec_reserved: vdec-reserved@fe800000 {
-			reg = <0x0 0xfe800000 0x0 0x0000>;
-			no-map;
-
-			/* USER CODE BEGIN vdec_reserved */
-			/* USER CODE END vdec_reserved */
-		};
-
-		venc_reserved: venc-reserved@fe800000 {
-			reg = <0x0 0xfe800000 0x0 0x0000>;
-			no-map;
-
-			/* USER CODE BEGIN venc_reserved */
-			/* USER CODE END venc_reserved */
-		};
-
 		ltdc_sec_layer: ltdc-sec-layer@fe800000 {
 			reg = <0x0 0xfe800000 0x0 0x800000>;
 			no-map;
@@ -230,6 +214,22 @@
 
 			/* USER CODE BEGIN ltdc_sec_rotation */
 			/* USER CODE END ltdc_sec_rotation */
+		};
+
+		 erase_risaf4:  erase-risaf4@100000000 {
+			reg = <0x00000001 0x00000000 0xffffffff 0xc0000000>;
+			no-map;
+
+			/* USER CODE BEGIN  erase_risaf4 */
+			/* USER CODE END  erase_risaf4 */
+		};
+
+		linuxkernel2: linuxkernel2@100000000 {
+			reg = <0x00000001 0x00000000 0x0 0x40000000>;
+			no-map;
+
+			/* USER CODE BEGIN linuxkernel2 */
+			/* USER CODE END linuxkernel2 */
 		};
 
 		pcie_device: pcie-device@10000000 {

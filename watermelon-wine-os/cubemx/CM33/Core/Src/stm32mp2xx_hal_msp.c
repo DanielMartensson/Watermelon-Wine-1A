@@ -73,6 +73,28 @@ void HAL_MspInit(void)
   /* USER CODE END MspInit 1 */
 }
 
+/**
+  * @brief IPCC MSP Initialization
+  * This function configures the hardware resources used in this example
+  * @param hipcc: IPCC handle pointer
+  * @retval None
+  */
+void HAL_IPCC_MspInit(IPCC_HandleTypeDef* hipcc)
+{
+
+}
+
+/**
+  * @brief IPCC MSP De-Initialization
+  * This function freeze the hardware resources used in this example
+  * @param hipcc: IPCC handle pointer
+  * @retval None
+  */
+void HAL_IPCC_MspDeInit(IPCC_HandleTypeDef* hipcc)
+{
+
+}
+
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
