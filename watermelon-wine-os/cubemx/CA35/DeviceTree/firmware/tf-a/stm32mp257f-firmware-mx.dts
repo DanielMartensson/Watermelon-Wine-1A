@@ -230,8 +230,8 @@
 			};
 			v5v_hdmi: ldo5 {
 				regulator-name = "v5v_hdmi";
-				regulator-min-microvolt = <2000000>;
-				regulator-max-microvolt = <2000000>;
+				regulator-min-microvolt = <5000000>;
+				regulator-max-microvolt = <5000000>;
 			};
 			vdd_sdcard: ldo7 {
 				regulator-name = "vdd_sdcard";
@@ -262,9 +262,21 @@
 	status = "okay";
 
 	/* USER CODE BEGIN pwr */
-	vddio1: vddio1 {
-		vddio1-supply = <&vdd_emmc>;
-	};
+        vddio1: vddio1 {
+                vddio1-supply = <&vdd_emmc>;
+        };
+        vddio2: vddio2 {
+                vddio2-supply = <&v1v8>;
+        };
+        vddio3: vddio3 {
+                vddio3-supply = <&vddio_pmic>;
+        };
+        vddio4: vddio4 {
+                vddio4-supply = <&vddio_pmic>;
+        };
+        vddio: vddio {
+                vdd-supply = <&vddio_pmic>;
+        };
 	/* USER CODE END pwr */
 };
 
