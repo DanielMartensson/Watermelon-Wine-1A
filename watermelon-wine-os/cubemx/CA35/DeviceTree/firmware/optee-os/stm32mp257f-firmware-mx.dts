@@ -289,7 +289,6 @@
 				regulator-over-current-protection;
 				st,pwrctrl-sel = <1>;
 				st,regulator-bypass-microvolt = <3300000>;
-				st,pwrctrl-sel = <3>;
 				st,pwrctrl-enable;
 				
 				default {
