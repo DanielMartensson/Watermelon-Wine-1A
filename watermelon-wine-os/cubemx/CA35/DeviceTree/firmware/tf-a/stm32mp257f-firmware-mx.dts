@@ -230,8 +230,8 @@
 			};
 			v5v_hdmi: ldo5 {
 				regulator-name = "v5v_hdmi";
-				regulator-min-microvolt = <5000000>;
-				regulator-max-microvolt = <5000000>;
+				regulator-min-microvolt = <2000000>;
+				regulator-max-microvolt = <2000000>;
 			};
 			vdd_sdcard: ldo7 {
 				regulator-name = "vdd_sdcard";
