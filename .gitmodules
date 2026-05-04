@@ -1,6 +1,0 @@
-[submodule "watermelon-wine-os/yocto/layers/meta-openembedded"]
-	path = watermelon-wine-os/yocto/layers/meta-openembedded
-	url = https://github.com/openembedded/meta-openembedded
-[submodule "watermelon-wine-os/yocto/layers/openembedded-core"]
-	path = watermelon-wine-os/yocto/layers/openembedded-core
-	url = git://git.openembedded.org/openembedded-core
