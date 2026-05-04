@@ -1,6 +1,23 @@
 [submodule "watermelon-wine-os/yocto/layers/meta-openembedded"]
 	path = watermelon-wine-os/yocto/layers/meta-openembedded
 	url = https://github.com/openembedded/meta-openembedded
+
 [submodule "watermelon-wine-os/yocto/layers/openembedded-core"]
 	path = watermelon-wine-os/yocto/layers/openembedded-core
-	url = git://git.openembedded.org/openembedded-core
+	url = https://github.com/openembedded/openembedded-core
+
+[submodule "watermelon-wine-os/yocto/layers/meta-st/meta-st-openstlinux"]
+	path = watermelon-wine-os/yocto/layers/meta-st/meta-st-openstlinux
+	url = https://github.com/STMicroelectronics/meta-st-openstlinux
+
+[submodule "watermelon-wine-os/yocto/layers/meta-st/meta-st-stm32mp"]
+	path = watermelon-wine-os/yocto/layers/meta-st/meta-st-stm32mp
+	url = https://github.com/STMicroelectronics/meta-st-stm32mp
+
+[submodule "watermelon-wine-os/yocto/layers/meta-st/meta-st-stm32mp-addons"]
+	path = watermelon-wine-os/yocto/layers/meta-st/meta-st-stm32mp-addons
+	url = https://github.com/STMicroelectronics/meta-st-stm32mp-addons
+
+[submodule "watermelon-wine-os/yocto/layers/meta-st/scripts"]
+	path = watermelon-wine-os/yocto/layers/meta-st/scripts
+	url = https://github.com/STMicroelectronics/meta-st-scripts
