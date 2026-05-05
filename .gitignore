@@ -1,5 +1,7 @@
 watermelon-wine-os/layers/meta-openembedded/
 watermelon-wine-os/layers/meta-st/
 watermelon-wine-os/layers/openembedded-core/
+watermelon-wine-os/layers/cache/
 watermelon-wine-os/.repo/
 watermelon-wine-os/build-*/
+watermelon-wine-os/cache/
