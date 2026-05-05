@@ -1,0 +1,6 @@
+# Yocto build output
+watermelon-wine-os/yocto/build-*/
+watermelon-wine-os/yocto/tmp-*/
+watermelon-wine-os/yocto/sstate-cache/
+watermelon-wine-os/yocto/downloads/
+watermelon-wine-os/yocto/.repo/
