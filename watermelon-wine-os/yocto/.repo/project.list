@@ -1,7 +1,0 @@
-layers/meta-openembedded
-layers/meta-st/meta-st-openstlinux
-layers/meta-st/meta-st-stm32mp
-layers/meta-st/meta-st-stm32mp-addons
-layers/meta-st/scripts
-layers/openembedded-core
-layers/openembedded-core/bitbake
