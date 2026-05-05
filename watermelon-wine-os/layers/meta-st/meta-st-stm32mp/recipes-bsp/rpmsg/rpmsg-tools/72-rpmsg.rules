@@ -1,2 +1,0 @@
-KERNEL=="rpmsg*", MODE="0660", OWNER="root", GROUP="rpmsg"
-
