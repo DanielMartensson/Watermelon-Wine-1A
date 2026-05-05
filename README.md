@@ -1,32 +1,21 @@
 # Watermelon-Wine-1A
 
-## Status Buildroot
+Clone this repository and go to
 
-Måste generera bättre DT i CubeMX. icache och verfbuf hittas ej i linux DT.
+```c
+cd watermelon-wine-os
+```
+
+Download the `STM32MPU Distribution Package OpenSTLinux distribution`. 
+```C
+
+repo init -u https://github.com/STMicroelectronics/oe-manifest.git -b refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18
 
 ```
-ubuntu@Windows:~/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot$ make
->>> linux custom Building
-/usr/bin/sed -i -e '/^\(# \)\?CONFIG_GCC_PLUGINS\>/d' /home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom//.config && echo '# CONFIG_GCC_PLUGINS is not set' >> /home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom//.config
-PATH="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/bin:/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" PKG_CONFIG="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/bin/pkg-config" PKG_CONFIG_SYSROOT_DIR="/" PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 PKG_CONFIG_LIBDIR="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/lib/pkgconfig:/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/share/pkgconfig" BR_BINARIES_DIR=/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/images KCFLAGS=-Wno-attribute-alias /usr/bin/make -j9 HOSTCC="/usr/bin/gcc -O2 -I/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/include -L/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/lib -Wl,-rpath,/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/lib" ARCH=arm64 INSTALL_MOD_PATH=/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/target CROSS_COMPILE="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/bin/aarch64-none-linux-gnu-" WERROR=0 DEPMOD=/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/sbin/depmod INSTALL_MOD_STRIP=1 -C /home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom all
-make[1]: Entering directory '/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom'
-  SYNC    include/config/auto.conf.cmd
-  CALL    scripts/checksyscalls.sh
-make[1]: Leaving directory '/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom'
-PATH="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/bin:/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" PKG_CONFIG="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/bin/pkg-config" PKG_CONFIG_SYSROOT_DIR="/" PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 PKG_CONFIG_LIBDIR="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/lib/pkgconfig:/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/share/pkgconfig" BR_BINARIES_DIR=/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/images KCFLAGS=-Wno-attribute-alias /usr/bin/make -j9 HOSTCC="/usr/bin/gcc -O2 -I/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/include -L/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/lib -Wl,-rpath,/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/lib" ARCH=arm64 INSTALL_MOD_PATH=/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/target CROSS_COMPILE="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/bin/aarch64-none-linux-gnu-" WERROR=0 DEPMOD=/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/sbin/depmod INSTALL_MOD_STRIP=1 -C /home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom Image.gz
-make[1]: Entering directory '/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom'
-  CALL    scripts/checksyscalls.sh
-make[1]: Leaving directory '/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom'
-PATH="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/bin:/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" PKG_CONFIG="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/bin/pkg-config" PKG_CONFIG_SYSROOT_DIR="/" PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 PKG_CONFIG_LIBDIR="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/lib/pkgconfig:/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/share/pkgconfig" BR_BINARIES_DIR=/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/images KCFLAGS=-Wno-attribute-alias /usr/bin/make -j9 HOSTCC="/usr/bin/gcc -O2 -I/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/include -L/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/lib -Wl,-rpath,/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/lib" ARCH=arm64 INSTALL_MOD_PATH=/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/target CROSS_COMPILE="/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/bin/aarch64-none-linux-gnu-" WERROR=0 DEPMOD=/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/host/sbin/depmod INSTALL_MOD_STRIP=1 -C /home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom st/stm32mp257f-firmware-mx.dtb
-make[1]: Entering directory '/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom'
-  DTC     arch/arm64/boot/dts/st/stm32mp257f-firmware-mx.dtb
-Error: arch/arm64/boot/dts/st/stm32mp257f-firmware-mx.dts:548.1-8 Label or path icache not found
-Error: arch/arm64/boot/dts/st/stm32mp257f-firmware-mx.dts:650.1-9 Label or path vrefbuf not found
-FATAL ERROR: Syntax error parsing input tree
-make[3]: *** [scripts/Makefile.lib:427: arch/arm64/boot/dts/st/stm32mp257f-firmware-mx.dtb] Error 1
-make[2]: *** [/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom/Makefile:1409: st/stm32mp257f-firmware-mx.dtb] Error 1
-make[1]: *** [Makefile:234: __sub-make] Error 2
-make[1]: Leaving directory '/home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom'
-make: *** [package/pkg-generic.mk:293: /home/ubuntu/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot/output/build/linux-custom/.stamp_built] Error 2
-ubuntu@Windows:~/github/Watermelon-Wine-1A/watermelon-wine-os/buildroot$
+Sync the `STM32MPU Distribution Package OpenSTLinux distribution`. 
+
+```C
+repo sync
 ```
+
+
