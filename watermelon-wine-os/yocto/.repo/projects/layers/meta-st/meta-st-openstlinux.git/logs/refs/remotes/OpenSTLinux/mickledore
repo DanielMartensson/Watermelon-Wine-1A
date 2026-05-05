@@ -1,0 +1,1 @@
+0000000000000000000000000000000000000000 0a0b94d470951d86dc3fd1bdb4a98e5763be4e00 Daniel Mårtensson <daniel.martensson100@outlook.com> 1778002902 +0200	fetch --quiet --progress OpenSTLinux --prune --recurse-submodules=no --tags +refs/heads/*:refs/remotes/OpenSTLinux/* +refs/tags/*:refs/tags/*: storing head

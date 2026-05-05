@@ -1,0 +1,30 @@
+{
+  "layers/meta-st/meta-st-stm32mp-addons": {
+    "last_fetch": 1778002874.4196858,
+    "last_checkout": 1778002874.4196858
+  },
+  "layers/meta-st/scripts": {
+    "last_fetch": 1778002874.4196858,
+    "last_checkout": 1778002874.4196858
+  },
+  "layers/meta-st/meta-st-stm32mp": {
+    "last_fetch": 1778002874.4196858,
+    "last_checkout": 1778002874.4196858
+  },
+  "layers/meta-st/meta-st-openstlinux": {
+    "last_fetch": 1778002874.4196858,
+    "last_checkout": 1778002874.4196858
+  },
+  "layers/meta-openembedded": {
+    "last_fetch": 1778002874.4196858,
+    "last_checkout": 1778002874.4196858
+  },
+  "layers/openembedded-core": {
+    "last_fetch": 1778002874.4196858,
+    "last_checkout": 1778002874.4196858
+  },
+  "layers/openembedded-core/bitbake": {
+    "last_fetch": 1778002874.4196858,
+    "last_checkout": 1778002874.4196858
+  }
+}

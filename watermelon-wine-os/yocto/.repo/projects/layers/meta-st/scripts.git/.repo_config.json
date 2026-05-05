@@ -1,0 +1,23 @@
+{
+  "core.repositoryformatversion": [
+    "0"
+  ],
+  "core.filemode": [
+    "true"
+  ],
+  "filter.lfs.smudge": [
+    "git-lfs smudge --skip -- %f"
+  ],
+  "filter.lfs.process": [
+    "git-lfs filter-process --skip"
+  ],
+  "remote.OpenSTLinux.url": [
+    "https://github.com/STMicroelectronics/meta-st-scripts"
+  ],
+  "remote.OpenSTLinux.projectname": [
+    "meta-st-scripts"
+  ],
+  "remote.OpenSTLinux.fetch": [
+    "+refs/heads/*:refs/remotes/OpenSTLinux/*"
+  ]
+}

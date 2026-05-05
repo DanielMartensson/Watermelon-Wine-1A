@@ -1,0 +1,34 @@
+# pack-refs with: peeled fully-peeled sorted 
+4cc1f58386a5f58635f0de94e5a13725b90172b5 refs/tags/openstlinux-20-02-19
+^af64967d7f45632d45ef445216ad9dae39501f63
+138ae9c4e094546bbc4c40ad6e0fbb69ccd9a055 refs/tags/openstlinux-4.19-thud-mp1-19-02-20
+4ae1988b23935aaaf26b01f4ba516b0a4febe155 refs/tags/openstlinux-4.19-thud-mp1-19-10-09
+252f25c865b76fc5237ee3b9b4e89fadff77d33f refs/tags/openstlinux-5.10-dunfell-mp1-21-03-31
+a11d44f622f484a2e1053e7038c6da0ddf1d97da refs/tags/openstlinux-5.10-dunfell-mp1-21-07-21
+bba37b3abc44e6070dfa4e5a923ae45c8fa083db refs/tags/openstlinux-5.10-dunfell-mp1-21-11-17
+50e181f6c13e2daaf03cde25f21b59d12330f068 refs/tags/openstlinux-5.10-dunfell-mp1-21-11-30
+b103e613e3d21001b84339957f60583c037f43ae refs/tags/openstlinux-5.10-dunfell-mp1-22-06-08
+71379e535c98f2b10ad85590f212c2665aad106a refs/tags/openstlinux-5.10-dunfell-mp1-22-11-30
+42e2f0717b469e093fb4e9d7fb5f849683c5e626 refs/tags/openstlinux-5.10-dunfell-mp1-23-11-01
+0f999f5a1758b9b9cdabb392fa06a9f5669b0126 refs/tags/openstlinux-5.15-yocto-kirkstone-mp1-v22.06.15
+134fd08b4113f1f8d38c17302523fdb31c601297 refs/tags/openstlinux-5.15-yocto-kirkstone-mp1-v22.07.27
+0df67c5685531e5cff6e11e997192b441ef9c261 refs/tags/openstlinux-5.15-yocto-kirkstone-mp1-v22.11.23
+62afa87dac1e5e9adcd13ad21e9255c505689d9f refs/tags/openstlinux-5.15-yocto-kirkstone-mp1-v23.07.26
+791a7199cd9469ebab1a867990efbe75bda95bf8 refs/tags/openstlinux-5.15-yocto-kirkstone-mp1-v24.07.17
+c521da72c91e35b6dd8b075a4cbec028964f5d0a refs/tags/openstlinux-5.4-dunfell-mp1-20-06-24
+bb7c99ffdccb46bebbc9d0159baabd01a5b193a9 refs/tags/openstlinux-5.4-dunfell-mp1-20-11-12
+6d8f11172136624905da984a96e0ac29f36decec refs/tags/openstlinux-5.4-dunfell-mp1-21-12-22
+7061962038fdd899771a87c0165a8880e07d5be8 refs/tags/openstlinux-5.4-dunfell-mp1-22-05-20
+e12aa730e174ca1d33602aeeeddf2dcb789e91e8 refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v23.06.21
+bc33c3483cf70900347f15542f435b1c6604a500 refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v23.10.18
+51fc8535f82f3f95ea39e675b12e243f06a8f8b0 refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v23.11.15
+2e703794221db4af25d1c71280cb5d2b3f3d86ca refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v24.03.13
+8e313e59954bb3cec212776cd3131665a1b42d17 refs/tags/openstlinux-6.1-yocto-mickledore-mpu-v24.06.26
+8c848376c8d5221cb43e96fe35b20c395cf3277b refs/tags/openstlinux-6.1-yocto-mickledore-mpu-v24.11.21
+702820da3cb17f611f928a3b912f347158ff2df8 refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v24.11.06
+f6a48ebc6f9db91025e2011418fc706ff57dac09 refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v24.12.05
+d7654c1745f23a7309473e31e7cfc509d4e9b9c4 refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v25.03.19
+a7f5682ba36dd7420b35d5c9102fc9c2aa017170 refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v25.04.30
+f5bebaa9d067f3146c798af8c2a0352fb831e17c refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11
+bcdc7ddf5000a2f89a05fdeda15e5fa6fa82c170 refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v25.08.27
+104df75efc88bdd2b1fb32d7d55721876cffb682 refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18

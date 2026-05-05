@@ -1,0 +1,1 @@
+0000000000000000000000000000000000000000 f00028caf257e386c0f3ae46bd4b3ba53dd0729d Daniel Mårtensson <daniel.martensson100@outlook.com> 1778002935 +0200	fetch --quiet --progress oe --prune --recurse-submodules=no --tags +refs/heads/*:refs/remotes/oe/* +refs/tags/*:refs/tags/*: storing head

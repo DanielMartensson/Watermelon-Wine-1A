@@ -1,0 +1,46 @@
+[core]
+	repositoryFormatVersion = 1
+	filemode = true
+[filter "lfs"]
+	smudge = git-lfs smudge --skip -- %f
+	process = git-lfs filter-process --skip
+[remote "origin"]
+	url = https://github.com/STMicroelectronics/oe-manifest.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[manifest]
+	platform = auto
+[extensions]
+	preciousObjects = true
+[branch "default"]
+	remote = origin
+	merge = refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18
+[repo]
+	existingprojectcount = 0
+	newprojectcount = 7
+[repo "syncstate.main"]
+	synctime = 2026-05-05T17:43:09.674924+00:00
+	version = 1
+[repo "syncstate.sys"]
+	argv = ['/home/mint/Documents/Github/Watermelon-Wine-1A/watermelon-wine-os/yocto/.repo/repo/main.py', '--repo-dir=/home/mint/Documents/Github/Watermelon-Wine-1A/watermelon-wine-os/yocto/.repo', '--wrapper-version=2.36', '--wrapper-path=/usr/bin/repo', '--', 'sync']
+[repo "syncstate.options"]
+	jobs = 8
+	outermanifest = true
+	jobsnetwork = 1
+	jobscheckout = 8
+	mpupdate = true
+	interleaved = true
+	clonebundle = true
+	retryfetches = 0
+	prune = true
+	repoverify = true
+	quiet = false
+	verbose = false
+[repo "syncstate.remote.origin"]
+	url = https://github.com/STMicroelectronics/oe-manifest.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[repo "syncstate.branch.default"]
+	remote = origin
+	merge = refs/tags/openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18
+[repo "syncstate.repo"]
+	existingprojectcount = 0
+	newprojectcount = 7
