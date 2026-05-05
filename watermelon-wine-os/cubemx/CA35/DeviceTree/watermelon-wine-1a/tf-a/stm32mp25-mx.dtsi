@@ -13,7 +13,7 @@
  * System frequency: 1200000kHz
  * Address mapping type: RBC
  *
- * Save Date: 2026.05.05, save Time: 18:46:28
+ * Save Date: 2026.05.05, save Time: 19:16:57
  */
 
 #define DDR_MEM_NAME "LPDDR4 32bits 1200000kHz"
