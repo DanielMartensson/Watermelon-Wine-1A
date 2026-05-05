@@ -1,5 +1,5 @@
-watermelon-wine-os/layer/meta-openembedded/
-watermelon-wine-os/layer/meta-st/
-watermelon-wine-os/layer/openembedded-core/
-watermelon-wine-os/build-*/
-watermelon-wine-os/.repo/
+watermelon-wine-os/layers/meta-openembedded/
+watermelon-wine-os/layers/meta-st/
+watermelon-wine-os/layers/openembedded-core/
+watermelon-wine-os/yocto/.repo/
+watermelon-wine-os/yocto/build-*/
