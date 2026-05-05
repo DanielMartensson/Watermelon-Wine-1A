@@ -1,0 +1,5 @@
+MANIFEST_VERSION = openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18
+KERNEL_DT = ./DeviceTree/watermelon-wine-1a/kernel
+OPTEE_DT = ./DeviceTree/watermelon-wine-1a/optee-os
+UBOOT_DT = ./DeviceTree/watermelon-wine-1a/u-boot
+TFA_DT = ./DeviceTree/watermelon-wine-1a/tf-a
