@@ -47,7 +47,7 @@ st-openstlinux        /home/mint/Documents/Github/Watermelon-Wine-1A/watermelon-
 core                  /home/mint/Documents/Github/Watermelon-Wine-1A/watermelon-wine-os/layers/openembedded-core/meta  5
 watermelon-wine       /home/mint/Documents/Github/Watermelon-Wine-1A/watermelon-wine-os/layers/meta-watermelon-wine  8
 ```
-If the layer `watermelon-wine` has been added. Then open the `local.conf` file
+If the layer `watermelon-wine` has been added. Then open the `local.conf` file inside the `build-openstlinuxweston-stm32mp25-mx` folder.
 ```c
 nano conf/local.conf
 ```

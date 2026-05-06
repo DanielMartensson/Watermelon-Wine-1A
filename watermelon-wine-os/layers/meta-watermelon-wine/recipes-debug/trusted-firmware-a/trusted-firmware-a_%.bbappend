@@ -1,0 +1,6 @@
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+
+SRC_URI += "file://0001-usart6-debug.patch"
+
+EXTRA_OEMAKE += "STM32MP_EARLY_CONSOLE=1" 
+EXTRA_OEMAKE += "LOG_LEVEL=40"
