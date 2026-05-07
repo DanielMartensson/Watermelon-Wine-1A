@@ -1,6 +1,5 @@
 From f7054eefa3921aec37fd885b08cc7f6fb7420e37 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Daniel=20M=C3=A5rtensson?=
- <daniel.martensson100@outlook.com>
+From: <noname@example.com>
 Date: Thu, 7 May 2026 22:06:34 +0200
 Subject: [PATCH] Add log console output for u-boot
 
