@@ -59,4 +59,14 @@ To
 ```c
 MACHINE=watermelon-wine-1a
 ```
-Then save the `local.conf`file.
+Then save the `local.conf`file. Then build the official `OpenSTLinux`.
+
+```c
+bitbake st-image-weston
+```
+
+Or buid other `OpenSTLinux`.
+
+```c
+bitbake st-image-core
+```

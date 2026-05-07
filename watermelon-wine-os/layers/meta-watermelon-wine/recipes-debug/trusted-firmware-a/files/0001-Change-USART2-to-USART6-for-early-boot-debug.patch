@@ -1,3 +1,20 @@
+From 1d9bf45c48211137fb0c7a81e32c70f4063b8e37 Mon Sep 17 00:00:00 2001
+From: noname <noreply@example.com>
+Date: Thu, 7 May 2026 19:44:45 +0200
+Subject: [PATCH] Change USART2 to USART6 for early boot debug
+
+---
+ plat/st/stm32mp2/stm32mp2_def.h | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+diff --git a/plat/st/stm32mp2/stm32mp2_def.h b/plat/st/stm32mp2/stm32mp2_def.h
+index a616e2fbf..e5e8ce1af 100644
+--- a/plat/st/stm32mp2/stm32mp2_def.h
++++ b/plat/st/stm32mp2/stm32mp2_def.h
+@@ -459,21 +459,21 @@ enum ddr_type {
+ 
+ /* For UART crash console */
+ #define STM32MP_DEBUG_USART_CLK_FRQ		64000000
 -/* USART2 on HSI@64MHz, TX on GPIOA4 Alternate 6 */
 -#define STM32MP_DEBUG_USART_BASE		USART2_BASE
 -#define DEBUG_UART_TX_GPIO_BANK_ADDRESS		GPIOA_BASE
@@ -28,3 +45,9 @@
 +#define DEBUG_UART_RST_BIT                      RCC_UARTxCFGR_UARTxRST
 +#define DEBUG_UART_PREDIV_CFGR                  RCC_PREDIV8CFGR
 +#define DEBUG_UART_FINDIV_CFGR                  RCC_FINDIV8CFGR
+ 
+ /*******************************************************************************
+  * STM32MP2 IPCC
+-- 
+2.43.0
+
