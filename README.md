@@ -58,8 +58,12 @@ MACHINE=stm32mp25-mx
 To 
 ```c
 MACHINE=watermelon-wine-1a
+BB_NUMBER_THREADS = "4"
+PARALLEL_MAKE = "-j4"
 ```
-Then save the `local.conf`file. Then build the official `OpenSTLinux`.
+You could use `4, 6, 8` depending how fast CPU you're using. Number `4` is recommended for `8GB` in RAM.
+Then save the `local.conf`file. 
+Then build the official `OpenSTLinux`.
 
 ```c
 bitbake st-image-weston
