@@ -51,11 +51,11 @@ If the layer `watermelon-wine` has been added. Then open the `local.conf` file i
 ```c
 nano conf/local.conf
 ```
-Select the correct machine by renaming
+Select the correct machine by replacing
 ```c
-MACHINE=stm32mp25-mx
+MACHINE="stm32mp25-mx"
 ```
-To 
+With
 ```c
 MACHINE="watermelon-wine-1a"
 BB_NUMBER_THREADS = "4"
