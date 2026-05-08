@@ -57,7 +57,7 @@ MACHINE=stm32mp25-mx
 ```
 To 
 ```c
-MACHINE=watermelon-wine-1a
+MACHINE="watermelon-wine-1a"
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j4"
 ```
