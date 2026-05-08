@@ -846,3 +846,4 @@
 };
 /* USER CODE END addons */
 
+#include "stm32mp257f-watermelon-wine-1a-mx-u-boot.dtsi"
