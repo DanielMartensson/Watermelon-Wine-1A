@@ -536,8 +536,9 @@
 	status = "okay";
 
 	/* USER CODE BEGIN rcc */
-        clocks = <&clk_hse>, <&clk_hsi>, <&clk_lsi>, <&clk_msi>, <&clk_i2sin>; 
-        clock-names = "clk-hse", "clk-hsi", "clk-lsi", "clk-msi", "clk-i2sin"; 
+	/* TODO: Ta bort clocks och clock-names efter ST har fixat LSE buggen. Dessa är bara här för att utesluta <&clk-lse> */
+	clocks = <&clk_hse>, <&clk_hsi>, <&clk_lsi>, <&clk_msi>, <&clk_i2sin>; 
+    clock-names = "clk-hse", "clk-hsi", "clk-lsi", "clk-msi", "clk-i2sin"; 
 	st,c1msrd = <2>;
 
 	st,clk_opp{
@@ -663,10 +664,12 @@
 	status = "okay";
 };
 
+/* TODO: &tamper ska vara aktiv och fungerande när ST har fixat LSE buggen */
 &tamp {	
 	status = "disabled";
 };
 
+/* TODO: &rtc ska vara aktiv och fungerande när ST har fixat LSE buggen */
 &rtc {
 	status = "disabled";
 };
