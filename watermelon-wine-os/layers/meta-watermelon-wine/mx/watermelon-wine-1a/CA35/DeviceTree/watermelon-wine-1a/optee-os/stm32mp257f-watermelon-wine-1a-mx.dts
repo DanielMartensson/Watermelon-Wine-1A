@@ -660,5 +660,13 @@
 	pinctrl-0 = <&usart2_pins_a>;
 	status = "okay";
 };
+
+&tamp {	
+	status = "disabled";
+};
+
+&rtc {
+	status = "disabled";
+};
 /* USER CODE END addons */
 
