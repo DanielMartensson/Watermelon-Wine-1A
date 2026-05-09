@@ -1,0 +1,27 @@
+From aef2af78f34f6d9ae91dae9191d8a07b0d419f95 Mon Sep 17 00:00:00 2001
+From: noname <noreply@example.com>
+Date: Sat, 9 May 2026 10:40:59 +0200
+Subject: [PATCH 2/2] Avoid LSE temporary
+
+---
+ drivers/st/clk/clk-stm32-core.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/drivers/st/clk/clk-stm32-core.c b/drivers/st/clk/clk-stm32-core.c
+index 8c2f5a96a..709676217 100644
+--- a/drivers/st/clk/clk-stm32-core.c
++++ b/drivers/st/clk/clk-stm32-core.c
+@@ -453,6 +453,10 @@ int clk_stm32_enable_call_ops(struct stm32_clk_priv *priv, uint16_t id)
+ 	}
+ 
+ 	if ((ops->is_enabled != NULL) && !ops->is_enabled(priv, id)) {
++		if (id == 5) {
++			WARN("PATCH: clk_stm32_enable_call_ops: ignoring clk id 5 (clk-lse) failure\n");
++			return 0;
++		}
+ 		ERROR("failed to enable clock id: %u\n", id);
+ 		panic();
+ 	}
+-- 
+2.43.0
+
