@@ -5299,8 +5299,7 @@
 
 
  aliases{
-  serial0 = &usart2;
-  serial1 = &usart6;
+  serial0 = &usart6;
  };
 
  chosen{
@@ -6048,18 +6047,6 @@
  };
 };
 
-&usart2_pins_mx{
-  bootph-all;
-
-   pins1{
-   bootph-all;
-   };
-
-   pins2{
-   bootph-all;
-   };
-};
-
 
 # 1 "/home/mint/Documents/Github/Watermelon-Wine-1A/watermelon-wine-os/layers/meta-watermelon-wine/mx/watermelon-wine-1a/CA35/DeviceTree/watermelon-wine-1a/u-boot/stm32mp257f-watermelon-wine-1a-mx-u-boot.dtsi" 1
 # 11 "/home/mint/Documents/Github/Watermelon-Wine-1A/watermelon-wine-os/layers/meta-watermelon-wine/mx/watermelon-wine-1a/CA35/DeviceTree/watermelon-wine-1a/u-boot/stm32mp257f-watermelon-wine-1a-mx-u-boot.dtsi"
@@ -6133,4 +6120,4 @@
 &usart2 {
  bootph-all;
 };
-# 805 "/home/mint/Documents/Github/Watermelon-Wine-1A/watermelon-wine-os/layers/meta-watermelon-wine/mx/watermelon-wine-1a/CA35/DeviceTree/watermelon-wine-1a/u-boot/.stm32mp257f-watermelon-wine-1a-mx.dtb.pre.tmp" 2
+# 792 "/home/mint/Documents/Github/Watermelon-Wine-1A/watermelon-wine-os/layers/meta-watermelon-wine/mx/watermelon-wine-1a/CA35/DeviceTree/watermelon-wine-1a/u-boot/.stm32mp257f-watermelon-wine-1a-mx.dtb.pre.tmp" 2

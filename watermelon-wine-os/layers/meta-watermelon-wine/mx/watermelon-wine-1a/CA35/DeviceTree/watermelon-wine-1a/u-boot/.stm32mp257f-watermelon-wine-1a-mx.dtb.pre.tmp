@@ -39,8 +39,7 @@
 	/* USER CODE BEGIN root */
 
 	aliases{
-		serial0 = &usart2;
-		serial1 = &usart6;
+		serial0 = &usart6;
 	};
 
 	chosen{
@@ -786,18 +785,6 @@
 		reg = <VOLTD_SCMI_STPMIC2_LDO7>;
 		regulator-name = "vdd_sdcard";
 	};
-};
-
-&usart2_pins_mx{
- 	bootph-all;
-
-  	pins1{
- 		bootph-all;
-  	};
-
-  	pins2{
- 		bootph-all;
-  	};
 };
 /* USER CODE END addons */
 
