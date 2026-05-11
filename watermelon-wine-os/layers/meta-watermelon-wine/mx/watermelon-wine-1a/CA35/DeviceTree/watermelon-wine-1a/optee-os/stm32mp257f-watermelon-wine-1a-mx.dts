@@ -657,14 +657,6 @@
 	};
 };
 
-/* TODO: ska optee ha access till usart2 eller inte? om ja måste usart2 ägas av secure/optee inte uboot & linux
-&usart2 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&usart2_pins_a>;
-	status = "okay";
-};
-*/
-
 /* TODO: &tamper ska vara aktiv och fungerande när ST har fixat LSE buggen */
 &tamp {	
 	status = "disabled";
