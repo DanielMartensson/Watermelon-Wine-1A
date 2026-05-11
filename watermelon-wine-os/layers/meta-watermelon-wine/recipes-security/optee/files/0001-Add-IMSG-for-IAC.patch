@@ -1,18 +1,18 @@
-From 5e6730259cdbff961858d49ff888737158b4ad7c Mon Sep 17 00:00:00 2001
+From 79a7a993efde0b5ff92749fdf76c9dc704f8f8b1 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Daniel=20M=C3=A5rtensson?=
  <daniel.martensson100@outlook.com>
-Date: Mon, 11 May 2026 20:01:57 +0200
+Date: Mon, 11 May 2026 20:23:34 +0200
 Subject: [PATCH] Add IMSG for IAC
 
 ---
- core/drivers/firewall/stm32_iac.c | 29 ++++++++++++++++++++++-------
- 1 file changed, 22 insertions(+), 7 deletions(-)
+ core/drivers/firewall/stm32_iac.c | 27 ++++++++++++++++++++-------
+ 1 file changed, 20 insertions(+), 7 deletions(-)
 
 diff --git a/core/drivers/firewall/stm32_iac.c b/core/drivers/firewall/stm32_iac.c
-index b341bac22..52b4933d5 100644
+index b341bac22..2a75ce64a 100644
 --- a/core/drivers/firewall/stm32_iac.c
 +++ b/core/drivers/firewall/stm32_iac.c
-@@ -155,24 +155,34 @@ static enum itr_return stm32_iac_itr(struct itr_handler *h __unused)
+@@ -155,24 +155,32 @@ static enum itr_return stm32_iac_itr(struct itr_handler *h __unused)
  	unsigned int i = 0;
  	unsigned int j = 0;
  	uint32_t isr = 0;
@@ -36,8 +36,6 @@ index b341bac22..52b4933d5 100644
 -
 +		}
 +		IMSG("!ISR is > 0 = Bad!");
-+		long unsigned int iac_len =  ARRAY_SIZE(iac_fbd_periph);
-+		IMSG("ARRAY_SIZE(iac_fbd_periph) = %lu", iac_len);
  		for (j = 0; j < ARRAY_SIZE(iac_fbd_periph); j++) {
  			uint32_t fbd_bit = BIT(iac_fbd_periph[j] %
  					       _PERIPH_IDS_PER_REG);
@@ -52,7 +50,7 @@ index b341bac22..52b4933d5 100644
  
  			/* This IAC shouldn't lead to a panic */
  			IMSG("-------------------------");
-@@ -183,16 +193,19 @@ static enum itr_return stm32_iac_itr(struct itr_handler *h __unused)
+@@ -183,16 +191,19 @@ static enum itr_return stm32_iac_itr(struct itr_handler *h __unused)
  				   BIT(IAC_FIRST_ILAC_IN_REG(isr)));
  
  			isr = io_read32(base + _IAC_ISR0 + offset);
@@ -73,7 +71,7 @@ index b341bac22..52b4933d5 100644
  		while (isr && tries < _PERIPH_IDS_PER_REG) {
  			EMSG("IAC exception ID: %d", IAC_ILAC_ID(isr, i));
  
-@@ -200,8 +213,10 @@ static enum itr_return stm32_iac_itr(struct itr_handler *h __unused)
+@@ -200,8 +211,10 @@ static enum itr_return stm32_iac_itr(struct itr_handler *h __unused)
  				   BIT(IAC_FIRST_ILAC_IN_REG(isr)));
  
  			isr = io_read32(base + _IAC_ISR0 + offset);
