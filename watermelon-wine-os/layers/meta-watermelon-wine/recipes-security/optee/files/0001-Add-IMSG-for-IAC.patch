@@ -1,0 +1,89 @@
+From e669e0df1917d2c5c2150a1172dc4b998318564a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Daniel=20M=C3=A5rtensson?=
+ <daniel.martensson100@outlook.com>
+Date: Mon, 11 May 2026 19:29:29 +0200
+Subject: [PATCH] Add IMSG for IAC
+
+---
+ core/drivers/firewall/stm32_iac.c | 28 +++++++++++++++++++++-------
+ 1 file changed, 21 insertions(+), 7 deletions(-)
+
+diff --git a/core/drivers/firewall/stm32_iac.c b/core/drivers/firewall/stm32_iac.c
+index b341bac22..b9b275ca4 100644
+--- a/core/drivers/firewall/stm32_iac.c
++++ b/core/drivers/firewall/stm32_iac.c
+@@ -155,24 +155,33 @@ static enum itr_return stm32_iac_itr(struct itr_handler *h __unused)
+ 	unsigned int i = 0;
+ 	unsigned int j = 0;
+ 	uint32_t isr = 0;
+-
++	
++	IMSG("Total number of registers: %u", nreg);
+ 	for (i = 0; i < nreg; i++) {
+ 		uint32_t offset = sizeof(uint32_t) * i;
+ 		uint8_t tries = 0;
++		IMSG("Offset: %u", offset);
+ 
+ 		isr = io_read32(base + _IAC_ISR0 + offset);
++		IMSG("IAC_ISR0 + offset: %u", isr);
+ 		isr &= io_read32(base + _IAC_IER0 + offset);
++		IMSG("IAC_IER0 + offset: %u", isr);
+ 
+-		if (!isr)
++		if (!isr){
++			IMSG("!ISR is 0 = Good! Continue!");
+ 			continue;
+-
++		}
++		IMSG("!ISR is > 0 = Bad!");
++		IMSG("ARRAY_SIZE(iac_fbd_periph) = %u", ARRAY_SIZE(iac_fbd_periph));
+ 		for (j = 0; j < ARRAY_SIZE(iac_fbd_periph); j++) {
+ 			uint32_t fbd_bit = BIT(iac_fbd_periph[j] %
+ 					       _PERIPH_IDS_PER_REG);
+-
++			IMSG("fbd_bit = %u", fbd_bit);
+ 			if (!(isr & fbd_bit) ||
+-			    IAC_ILAC_ID(isr, i) != iac_fbd_periph[j])
++			    IAC_ILAC_ID(isr, i) != iac_fbd_periph[j]){
++			    IMSG("Continue");
+ 				continue;
++			}
+ 
+ 			/* This IAC shouldn't lead to a panic */
+ 			IMSG("-------------------------");
+@@ -183,16 +192,19 @@ static enum itr_return stm32_iac_itr(struct itr_handler *h __unused)
+ 				   BIT(IAC_FIRST_ILAC_IN_REG(isr)));
+ 
+ 			isr = io_read32(base + _IAC_ISR0 + offset);
++			IMSG("IAC_ISR0 + offset: %u", isr);
+ 			isr &= io_read32(base + _IAC_IER0 + offset);
++			IMSG("IAC_IER0 + offset: %u", isr);
+ 		}
+ 
+ 		/* A legit IAC occurred, platform may panic */
++		IMSG("Test if isr > 0");
+ 		if (isr) {
+ 			do_panic = true;
+ 			EMSG("IAC exceptions [%d:%d]: %#x",
+ 			     IAC_EXCEPT_MSB_BIT(i), IAC_EXCEPT_LSB_BIT(i), isr);
+ 		}
+-
++		IMSG("Nope! isr = %u", isr);
+ 		while (isr && tries < _PERIPH_IDS_PER_REG) {
+ 			EMSG("IAC exception ID: %d", IAC_ILAC_ID(isr, i));
+ 
+@@ -200,8 +212,10 @@ static enum itr_return stm32_iac_itr(struct itr_handler *h __unused)
+ 				   BIT(IAC_FIRST_ILAC_IN_REG(isr)));
+ 
+ 			isr = io_read32(base + _IAC_ISR0 + offset);
++			IMSG("IAC_ISR0 + offset: %u", isr);
+ 			isr &= io_read32(base + _IAC_IER0 + offset);
+-
++			IMSG("IAC_IER0 + offset: %u", isr);
++			IMSG("tries = %u", tries);
+ 			tries++;
+ 		}
+ 	}
+-- 
+2.43.0
+
