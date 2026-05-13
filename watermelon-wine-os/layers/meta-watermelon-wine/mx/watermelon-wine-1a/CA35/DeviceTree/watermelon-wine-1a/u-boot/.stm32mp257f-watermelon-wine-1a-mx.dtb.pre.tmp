@@ -43,7 +43,7 @@
 	};
 
 	chosen{
-		stdout-path = "serial0:115200n8";
+		stdout-path = "serial1:115200n8";
 		#address-cells = <2>;
 		#size-cells = <2>;
 		ranges;
@@ -788,3 +788,4 @@
 };
 /* USER CODE END addons */
 
+#include "stm32mp257f-watermelon-wine-1a-mx-u-boot.dtsi"
