@@ -1,6 +1,6 @@
-From 8810a1569fe361b09593bcba5c8b0e2e245d8e48 Mon Sep 17 00:00:00 2001
+From d32c982838597e4c825c651d20e991a30d3f89e4 Mon Sep 17 00:00:00 2001
 From: noname <noreply@example.com>
-Date: Thu, 14 May 2026 23:47:22 +0200
+Date: Fri, 15 May 2026 00:13:52 +0200
 Subject: [PATCH 3/3] Add INFO messages about entering functions
 
 ---
@@ -9,34 +9,34 @@ Subject: [PATCH 3/3] Add INFO messages about entering functions
  2 files changed, 13 insertions(+), 1 deletion(-)
 
 diff --git a/bl31/bl31_main.c b/bl31/bl31_main.c
-index 925c6a69f..80ab0867c 100644
+index 925c6a69f..1e0c9044c 100644
 --- a/bl31/bl31_main.c
 +++ b/bl31/bl31_main.c
 @@ -205,20 +205,26 @@ void bl31_main(void)
  	 * We are ready to enter the next EL. Prepare entry into the image
  	 * corresponding to the desired security state after the next ERET.
  	 */
-+	INFO("Entering bl31_prepare_next_image_entry(void)");
++	INFO("Entering bl31_prepare_next_image_entry(void)\n");
  	bl31_prepare_next_image_entry();
 -
 +	
-+	INFO("Entering console_flush(void)");
++	INFO("Entering console_flush(void)\n");
  	console_flush();
  
  	/*
  	 * Perform any platform specific runtime setup prior to cold boot exit
  	 * from BL31
  	 */
-+	INFO("Entering bl31_plat_runtime_setup(void)");
++	INFO("Entering bl31_plat_runtime_setup(void)\n");
  	bl31_plat_runtime_setup();
  
  #if ENABLE_RUNTIME_INSTRUMENTATION
-+	INFO("Entering PMF_CAPTURE_TIMESTAMP(bl_svc, BL31_EXIT, PMF_CACHE_MAINT);");
++	INFO("Entering PMF_CAPTURE_TIMESTAMP(bl_svc, BL31_EXIT, PMF_CACHE_MAINT)\n");
  	PMF_CAPTURE_TIMESTAMP(bl_svc, BL31_EXIT, PMF_CACHE_MAINT);
-+	INFO("Entering console_flush(void)");
++	INFO("Entering console_flush(void)\n");
  	console_flush();
  #endif
-+	INFO("End of BL32_MAIN");
++	INFO("End of void bl31_main(void)\n");
  }
  
  /*******************************************************************************
@@ -44,9 +44,9 @@ index 925c6a69f..80ab0867c 100644
  
  	INFO("BL31: Preparing for EL3 exit to %s world\n",
  		(image_type == SECURE) ? "secure" : "normal");
-+	INFO("Entering print_entry_point_info(next_image_info)");
++	INFO("Entering print_entry_point_info(next_image_info)\n");
  	print_entry_point_info(next_image_info);
-+	INFO("Entering cm_init_my_context(next_image_info)");
++	INFO("Entering cm_init_my_context(next_image_info)\n");
  	cm_init_my_context(next_image_info);
  
  	/*
@@ -54,29 +54,29 @@ index 925c6a69f..80ab0867c 100644
  	* 'cm_prepare_el3_exit_ns' to exit.
  	*/
  	if (image_type == NON_SECURE) {
-+		INFO("Entering cm_prepare_el3_exit_ns(void)");
++		INFO("Entering cm_prepare_el3_exit_ns(void)\n");
  		cm_prepare_el3_exit_ns();
  	} else {
-+		INFO("Entering cm_prepare_el3_exit(image_type)");
++		INFO("Entering cm_prepare_el3_exit(image_type)\n");
  		cm_prepare_el3_exit(image_type);
  	}
  }
 diff --git a/plat/st/stm32mp2/bl31_plat_setup.c b/plat/st/stm32mp2/bl31_plat_setup.c
-index ecf6ba6d9..05e29900b 100644
+index ecf6ba6d9..b96f60ac3 100644
 --- a/plat/st/stm32mp2/bl31_plat_setup.c
 +++ b/plat/st/stm32mp2/bl31_plat_setup.c
 @@ -176,12 +176,14 @@ void bl31_plat_runtime_setup(void)
  	/* We reinit the nvram driver Optee should have update the register access configuration
  	 * based on the device tree
  	 */
-+	INFO("Enterng stm32_tamp_nvram_update_rights(void)");
++	INFO("Enterng stm32_tamp_nvram_update_rights(void)\n");
  	int ret = stm32_tamp_nvram_update_rights();
  
  	if (ret != 0) {
  		ERROR("Failed to update TAMP backup registers rights\n");
  		panic();
  	}
-+	INFO("Entering console_switch_state(CONSOLE_FLAG_RUNTIME)");
++	INFO("Entering console_switch_state(CONSOLE_FLAG_RUNTIME)\n");
  	console_switch_state(CONSOLE_FLAG_RUNTIME);
  }
  
