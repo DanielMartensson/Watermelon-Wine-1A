@@ -16,7 +16,6 @@
 / {
 
 	/* USER CODE BEGIN root */
-
 	config{
 		u-boot,boot-led = "led-blue";
 		u-boot,mmc-env-partition = "u-boot-env";
@@ -50,9 +49,9 @@
 	/delete-node/ typec@35;
 };
 
-
+/* TODO: Ska denna med ? 
 &usart2 {
 	bootph-all;
-};
+};*/
 /* USER CODE END addons */
 
