@@ -1,7 +1,7 @@
 From aef2af78f34f6d9ae91dae9191d8a07b0d419f95 Mon Sep 17 00:00:00 2001
 From: noname <noreply@example.com>
 Date: Sat, 9 May 2026 10:40:59 +0200
-Subject: [PATCH 2/2] Avoid LSE temporary
+Subject: [PATCH 2/4] Avoid LSE temporary
 
 ---
  drivers/st/clk/clk-stm32-core.c | 4 ++++

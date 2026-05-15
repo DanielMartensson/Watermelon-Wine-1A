@@ -1,0 +1,289 @@
+From 7796596f05ab8863571b9f03d7c72a4f6908e48f Mon Sep 17 00:00:00 2001
+From: noname <noreply@example.com>
+Date: Fri, 15 May 2026 13:44:33 +0200
+Subject: [PATCH 4/4] Add more INFO for more detalied approach
+
+---
+ lib/el3_runtime/aarch64/context_mgmt.c | 62 +++++++++++++++++++-------
+ plat/st/stm32mp2/bl31_plat_setup.c     |  1 +
+ 2 files changed, 48 insertions(+), 15 deletions(-)
+
+diff --git a/lib/el3_runtime/aarch64/context_mgmt.c b/lib/el3_runtime/aarch64/context_mgmt.c
+index d2fdfddb8..2d106f689 100644
+--- a/lib/el3_runtime/aarch64/context_mgmt.c
++++ b/lib/el3_runtime/aarch64/context_mgmt.c
+@@ -114,8 +114,10 @@ static void setup_secure_context(cpu_context_t *ctx, const struct entry_point_in
+ {
+ 	u_register_t scr_el3;
+ 	el3_state_t *state;
+-
++	
++	INFO("Entering get_el3state_ctx(ctx);\n");
+ 	state = get_el3state_ctx(ctx);
++	INFO("Entering read_ctx_reg(state, CTX_SCR_EL3);\n");
+ 	scr_el3 = read_ctx_reg(state, CTX_SCR_EL3);
+ 
+ #if defined(IMAGE_BL31) && !defined(SPD_spmd)
+@@ -123,11 +125,13 @@ static void setup_secure_context(cpu_context_t *ctx, const struct entry_point_in
+ 	 * SCR_EL3.IRQ, SCR_EL3.FIQ: Enable the physical FIQ and IRQ routing as
+ 	 * indicated by the interrupt routing model for BL31.
+ 	 */
++	INFO("Entering get_scr_el3_from_routing_model(SECURE);\n");
+ 	scr_el3 |= get_scr_el3_from_routing_model(SECURE);
+ #endif
+ 
+ #if !CTX_INCLUDE_MTE_REGS || ENABLE_ASSERTIONS
+ 	/* Get Memory Tagging Extension support level */
++	INFO("Entering get_armv8_5_mte_support();\n");
+ 	unsigned int mte = get_armv8_5_mte_support();
+ #endif
+ 	/*
+@@ -142,7 +146,7 @@ static void setup_secure_context(cpu_context_t *ctx, const struct entry_point_in
+ 		scr_el3 |= SCR_ATA_BIT;
+ 	}
+ #endif /* CTX_INCLUDE_MTE_REGS */
+-
++	
+ 	write_ctx_reg(state, CTX_SCR_EL3, scr_el3);
+ 
+ 	/*
+@@ -151,8 +155,8 @@ static void setup_secure_context(cpu_context_t *ctx, const struct entry_point_in
+ 	 */
+ #if !SPMD_SPM_AT_SEL2
+ 	setup_el1_context(ctx, ep);
+-#endif
+-
++#endif	
++	
+ 	manage_extensions_secure(ctx);
+ 
+ 	/**
+@@ -161,8 +165,9 @@ static void setup_secure_context(cpu_context_t *ctx, const struct entry_point_in
+ 	 * all the cpus for the secure world.
+ 	 * Henceforth, this check ensures that the registers are initialised once
+ 	 * and avoids re-initialization from multiple cores.
+-	 */
++	 */ 
+ 	if (!has_secure_perworld_init) {
++		INFO("Entering manage_extensions_secure_per_world()\n");
+ 		manage_extensions_secure_per_world();
+ 	}
+ 
+@@ -177,17 +182,19 @@ static void setup_realm_context(cpu_context_t *ctx, const struct entry_point_inf
+ {
+ 	u_register_t scr_el3;
+ 	el3_state_t *state;
+-
++	
+ 	state = get_el3state_ctx(ctx);
++	INFO("Entering read_ctx_reg(state, CTX_SCR_EL3);\n");
+ 	scr_el3 = read_ctx_reg(state, CTX_SCR_EL3);
+-
++	
+ 	scr_el3 |= SCR_NS_BIT | SCR_NSE_BIT;
+-
++	
+ 	if (is_feat_csv2_2_supported()) {
+ 		/* Enable access to the SCXTNUM_ELx registers. */
++		INFO("Set scr_el3 |= SCR_EnSCXT_BIT;\n");
+ 		scr_el3 |= SCR_EnSCXT_BIT;
+ 	}
+-
++	
+ 	write_ctx_reg(state, CTX_SCR_EL3, scr_el3);
+ }
+ #endif /* ENABLE_RME */
+@@ -200,8 +207,8 @@ static void setup_ns_context(cpu_context_t *ctx, const struct entry_point_info *
+ {
+ 	u_register_t scr_el3;
+ 	el3_state_t *state;
+-
+ 	state = get_el3state_ctx(ctx);
++	INFO("Entering read_ctx_reg(state, CTX_SCR_EL3)\n");
+ 	scr_el3 = read_ctx_reg(state, CTX_SCR_EL3);
+ 
+ 	/* SCR_NS: Set the NS bit */
+@@ -250,7 +257,7 @@ static void setup_ns_context(cpu_context_t *ctx, const struct entry_point_info *
+ 	 */
+ 	scr_el3 |= SCR_TERR_BIT;
+ #endif
+-
++	INFO("Entering is_feat_csv2_2_supported()\n");
+ 	if (is_feat_csv2_2_supported()) {
+ 		/* Enable access to the SCXTNUM_ELx registers. */
+ 		scr_el3 |= SCR_EnSCXT_BIT;
+@@ -261,11 +268,13 @@ static void setup_ns_context(cpu_context_t *ctx, const struct entry_point_info *
+ 	 * SCR_EL3.IRQ, SCR_EL3.FIQ: Enable the physical FIQ and IRQ routing as
+ 	 *  indicated by the interrupt routing model for BL31.
+ 	 */
++	INFO("Entering get_scr_el3_from_routing_model(NON_SECURE);\n");
+ 	scr_el3 |= get_scr_el3_from_routing_model(NON_SECURE);
+ #endif
+ 	write_ctx_reg(state, CTX_SCR_EL3, scr_el3);
+ 
+ 	/* Initialize EL1 context registers */
++	INFO("Entering setup_el1_context(ctx, ep);\n");
+ 	setup_el1_context(ctx, ep);
+ 
+ 	/* Initialize EL2 context registers */
+@@ -279,7 +288,7 @@ static void setup_ns_context(cpu_context_t *ctx, const struct entry_point_info *
+ 	sctlr_el2 |= SCTLR_EL2_RES1;
+ 	write_ctx_reg(get_el2_sysregs_ctx(ctx), CTX_SCTLR_EL2,
+ 			sctlr_el2);
+-
++	
+ 	if (is_feat_hcx_supported()) {
+ 		/*
+ 		 * Initialize register HCRX_EL2 with its init value.
+@@ -289,10 +298,11 @@ static void setup_ns_context(cpu_context_t *ctx, const struct entry_point_info *
+ 		 * this feature if not properly initialized, especially when
+ 		 * it comes to those bits that enable/disable traps.
+ 		 */
++		INFO("Entering 		write_ctx_reg(get_el2_sysregs_ctx(ctx), CTX_HCRX_EL2, HCRX_EL2_INIT_VAL);\n");
+ 		write_ctx_reg(get_el2_sysregs_ctx(ctx), CTX_HCRX_EL2,
+ 			HCRX_EL2_INIT_VAL);
+ 	}
+-
++	
+ 	if (is_feat_fgt_supported()) {
+ 		/*
+ 		 * Initialize HFG*_EL2 registers with a default value so legacy
+@@ -307,7 +317,7 @@ static void setup_ns_context(cpu_context_t *ctx, const struct entry_point_info *
+ 			HFGWTR_EL2_INIT_VAL);
+ 	}
+ #endif /* CTX_INCLUDE_EL2_REGS */
+-
++	INFO("Entering manage_extensions_nonsecure(ctx);\n");
+ 	manage_extensions_nonsecure(ctx);
+ }
+ 
+@@ -543,21 +553,27 @@ void cm_setup_context(cpu_context_t *ctx, const entry_point_info_t *ep)
+ 	 * Perform initializations that are common
+ 	 * to all security states
+ 	 */
++	INFO("Entering setup_context_common(ctx, ep);\n");
+ 	setup_context_common(ctx, ep);
+ 
++	INFO("Entering GET_SECURITY_STATE(ep->h.attr);\n");
+ 	security_state = GET_SECURITY_STATE(ep->h.attr);
+ 
+ 	/* Perform security state specific initializations */
++	INFO("Entering switch-statement\n");
+ 	switch (security_state) {
+ 	case SECURE:
++		INFO("Entering setup_secure_context(ctx, ep);\n");
+ 		setup_secure_context(ctx, ep);
+ 		break;
+ #if ENABLE_RME
+ 	case REALM:
++		INFO("Entering setup_realm_context(ctx, ep);\n");
+ 		setup_realm_context(ctx, ep);
+ 		break;
+ #endif
+ 	case NON_SECURE:
++		INFO("Entering setup_ns_context(ctx, ep);\n");
+ 		setup_ns_context(ctx, ep);
+ 		break;
+ 	default:
+@@ -638,6 +654,7 @@ void manage_extensions_nonsecure_per_world(void)
+ static void manage_extensions_secure_per_world(void)
+ {
+ #if IMAGE_BL31
++	INFO("Entering is_feat_sme_supported()\n");
+ 	if (is_feat_sme_supported()) {
+ 
+ 		if (ENABLE_SME_FOR_SWD) {
+@@ -645,33 +662,40 @@ static void manage_extensions_secure_per_world(void)
+ 		 * Enable SME, SVE, FPU/SIMD in secure context, SPM must ensure
+ 		 * SME, SVE, and FPU/SIMD context properly managed.
+ 		 */
++		 	INFO("Entering sme_enable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);\n");
+ 			sme_enable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);
+ 		} else {
+ 		/*
+ 		 * Disable SME, SVE, FPU/SIMD in secure context so non-secure
+ 		 * world can safely use the associated registers.
+ 		 */
++		 	INFO("Entering sme_disable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);\n");
+ 			sme_disable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);
+ 		}
+ 	}
++	INFO("Entering is_feat_sve_supported()\n");
+ 	if (is_feat_sve_supported()) {
+ 		if (ENABLE_SVE_FOR_SWD) {
+ 		/*
+ 		 * Enable SVE and FPU in secure context, SPM must ensure
+ 		 * that the SVE and FPU register contexts are properly managed.
+-		 */
++		 */	
++		 INFO("Entering sve_enable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);\n");
+ 			sve_enable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);
+ 		} else {
+ 		/*
+ 		 * Disable SVE and FPU in secure context so non-secure world
+ 		 * can safely use them.
+ 		 */
++		 	INFO("Entering sve_disable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);\n");
+ 			sve_disable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);
+ 		}
+ 	}
+ 
+ 	/* NS can access this but Secure shouldn't */
++	INFO("Entering is_feat_sys_reg_trace_supported()\n");
+ 	if (is_feat_sys_reg_trace_supported()) {
++		INFO("Entering sys_reg_trace_disable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);\n");
+ 		sys_reg_trace_disable_per_world(&per_world_context[CPU_CONTEXT_SECURE]);
+ 	}
+ 
+@@ -809,7 +833,9 @@ void cm_init_context_by_index(unsigned int cpu_idx,
+ void cm_init_my_context(const entry_point_info_t *ep)
+ {
+ 	cpu_context_t *ctx;
++	INFO("Entering cm_get_context(GET_SECURITY_STATE(ep->h.attr));\n");
+ 	ctx = cm_get_context(GET_SECURITY_STATE(ep->h.attr));
++	INFO("Entering cm_setup_context(ctx, ep);\n");
+ 	cm_setup_context(ctx, ep);
+ }
+ 
+@@ -1435,20 +1461,26 @@ void cm_prepare_el3_exit_ns(void)
+ 
+ #if CTX_INCLUDE_EL2_REGS
+ #if ENABLE_ASSERTIONS
++	INFO("Entering cm_get_context(NON_SECURE);\n");
+ 	cpu_context_t *ctx = cm_get_context(NON_SECURE);
+ 	assert(ctx != NULL);
+ 
+ 	/* Assert that EL2 is used. */
++	INFO("Entering read_ctx_reg(get_el3state_ctx(ctx), CTX_SCR_EL3);\n");
+ 	u_register_t scr_el3 = read_ctx_reg(get_el3state_ctx(ctx), CTX_SCR_EL3);
+ 	assert(((scr_el3 & SCR_HCE_BIT) != 0UL) &&
+ 			(el_implemented(2U) != EL_IMPL_NONE));
+ #endif /* ENABLE_ASSERTIONS */
+ 
+ 	/* Restore EL2 and EL1 sysreg contexts */
++	INFO("Entering cm_el2_sysregs_context_restore(NON_SECURE);\n");
+ 	cm_el2_sysregs_context_restore(NON_SECURE);
++	INFO("Entering cm_el1_sysregs_context_restore(NON_SECURE);\n");
+ 	cm_el1_sysregs_context_restore(NON_SECURE);
++	INFO("Entering cm_set_next_eret_context(NON_SECURE);\n");
+ 	cm_set_next_eret_context(NON_SECURE);
+ #else
++	INFO("Entering cm_prepare_el3_exit(NON_SECURE);\n");
+ 	cm_prepare_el3_exit(NON_SECURE);
+ #endif /* CTX_INCLUDE_EL2_REGS */
+ }
+diff --git a/plat/st/stm32mp2/bl31_plat_setup.c b/plat/st/stm32mp2/bl31_plat_setup.c
+index b96f60ac3..657d83c10 100644
+--- a/plat/st/stm32mp2/bl31_plat_setup.c
++++ b/plat/st/stm32mp2/bl31_plat_setup.c
+@@ -185,6 +185,7 @@ void bl31_plat_runtime_setup(void)
+ 	}
+ 	INFO("Entering console_switch_state(CONSOLE_FLAG_RUNTIME)\n");
+ 	console_switch_state(CONSOLE_FLAG_RUNTIME);
++	INFO("Exit bl31_plat_runtime_setup(void)\n");
+ }
+ 
+ entry_point_info_t *bl31_plat_get_next_image_ep_info(unsigned int type)
+-- 
+2.43.0
+

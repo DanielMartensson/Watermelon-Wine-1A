@@ -1,7 +1,7 @@
 From d32c982838597e4c825c651d20e991a30d3f89e4 Mon Sep 17 00:00:00 2001
 From: noname <noreply@example.com>
 Date: Fri, 15 May 2026 00:13:52 +0200
-Subject: [PATCH 3/3] Add INFO messages about entering functions
+Subject: [PATCH 3/4] Add INFO messages about entering functions
 
 ---
  bl31/bl31_main.c                   | 12 +++++++++++-

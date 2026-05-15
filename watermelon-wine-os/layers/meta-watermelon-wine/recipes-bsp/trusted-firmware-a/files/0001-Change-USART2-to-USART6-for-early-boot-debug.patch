@@ -1,7 +1,7 @@
 From 1d9bf45c48211137fb0c7a81e32c70f4063b8e37 Mon Sep 17 00:00:00 2001
 From: noname <noreply@example.com>
 Date: Thu, 7 May 2026 19:44:45 +0200
-Subject: [PATCH] Change USART2 to USART6 for early boot debug
+Subject: [PATCH 1/4] Change USART2 to USART6 for early boot debug
 
 ---
  plat/st/stm32mp2/stm32mp2_def.h | 30 +++++++++++++++---------------
