@@ -39,8 +39,7 @@
 	/* USER CODE BEGIN root */
 
 	aliases{
-		serial0 = &usart2;
-		serial1 = &usart6;
+		serial0 = &usart6;
 	};
 
 	chosen{

@@ -49,9 +49,18 @@
 	/delete-node/ typec@35;
 };
 
-/* TODO: Ska denna med ? 
-&usart2 {
+&usart6 {
 	bootph-all;
-};*/
+};
+ 
+&usart6_pins_mx {
+ 	bootph-all;
+ 	pins1 {
+ 		bootph-all;
+ 	};
+ 	pins2 {
+ 		bootph-all;
+ 	};
+};
 /* USER CODE END addons */
 
