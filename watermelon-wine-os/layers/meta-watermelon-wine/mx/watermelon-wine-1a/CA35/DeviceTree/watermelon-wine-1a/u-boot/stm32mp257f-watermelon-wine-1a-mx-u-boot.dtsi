@@ -45,10 +45,6 @@
 	/delete-node/ port;
 };
 
-&i2c_rpmsg {
-	/delete-node/ typec@35;
-};
-
 &usart6 {
 	bootph-all;
 };

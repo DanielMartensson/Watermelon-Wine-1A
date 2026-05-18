@@ -966,15 +966,6 @@
 	/* USER CODE END pcie_rc */
 };
 
-&rtc {
-	status = "okay";
-
-	/* USER CODE BEGIN rtc */
-	#clock-cells = <0>;
-	st,lsco = <RTC_OUT2_RMP>;
-	/* USER CODE END rtc */
-};
-
 &sdmmc1 {
 	pinctrl-names = "default", "opendrain", "sleep";
 	pinctrl-0 = <&sdmmc1_pins_mx>;

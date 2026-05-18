@@ -1,14 +1,14 @@
-From 64afc3c5355ca4179cb7ffb4ce9f0ae45c7fbe21 Mon Sep 17 00:00:00 2001
+From 8cb5dda2bd1c00d16f98ebbd0a7af58e3e957460 Mon Sep 17 00:00:00 2001
 From: <noname@example.com>
-Date: Fri, 15 May 2026 19:46:34 +0200
-Subject: [PATCH] Add log console output for u boot
+Date: Mon, 18 May 2026 17:56:13 +0200
+Subject: [PATCH] Add log console output for u-boot
 
 ---
- configs/stm32mp25_defconfig | 5 ++++
+ configs/stm32mp25_defconfig | 5 +++++
  1 file changed, 5 insertions(+)
 
 diff --git a/configs/stm32mp25_defconfig b/configs/stm32mp25_defconfig
-index 0c8359a94e..b9a4345251 100644
+index 0c8359a94e..d8e8ac07ea 100644
 --- a/configs/stm32mp25_defconfig
 +++ b/configs/stm32mp25_defconfig
 @@ -195,3 +195,8 @@ CONFIG_FWU_MULTI_BANK_UPDATE=y
@@ -18,7 +18,7 @@ index 0c8359a94e..b9a4345251 100644
 +CONFIG_DEBUG_UART_BASE=0x40220000
 +CONFIG_DEBUG_UART=y
 +CONFIG_DEBUG_UART_STM32=y
-+CONFIG_LOG_MAX_LEVEL=6
++CONFIG_LOG_MAX_LEVEL=7
 +CONFIG_LOG=y
 -- 
 2.43.0
