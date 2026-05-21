@@ -259,14 +259,6 @@
 	/* USER CODE END i2c7 */
 };
 
-&iwdg1 {
-	status = "okay";
-
-	/* USER CODE BEGIN iwdg1 */
-	timeout-sec = <32>;
-	/* USER CODE END iwdg1 */
-};
-
 &pka {
 	status = "okay";
 

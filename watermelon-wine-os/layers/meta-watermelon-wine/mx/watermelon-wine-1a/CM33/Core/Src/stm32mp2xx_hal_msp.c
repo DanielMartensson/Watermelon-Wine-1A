@@ -78,53 +78,6 @@ void HAL_MspInit(void)
   /* USER CODE END MspInit 1 */
 }
 
-/**
-  * @brief IPCC MSP Initialization
-  * This function configures the hardware resources used in this example
-  * @param hipcc: IPCC handle pointer
-  * @retval None
-  */
-void HAL_IPCC_MspInit(IPCC_HandleTypeDef* hipcc)
-{
-  if(hipcc->Instance==IPCC1)
-  {
-    /* USER CODE BEGIN IPCC1_MspInit 0 */
-
-    /* USER CODE END IPCC1_MspInit 0 */
-    /* IPCC1 interrupt Init */
-    HAL_NVIC_SetPriority(IPCC1_RX_IRQn, 1, 0);
-    HAL_NVIC_EnableIRQ(IPCC1_RX_IRQn);
-    /* USER CODE BEGIN IPCC1_MspInit 1 */
-
-    /* USER CODE END IPCC1_MspInit 1 */
-
-  }
-
-}
-
-/**
-  * @brief IPCC MSP De-Initialization
-  * This function freeze the hardware resources used in this example
-  * @param hipcc: IPCC handle pointer
-  * @retval None
-  */
-void HAL_IPCC_MspDeInit(IPCC_HandleTypeDef* hipcc)
-{
-  if(hipcc->Instance==IPCC1)
-  {
-    /* USER CODE BEGIN IPCC1_MspDeInit 0 */
-
-    /* USER CODE END IPCC1_MspDeInit 0 */
-
-    /* IPCC1 interrupt DeInit */
-    HAL_NVIC_DisableIRQ(IPCC1_RX_IRQn);
-    /* USER CODE BEGIN IPCC1_MspDeInit 1 */
-
-    /* USER CODE END IPCC1_MspDeInit 1 */
-  }
-
-}
-
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */

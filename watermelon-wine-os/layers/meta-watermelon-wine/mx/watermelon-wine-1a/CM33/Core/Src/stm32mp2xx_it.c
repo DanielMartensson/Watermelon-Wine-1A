@@ -55,7 +55,7 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern IPCC_HandleTypeDef hipcc1;
+
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -212,20 +212,6 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32mp2xx.s).                    */
 /******************************************************************************/
-
-/**
-  * @brief This function handles Mailbox 1 RX Occupied interrupt.
-  */
-void IPCC1_RX_IRQHandler(void)
-{
-  /* USER CODE BEGIN IPCC1_RX_IRQn 0 */
-
-  /* USER CODE END IPCC1_RX_IRQn 0 */
-  HAL_IPCC_RX_IRQHandler(&hipcc1);
-  /* USER CODE BEGIN IPCC1_RX_IRQn 1 */
-
-  /* USER CODE END IPCC1_RX_IRQn 1 */
-}
 
 /**
   * @brief This function handles RCC wake-up interrupt.

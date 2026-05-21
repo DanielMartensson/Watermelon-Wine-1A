@@ -49,36 +49,6 @@
 		ranges;
 	};
 
-	dmic0:dmic-0{
-		compatible = "dmic-codec";
-		#sound-dai-cells = <1>;
-		sound-name-prefix = "dmic0";
-		vref-supply = <&scmi_v3v3>;
-		status = "okay";
-
-		port{
-
-			dmic0_endpoint:endpoint{
-				remote-endpoint = <&mdf_endpoint0>;
-			};
-		};
-	};
-
-	dmic1:dmic-1{
-		compatible = "dmic-codec";
-		#sound-dai-cells = <1>;
-		sound-name-prefix = "dmic1";
-		vref-supply = <&scmi_v3v3>;
-		status = "okay";
-
-		port{
-
-			dmic1_endpoint:endpoint{
-				remote-endpoint = <&mdf_endpoint1>;
-			};
-		};
-	};
-
 	hdmi:connector{
 		compatible = "hdmi-connector";
 		label = "hdmi";
@@ -91,13 +61,6 @@
 				remote-endpoint = <&adv7535_out>;
 			};
 		};
-	};
-
-	sound{
-		compatible = "audio-graph-card";
-		label = "STM32MP25-DK";
-		dais = <&i2s2_port &mdf1_port0 &mdf1_port1>;
-		status = "okay";
 	};
 
 	/* USER CODE END root */
@@ -818,25 +781,6 @@
 	/* USER CODE END i3c3 */
 };
 
-&ipcc1 {
-	status = "okay";
-
-	/* USER CODE BEGIN ipcc1 */
-	/* USER CODE END ipcc1 */
-};
-
-&lptimer3 {
-	status = "okay";
-
-	/* USER CODE BEGIN lptimer3 */
-	clocks = <&rcc CK_LPTIM3_AM>;
-
-	timer{
-		status = "okay";
-	};
-	/* USER CODE END lptimer3 */
-};
-
 &ltdc {
 	status = "okay";
 
@@ -866,93 +810,12 @@
 &m33_rproc {
 	status = "okay";
 
-	/*Restriction: "memory-region" property is not managed - please to use User-Section if needed*/
-	mboxes = <&ipcc1 0x100>, <&ipcc1 0x101>, <&ipcc1 2>;
-	mbox-names = "vq0", "vq1", "shutdown";
-
 	/* USER CODE BEGIN m33_rproc */
 	compatible = "st,stm32mp2-m33-tee";
 	memory-region = <&ipc_shmem_1>, <&vdev0vring0>,
 			<&vdev0vring1>, <&vdev0buffer>,
 			<&cm33_sram2>;
 	/* USER CODE END m33_rproc */
-};
-
-&mdf1 {
-	status = "okay";
-
-	/* USER CODE BEGIN mdf1 */
-	#clock-cells = <1>;
-	clock-output-names = "cck0";
-	clock-frequency = <1536000>;
-
-	sitf6:sitf@380{
-		pinctrl-names = "default", "sleep";
-		pinctrl-0 = <&mdf_sdi6_pins_a>;
-		pinctrl-1 = <&mdf_sdi6_sleep_pins_a>;
-		st,sitf-mode = "spi";
-		clocks = <&mdf1 0>;
-		status = "okay";
-	};
-
-	filter0:filter@84{
-		#address-cells = <1>;
-		#size-cells = <0>;
-		st,cic-mode = <4>;
-		st,sitf = <&sitf6 0>;
-		st,hpf-filter-cutoff-bp = <625>;
-		status = "okay";
-
-		channel@0{
-			reg = <0>;
-			label = "dmic_u53";
-		};
-
-		asoc_pdm0:mdf-dai{
-			compatible = "st,stm32mp25-mdf-dai";
-			#sound-dai-cells = <0>;
-			io-channels = <&filter0 0>;
-			power-domains = <&d1_pd>;
-			status = "okay";
-
-			mdf1_port0:port{
-
-				mdf_endpoint0:endpoint{
-					remote-endpoint = <&dmic0_endpoint>;
-				};
-			};
-		};
-	};
-
-	filter1:filter@104{
-		#address-cells = <1>;
-		#size-cells = <0>;
-		st,cic-mode = <4>;
-		st,sitf = <&sitf6 1>;
-		st,hpf-filter-cutoff-bp = <625>;
-		status = "okay";
-
-		channel@1{
-			reg = <1>;
-			label = "dmic_u12";
-		};
-
-		asoc_pdm1:mdf-dai{
-			compatible = "st,stm32mp25-mdf-dai";
-			#sound-dai-cells = <0>;
-			io-channels = <&filter1 0>;
-			power-domains = <&d1_pd>;
-			status = "okay";
-
-			mdf1_port1:port{
-
-				mdf_endpoint1:endpoint{
-					remote-endpoint = <&dmic1_endpoint>;
-				};
-			};
-		};
-	};
-	/* USER CODE END mdf1 */
 };
 
 &pcie_rc {

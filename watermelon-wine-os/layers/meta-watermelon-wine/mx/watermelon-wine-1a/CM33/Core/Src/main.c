@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "copro_sync.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -41,7 +40,6 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-IPCC_HandleTypeDef hipcc1;
 
 /* USER CODE BEGIN PV */
 
@@ -50,7 +48,6 @@ IPCC_HandleTypeDef hipcc1;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_IPCC1_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -94,14 +91,6 @@ int main(void)
    SystemCoreClockUpdate();
   }
 
-  if(!IS_DEVELOPER_BOOT_MODE())
-  {
-    /* IPCC initialisation */
-    MX_IPCC1_Init();
-    /*Corpo Sync Initialization*/
-    CoproSync_Init();
-  }
-
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
@@ -129,32 +118,6 @@ int main(void)
   */
 void SystemClock_Config(void)
 {
-}
-
-/**
-  * @brief IPCC1 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_IPCC1_Init(void)
-{
-
-  /* USER CODE BEGIN IPCC1_Init 0 */
-
-  /* USER CODE END IPCC1_Init 0 */
-
-  /* USER CODE BEGIN IPCC1_Init 1 */
-
-  /* USER CODE END IPCC1_Init 1 */
-  hipcc1.Instance = IPCC1;
-  if (HAL_IPCC_Init(&hipcc1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN IPCC1_Init 2 */
-
-  /* USER CODE END IPCC1_Init 2 */
-
 }
 
 /**
