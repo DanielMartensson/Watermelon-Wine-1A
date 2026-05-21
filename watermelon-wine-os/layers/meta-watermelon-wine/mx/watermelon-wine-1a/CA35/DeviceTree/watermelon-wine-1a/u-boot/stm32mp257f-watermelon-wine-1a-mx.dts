@@ -343,6 +343,19 @@
 	/* USER CODE BEGIN dsi */
 	vdd-supply = <&scmi_vddcore>;
 	vdda18-supply = <&scmi_v1v8>;
+
+    ports{
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		port@0{
+			reg = <0>;
+
+			dsi_in:endpoint{
+				remote-endpoint = <&ltdc_ep0_out>;
+			};
+		};
+	};
 	/* USER CODE END dsi */
 };
 
