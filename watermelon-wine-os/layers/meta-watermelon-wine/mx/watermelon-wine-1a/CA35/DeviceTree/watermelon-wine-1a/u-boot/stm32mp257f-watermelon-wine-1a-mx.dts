@@ -431,6 +431,11 @@
 	port{
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+        ltdc_ep0_out:endpoint@0{
+			reg = <0>;
+			remote-endpoint = <&dsi_in>;
+		};
 	};
 	/* USER CODE END ltdc */
 };
