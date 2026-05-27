@@ -62,6 +62,23 @@ BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j4"
 ```
 You could use `4, 6, 8` depending how fast CPU you're using. Number `4` is recommended for `8GB` in RAM.
+Then replace the bottom text line
+
+```c
+# =========================================================================
+# Set EULA acceptance
+# =========================================================================
+ACCEPT_EULA_stm32mp25-mx = "1"
+```
+With 
+
+```c
+# =========================================================================
+# Set EULA acceptance
+# =========================================================================
+ACCEPT_EULA_watermelon-wine-1a = "1"
+```
+
 Then save the `local.conf`file. 
 Then build the official `OpenSTLinux`.
 
