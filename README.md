@@ -70,7 +70,7 @@ Then replace the bottom text line
 # =========================================================================
 ACCEPT_EULA_stm32mp25-mx = "1"
 ```
-With 
+With this, or else you will get Op-TEE panic errors.
 
 ```c
 # =========================================================================
