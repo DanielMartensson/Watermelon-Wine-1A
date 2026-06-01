@@ -95,21 +95,12 @@
 	};
 
 	eth1_mdio_pins_mx: eth1_mdio_mx-0 {
-		pins1 {
-			pinmux = <STM32_PINMUX('A', 10, AF10)>; /* ETH1_MDIO */
+		pins {
+			pinmux = <STM32_PINMUX('A', 9, AF10)>, /* ETH1_MDC */
+					 <STM32_PINMUX('A', 10, AF10)>; /* ETH1_MDIO */
 			bias-disable;
 			drive-push-pull;
-			slew-rate = <0>;
-			st,io-clk-edge = <0>;
-			st,io-retime = <0>;
-			st,io-delay-path = <0>;
-			st,io-delay = <0>;
-		};
-		pins2 {
-			pinmux = <STM32_PINMUX('A', 9, AF10)>; /* ETH1_MDC */
-			bias-disable;
-			drive-push-pull;
-			slew-rate = <2>;
+			slew-rate = <1>;
 			st,io-clk-edge = <0>;
 			st,io-retime = <0>;
 			st,io-delay-path = <0>;
@@ -156,17 +147,15 @@
 			pinmux = <STM32_PINMUX('A', 14, AF10)>; /* ETH1_RGMII_RX_CLK */
 			bias-disable;
 			drive-push-pull;
-			slew-rate = <0>;
 			st,io-clk-edge = <0>;
 			st,io-retime = <0>;
-			st,io-delay-path = <0>;
+			st,io-delay-path = <1>;
 			st,io-delay = <0>;
 		};
 		pins4 {
 			pinmux = <STM32_PINMUX('C', 0, AF12)>; /* ETH1_RGMII_GTX_CLK */
 			bias-disable;
 			drive-push-pull;
-			slew-rate = <3>;
 			st,io-clk-edge = <0>;
 			st,io-retime = <0>;
 			st,io-delay-path = <0>;
