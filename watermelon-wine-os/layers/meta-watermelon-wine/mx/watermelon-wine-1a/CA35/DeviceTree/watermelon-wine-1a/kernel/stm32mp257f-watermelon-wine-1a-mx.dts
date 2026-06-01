@@ -596,6 +596,7 @@
 	phy-mode = "rgmii-id";
 	max-speed = <1000>;
 	phy-handle = <&phy1_eth1>;
+	st,eth-ptp-from-rcc;
 
 	mdio1{
 		#address-cells = <1>;
