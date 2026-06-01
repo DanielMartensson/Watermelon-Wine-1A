@@ -99,6 +99,21 @@
 		};
 	};
 
+	eth1_clk_pins_mx: eth1_clk_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('F', 3, AF9)>; /* ETH1_CLK */
+			bias-disable;
+			drive-push-pull;
+			slew-rate = <1>;
+		};
+	};
+
+	eth1_clk_sleep_pins_mx: eth1_clk_sleep_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('F', 3, ANALOG)>; /* ETH1_CLK */
+		};
+	};
+
 	eth1_mdio_pins_mx: eth1_mdio_mx-0 {
 		pins1 {
 			pinmux = <STM32_PINMUX('A', 10, AF10)>; /* ETH1_MDIO */
@@ -573,16 +588,14 @@
 
 &eth1 {
 	pinctrl-names = "default", "sleep";
-	pinctrl-0 = <&eth1_mdio_pins_mx>, <&eth1_rgmii_pins_mx>;
-	pinctrl-1 = <&eth1_mdio_sleep_pins_mx>, <&eth1_rgmii_sleep_pins_mx>;
+	pinctrl-0 = <&eth1_clk_pins_mx>, <&eth1_mdio_pins_mx>, <&eth1_rgmii_pins_mx>;
+	pinctrl-1 = <&eth1_clk_sleep_pins_mx>, <&eth1_mdio_sleep_pins_mx>, <&eth1_rgmii_sleep_pins_mx>;
 	status = "okay";
 
 	/* USER CODE BEGIN eth1 */
 	phy-mode = "rgmii-id";
 	max-speed = <1000>;
 	phy-handle = <&phy1_eth1>;
-	st,eth-ptp-from-rcc;
-	st,ext-phyclk;
 
 	mdio1{
 		#address-cells = <1>;
