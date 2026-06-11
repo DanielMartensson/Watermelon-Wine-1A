@@ -679,9 +679,9 @@
 		};
 	};
 
-	adv7535:hdmi@3d{
+	adv7535:hdmi@39{
 		compatible = "adi,adv7535";
-		reg = <0x3d>, <0x3c>, <0x3f>, <0x38>;
+		reg = <0x39>, <0x3c>, <0x3f>, <0x38>;
 		reg-names = "main", "cec", "edid", "packet";
 		status = "okay";
 		adi,dsi-lanes = <4>;
