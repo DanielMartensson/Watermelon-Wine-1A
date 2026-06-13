@@ -52,7 +52,7 @@
 	hdmi:connector{
 		compatible = "hdmi-connector";
 		label = "hdmi";
-		type = "a";
+		type = "d";
 		hdmi-pwr-supply = <&scmi_v5v_hdmi>;
 
 		port{
