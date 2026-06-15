@@ -496,6 +496,7 @@
 			reg = <1>;
 			vdd-supply = <&scmi_v3v3>;
 		};
+
 	};
 	/* USER CODE END usbh */
 };
@@ -553,5 +554,10 @@
 		regulator-name = "vdd_sdcard";
 	};
 };
+
+&usbh_ohci {
+	status = "disabled";
+};
+
 /* USER CODE END addons */
 
