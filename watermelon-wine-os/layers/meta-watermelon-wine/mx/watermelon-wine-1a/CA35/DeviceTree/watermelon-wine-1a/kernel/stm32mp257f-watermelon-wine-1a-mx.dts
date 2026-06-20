@@ -830,11 +830,12 @@
 	bus-width = <4>;
 	vmmc-supply = <&scmi_v3v3>;
 	vqmmc-supply = <&scmi_vddio1>;
+	// EMI-filtret har för hög dämpning på frekvenser över 50MHz
+	max-frequency = <50000000>;
 	sd-uhs-sdr12;
 	sd-uhs-sdr25;
 	sd-uhs-sdr50;
 	sd-uhs-ddr50;
-	sd-uhs-sdr104;
 	/* USER CODE END sdmmc1 */
 };
 
