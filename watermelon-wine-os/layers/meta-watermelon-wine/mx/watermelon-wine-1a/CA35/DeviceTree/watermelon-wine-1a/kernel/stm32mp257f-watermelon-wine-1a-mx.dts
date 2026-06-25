@@ -873,6 +873,9 @@
 	/* USER CODE BEGIN timers1 */
 	/delete-property/dmas;
     /delete-property/dma-names;
+    pwm4: pwm {
+		status = "okay";
+	};
 	/* USER CODE END timers1 */
 };
 
