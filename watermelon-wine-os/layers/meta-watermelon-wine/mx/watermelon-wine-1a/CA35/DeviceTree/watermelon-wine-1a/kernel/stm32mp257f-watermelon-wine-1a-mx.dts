@@ -373,6 +373,21 @@
 		};
 	};
 
+	tim1_pwm_pins_mx: tim1_pwm_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('E', 9, AF8)>; /* TIM1_CH4 */
+			bias-disable;
+			drive-push-pull;
+			slew-rate = <0>;
+		};
+	};
+
+	tim1_pwm_sleep_pins_mx: tim1_pwm_sleep_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('E', 9, ANALOG)>; /* TIM1_CH4 */
+		};
+	};
+
 	usart2_pins_mx: usart2_mx-0 {
 		pins1 {
 			pinmux = <STM32_PINMUX('A', 4, AF6)>; /* USART2_TX */
@@ -847,6 +862,18 @@
 
 	/* USER CODE BEGIN spi8 */
 	/* USER CODE END spi8 */
+};
+
+&timers1 {
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&tim1_pwm_pins_mx>;
+	pinctrl-1 = <&tim1_pwm_sleep_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN timers1 */
+	/delete-property/dmas;
+    /delete-property/dma-names;
+	/* USER CODE END timers1 */
 };
 
 &usart2 {
