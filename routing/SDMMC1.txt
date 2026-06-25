@@ -1,0 +1,39 @@
+# Totala länger
+SDMMC1_D2: 8.116mm + 2.080mm + 0.692mm = 10.888 mm
+SDMMC1_D3: 8.017mm + 3.520mm + 0.692mm = 12.229 mm
+SDMMC1_CMD: 7.410mm + 4.792mm + 0.692mm = 12.894 mm
+SDMMC1_CK: 3.488mm + 0.9mm + 4.224mm + 4.792mm + 0.692mm = 14.096 mm
+SDMMC1_D0:5.902mm + 7.154mm + 0.692mm = 13.748 mm
+SDMMC1_D1: 5.999mm + 10.786mm + 0.692mm = 17.477 mm
+
+# Differentiella längder
+SDMMC1_D0:	-0.348 mm
+SDMMC1_D1:	+3.381 mm
+SDMMC1_D2:	-3.208 mm
+SDMMC1_D3:	-1.867 mm
+SDMMC1_CMD:	-1.202 mm
+
+# Antagande att det är hastighet 10 ps/mm
+SDMMC1_D0:	3.48 ps (0.0035 ns)
+SDMMC1_D1:	−33.81 ps (−0.0338 ns)
+SDMMC1_D2:	32.08 ps (0.0321 ns)
+SDMMC1_D3:	18.67 ps (0.0187 ns)
+SDMMC1_CMD:	12.02 ps (0.0120 ns)
+
+# SDR104 specifikation
+tIS = -1.4 ns
+tIH = +0.8 ns
+tCLK ≥ 4.8 ns (Max 208 MHz)
+
+                t = 0
+----------------|---------------------> tid
+      -1.4 ns   |   +0.8 ns
+<-------------->|<---------->
+    Setup           Hold
+
+# Vilka är inom intervallet:
+SDMMC1_D0:	OK
+SDMMC1_D1:	OK
+SDMMC1_D2:	OK
+SDMMC1_D3:	OK
+SDMMC1_CMD:	OK
