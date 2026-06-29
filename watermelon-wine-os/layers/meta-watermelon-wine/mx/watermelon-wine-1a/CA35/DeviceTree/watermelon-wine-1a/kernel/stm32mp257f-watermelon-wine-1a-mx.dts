@@ -63,6 +63,13 @@
 		};
 	};
 
+	sound {
+		compatible = "audio-graph-card";
+		label = "STM32MP25-DK";
+		dais = <&i2s2_port>;
+		status = "okay";
+	};
+
 	/* USER CODE END root */
 
 	clocks{
