@@ -721,7 +721,7 @@
 		i2s2_endpoint:endpoint{
 			remote-endpoint = <&adv7535_tx_endpoint>;
 			format = "i2s";
-			mclk-fs = <256>;
+			/*mclk-fs = <256>; Vi använder inte Master Clock */
 		};
 	};
 	/* USER CODE END i2s2 */
