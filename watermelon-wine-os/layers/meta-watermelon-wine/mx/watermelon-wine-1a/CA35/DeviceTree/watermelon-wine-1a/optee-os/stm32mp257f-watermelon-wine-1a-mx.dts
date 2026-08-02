@@ -336,10 +336,10 @@
 				st,mask-reset;
 			};
 
-			vdd_emmc:ldo2{
-				regulator-name = "vddio_sdcard_emmc_ldo2";
-				regulator-min-microvolt = <1800000>;
-				regulator-max-microvolt = <3300000>;
+			v1v5_pcie:ldo2{
+				regulator-name = "v1v5_pcie";
+				regulator-min-microvolt = <1500000>;
+				regulator-max-microvolt = <1500000>;
 				regulator-over-current-protection;
 				st,pwrctrl-sel = <3>;
 				st,pwrctrl-reset;
@@ -485,7 +485,7 @@
 		status = "okay";
 		regulator-min-microvolt = <1800000>;
 		regulator-max-microvolt = <3300000>;
-		vddio1-supply = <&vdd_emmc>;
+		vddio1-supply = <&vddio_sdcard>;
 	};
 
 	vddio2:vddio2{
@@ -611,7 +611,7 @@
 
 		regulator@12{
 			reg = <VOLTD_SCMI_STPMIC2_LDO2>;
-			voltd-supply = <&vdd_emmc>;
+			voltd-supply = <&v1v5_pcie>;
 		};
 
 		regulator@14{

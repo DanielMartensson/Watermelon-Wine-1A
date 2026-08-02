@@ -1,0 +1,24 @@
+From 90b916b207483a1e0a4295ca98700057be4b9a9e Mon Sep 17 00:00:00 2001
+From: noname
+Date: Sat, 1 Aug 2026 20:34:42 +0200
+Subject: [PATCH 1/2] Add Soft Reset At RLT8211F
+
+---
+ drivers/net/phy/realtek.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/net/phy/realtek.c b/drivers/net/phy/realtek.c
+index 5e58d0f48111..229fd8622afc 100644
+--- a/drivers/net/phy/realtek.c
++++ b/drivers/net/phy/realtek.c
+@@ -979,6 +979,7 @@ static struct phy_driver realtek_drvs[] = {
+ 		PHY_ID_MATCH_EXACT(0x001cc916),
+ 		.name		= "RTL8211F Gigabit Ethernet",
+ 		.probe		= rtl821x_probe,
++		.soft_reset = genphy_soft_reset,
+ 		.config_init	= &rtl8211f_config_init,
+ 		.read_status	= rtlgen_read_status,
+ 		.config_intr	= &rtl8211f_config_intr,
+-- 
+2.43.0
+

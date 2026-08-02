@@ -338,7 +338,7 @@
 
 			vdd_emmc:ldo2{
 				regulator-name = "vdd_emmc";
-				regulator-min-microvolt = <1800000>;
+				regulator-min-microvolt = <3300000>;
 				regulator-max-microvolt = <3300000>;
 				regulator-over-current-protection;
 				st,pwrctrl-sel = <3>;

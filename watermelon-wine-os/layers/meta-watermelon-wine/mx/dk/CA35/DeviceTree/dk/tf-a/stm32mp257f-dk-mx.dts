@@ -280,7 +280,7 @@
 	/* USER CODE BEGIN pwr */
 
 	vddio1:vddio1{
-		vddio1-supply = <&vdd_emmc>;
+		vddio1-supply = <&vddio_sdcard>;
 	};
 
 	vddio2:vddio2{
@@ -330,7 +330,7 @@
 	/* USER CODE BEGIN sdmmc1 */
 	st,neg-edge;
 	bus-width = <4>;
-	vmmc-supply = <&v3v3>;
+	vmmc-supply = <&vdd_sdcard>;
 	vqmmc-supply = <&vddio1>;
 	/* USER CODE END sdmmc1 */
 };

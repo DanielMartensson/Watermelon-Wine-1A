@@ -76,7 +76,7 @@
 					 <STM32_PINMUX('E', 2, AF10)>, /* SDMMC1_CMD */
 					 <STM32_PINMUX('E', 4, AF10)>, /* SDMMC1_D0 */
 					 <STM32_PINMUX('E', 5, AF10)>; /* SDMMC1_D1 */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <1>;
 		};
@@ -214,10 +214,10 @@
 				regulator-always-on;
 			};
 
-			vdd_emmc:ldo2{
-				regulator-name = "vddio_sdcard_emmc_ldo2";
-				regulator-min-microvolt = <1800000>;
-				regulator-max-microvolt = <3300000>;
+			v1v5_pcie:ldo2{
+				regulator-name = "v1v5_pcie";
+				regulator-min-microvolt = <1500000>;
+				regulator-max-microvolt = <1500000>;
 				regulator-always-on;
 			};
 
@@ -272,7 +272,7 @@
 	/* USER CODE BEGIN pwr */
 
 	vddio1:vddio1{
-		vddio1-supply = <&vdd_emmc>;
+		vddio1-supply = <&vddio_sdcard>;
 	};
 
 	vddio2:vddio2{
@@ -322,7 +322,7 @@
 	/* USER CODE BEGIN sdmmc1 */
 	st,neg-edge;
 	bus-width = <4>;
-	vmmc-supply = <&v3v3>;
+	vmmc-supply = <&vdd_sdcard>;
 	vqmmc-supply = <&vddio1>;
 	/* USER CODE END sdmmc1 */
 };

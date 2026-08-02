@@ -213,7 +213,7 @@
 					 <STM32_PINMUX('E', 2, AF10)>, /* SDMMC1_CMD */
 					 <STM32_PINMUX('E', 4, AF10)>, /* SDMMC1_D0 */
 					 <STM32_PINMUX('E', 5, AF10)>; /* SDMMC1_D1 */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <1>;
 		};
@@ -231,13 +231,13 @@
 					 <STM32_PINMUX('E', 1, AF10)>, /* SDMMC1_D3 */
 					 <STM32_PINMUX('E', 4, AF10)>, /* SDMMC1_D0 */
 					 <STM32_PINMUX('E', 5, AF10)>; /* SDMMC1_D1 */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <1>;
 		};
 		pins2 {
 			pinmux = <STM32_PINMUX('E', 2, AF10)>; /* SDMMC1_CMD */
-			bias-disable;
+			bias-pull-up;
 			drive-open-drain;
 			slew-rate = <1>;
 		};
@@ -452,7 +452,7 @@
 	disable-wp;
 	st,neg-edge;
 	bus-width = <4>;
-	vmmc-supply = <&scmi_v3v3>;
+	vmmc-supply = <&scmi_vdd_sdcard>;
 	vqmmc-supply = <&scmi_vddio1>;
 	sd-uhs-sdr12;
 	sd-uhs-sdr25;
@@ -533,9 +533,9 @@
 		reg = <VOLTD_SCMI_STPMIC2_BUCK7>;
 		regulator-name = "v3v3";
 	};
-	scmi_vdd_emmc: regulator@12 {
+	scmi_v1v5_pcie: regulator@12 {
 		reg = <VOLTD_SCMI_STPMIC2_LDO2>;
-		regulator-name = "vdd_emmc";
+		regulator-name = "v1v5_pcie";
 	};
 	scmi_vdd3v3_usb: regulator@14 {
 		reg = <VOLTD_SCMI_STPMIC2_LDO4>;
