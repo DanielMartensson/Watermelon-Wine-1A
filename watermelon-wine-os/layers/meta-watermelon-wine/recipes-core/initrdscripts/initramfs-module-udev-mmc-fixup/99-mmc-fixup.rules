@@ -1,1 +1,0 @@
-SUBSYSTEM=="block", KERNEL=="mmcblk[0-9]", ACTION=="add", RUN+="/usr/sbin/partprobe /dev/%k"

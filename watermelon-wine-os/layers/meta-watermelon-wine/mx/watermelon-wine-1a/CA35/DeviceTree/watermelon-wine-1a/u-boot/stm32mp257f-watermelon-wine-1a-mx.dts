@@ -374,7 +374,9 @@
 
 		phy1_eth1:ethernet-phy@1{
 			compatible = "ethernet-phy-id001c.c916";
-			/* No Reset pins */
+			reset-gpios =  <&gpioc 10 GPIO_ACTIVE_LOW>;
+			reset-assert-us = <10000>;
+			reset-deassert-us = <80000>;
 			realtek,eee-disable;
 			reg = <1>;
 		};
