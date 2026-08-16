@@ -16,6 +16,7 @@ DEPENDS = " \
 	gstreamer1.0 \
 	gstreamer1.0-plugins-good \
 	libsdl3 \
+	nlohmann-json \
 "
 
 S = "${WORKDIR}/git"
