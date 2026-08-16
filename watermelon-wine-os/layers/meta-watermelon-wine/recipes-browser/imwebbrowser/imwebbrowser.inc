@@ -10,6 +10,7 @@ inherit cmake pkgconfig features_check
 #REQUIRED_DISTRO_FEATURES = "x11"
 
 DEPENDS = " \
+	libsdl3 \
 "
 
 SRCREV = "40709e59e48d2bd409277b92495401a0713bc0f0"

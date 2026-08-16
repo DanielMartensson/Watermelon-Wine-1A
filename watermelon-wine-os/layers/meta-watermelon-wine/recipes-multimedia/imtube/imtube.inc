@@ -15,11 +15,22 @@ DEPENDS = " \
 	curl \
 	gstreamer1.0 \
 	gstreamer1.0-plugins-good \
+	libsdl3 \
 "
 
-SRCREV = "5f4b95b9280e130b3d29cc36600c825d0af8e543"
-BRANCH = "main"
-SRC_URI = "git://github.com/DanielMartensson/ImTube.git;protocol=https;branch=${BRANCH}"
-
 S = "${WORKDIR}/git"
+
 PV = "0.1.0"
+SRCREV = "5bec7e8b98e29882b94b4a47024c0ff66d5337d9"
+BRANCH = "main"
+SRC_URI = " \
+	git://github.com/DanielMartensson/ImTube.git;protocol=https;branch=${BRANCH} \
+	file://CMakeLists.txt \
+"
+
+do_replace() {
+	install ${WORKDIR}/CMakeLists.txt ${S}/CMakeLists.txt
+}
+addtask do_replace after do_unpack before do_configure
+
+EXTRA_OECMAKE = "-DIMTUBE_EMBEDDED:BOOL=ON -DIMTUBE_IMGUI_DIR:PATH=${S}/src/libraries/imgui"
