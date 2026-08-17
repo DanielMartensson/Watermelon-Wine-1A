@@ -13,7 +13,7 @@ DEPENDS = " \
 	libsdl3 \
 "
 
-SRCREV = "40709e59e48d2bd409277b92495401a0713bc0f0"
+SRCREV = "b59ce89b4d0e28418df38d477f37c31b0bc21b97"
 BRANCH = "main"
 SRC_URI = "git://github.com/DanielMartensson/ImWebBrowser.git;protocol=https;branch=${BRANCH}"
 
