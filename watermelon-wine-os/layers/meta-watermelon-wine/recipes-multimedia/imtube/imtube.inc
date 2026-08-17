@@ -26,12 +26,6 @@ SRCREV = "5bec7e8b98e29882b94b4a47024c0ff66d5337d9"
 BRANCH = "main"
 SRC_URI = " \
 	git://github.com/DanielMartensson/ImTube.git;protocol=https;branch=${BRANCH} \
-	file://CMakeLists.txt \
 "
-
-do_replace() {
-	install ${WORKDIR}/CMakeLists.txt ${S}/CMakeLists.txt
-}
-addtask do_replace after do_unpack before do_configure
 
 EXTRA_OECMAKE = "-DIMTUBE_EMBEDDED:BOOL=ON -DIMTUBE_IMGUI_DIR:PATH=${S}/src/libraries/imgui"
