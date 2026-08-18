@@ -11,6 +11,14 @@ inherit cmake pkgconfig features_check
 
 DEPENDS = " \
 	libsdl3 \
+	libwpe \
+	wpebackend-fdo \
+	wpewebkit \
+	libepoxy \
+	virtual/egl \
+	glib-2.0 \
+	wayland \
+	libxkbcommon \
 "
 
 SRCREV = "b59ce89b4d0e28418df38d477f37c31b0bc21b97"
