@@ -12,7 +12,7 @@ WARN_QA:remove = "src-uri-bad"
 CCACHE_DISABLE = "1"
 
 DEPENDS += " \
-    ruby-native gperf-native unifdef-native \
+    ruby-native gperf-native unifdef-native glib-2.0-native gettext-native \
     cairo harfbuzz freetype fontconfig pixman \
     libxml2 libxslt icu zlib \
     jpeg libpng libwebp sqlite3 \
@@ -20,7 +20,7 @@ DEPENDS += " \
     libsoup libwpe wpebackend-fdo libepoxy virtual/egl \
     wayland wayland-protocols wayland-native libxkbcommon \
     systemd libdrm \
-    gstreamer1.0 gstreamer1.0-plugins-base \
+    gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-bad \
 "
 
 EXTRA_OECMAKE = " \
