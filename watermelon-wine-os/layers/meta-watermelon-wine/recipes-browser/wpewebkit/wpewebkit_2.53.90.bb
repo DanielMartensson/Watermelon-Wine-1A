@@ -63,10 +63,7 @@ CXXFLAGS += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', '', '-DEGL_NO_X11=1'
 SECURITY_CFLAGS:remove:aarch64 = "-fpie"
 SECURITY_CFLAGS:append:aarch64 = " -fPIE"
 
-PARALLEL_MAKE = ""
-PARALLEL_MAKE:force-cross = ""
-
-FILES:${PN} += "${libdir}/wpe-*/ ${libexecdir}/wpe-*"
+FILES:${PN} += "${libdir}/wpe-*/ ${libexecdir}/wpe-* ${datadir}/wpe-webkit-*/*"
 RRECOMMENDS:${PN} += "ca-certificates"
 
 SRC_URI = "https://wpewebkit.org/releases/${BPN}-${PV}.tar.xz"
