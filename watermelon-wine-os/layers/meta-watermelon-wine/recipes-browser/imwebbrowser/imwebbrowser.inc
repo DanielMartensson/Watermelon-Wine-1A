@@ -14,6 +14,7 @@ DEPENDS = " \
 	wpewebkit \
 	libepoxy \
 	virtual/egl \
+	vulkan-utility-libraries \
 	glib-2.0 \
 	wayland \
 	libxkbcommon \
@@ -22,6 +23,8 @@ DEPENDS = " \
 SRCREV = "b59ce89b4d0e28418df38d477f37c31b0bc21b97"
 BRANCH = "main"
 SRC_URI = "git://github.com/DanielMartensson/ImWebBrowser.git;protocol=https;branch=${BRANCH}"
+
+EXTRA_OECMAKE = "-DIMWEBBROWSER_BACKEND_VULKAN=ON -DIMWEBBROWSER_BACKEND_OPENGL_ES=OFF"
 
 S = "${WORKDIR}/git"
 PV = "1.0.0"
