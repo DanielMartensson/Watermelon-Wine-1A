@@ -5,9 +5,7 @@ HOMEPAGE = "https://github.com/DanielMartensson/ImTube"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=19b5c44dd600b05d43b5bb78ad0bd491"
 
-inherit cmake pkgconfig features_check
-
-#REQUIRED_DISTRO_FEATURES = "x11"
+inherit cmake pkgconfig
 
 DEPENDS = " \
 	virtual/egl \
@@ -22,7 +20,7 @@ DEPENDS = " \
 S = "${WORKDIR}/git"
 
 PV = "0.1.0"
-SRCREV = "5bec7e8b98e29882b94b4a47024c0ff66d5337d9"
+SRCREV = "ca01fe09c038defb05f6c15116da42327c7eaf5b"
 BRANCH = "main"
 SRC_URI = " \
 	git://github.com/DanielMartensson/ImTube.git;protocol=https;branch=${BRANCH} \
