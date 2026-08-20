@@ -19,8 +19,9 @@ DEPENDS += " \
     libgcrypt libgpg-error libtasn1 \
     libsoup libwpe wpebackend-fdo libepoxy virtual/egl \
     wayland wayland-protocols wayland-native libxkbcommon \
-    systemd libdrm \
+    systemd libdrm virtual/libgbm \
     gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-bad \
+    vulkan-volk lcms libbacktrace libavif libjxl \
 "
 
 EXTRA_OECMAKE = " \
@@ -31,15 +32,15 @@ EXTRA_OECMAKE = " \
     -DENABLE_JOURNALD_LOG=ON \
     -DUSE_SYSTEM_SYSPROF_CAPTURE=OFF \
     -DUSE_ATK=OFF \
-    -DUSE_AVIF=OFF \
-    -DUSE_JPEGXL=OFF \
+    -DUSE_AVIF=ON \
+    -DUSE_JPEGXL=ON \
     -DUSE_WOFF2=OFF \
-    -DUSE_LCMS=OFF \
+    -DUSE_LCMS=ON \
     -DUSE_LIBHYPHEN=OFF \
-    -DUSE_LIBBACKTRACE=OFF \
-    -DUSE_LIBDRM=OFF \
-    -DUSE_GBM=OFF \
-    -DUSE_VULKAN=OFF \
+    -DUSE_LIBBACKTRACE=ON \
+    -DUSE_LIBDRM=ON \
+    -DUSE_GBM=ON \
+    -DUSE_VULKAN=ON \
     -DENABLE_DOCUMENTATION=OFF \
     -DENABLE_INTROSPECTION=OFF \
     -DENABLE_SPELLCHECK=OFF \

@@ -5,9 +5,7 @@ HOMEPAGE = "https://github.com/DanielMartensson/ImWebBrowser"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=19b5c44dd600b05d43b5bb78ad0bd491"
 
-inherit cmake pkgconfig features_check
-
-#REQUIRED_DISTRO_FEATURES = "x11"
+inherit cmake pkgconfig
 
 DEPENDS = " \
 	libsdl3 \
