@@ -1,5 +1,5 @@
 SUMMARY = "ImWebBrowser"
-DESCRIPTION = "A minimal, GPU-accelerated web browser."
+DESCRIPTION = "A minimal, GPU-accelerated kiosk web browser built on SDL3 + Dear ImGui + WPE WebKit."
 SECTION = "www-client"
 HOMEPAGE = "https://github.com/DanielMartensson/ImWebBrowser"
 LICENSE = "MIT"
@@ -12,19 +12,22 @@ DEPENDS = " \
 	libwpe \
 	wpebackend-fdo \
 	wpewebkit \
-	libepoxy \
 	virtual/egl \
-	vulkan-utility-libraries \
+	virtual/libgles2 \
 	glib-2.0 \
 	wayland \
 	libxkbcommon \
 "
 
-SRCREV = "b59ce89b4d0e28418df38d477f37c31b0bc21b97"
+# Rendering backend: OpenGL ES 3 (default) or Vulkan. The Vulkan backend
+# additionally needs the Vulkan loader/headers at build time.
+VULKAN_BACKEND ??= "0"
+EXTRA_OECMAKE += "${@bb.utils.contains('VULKAN_BACKEND', '1', \
+	'-DIMWB_BACKEND_VULKAN=ON', '-DIMWB_BACKEND_VULKAN=OFF', d)}"
+
+SRCREV = "a51cb2955d936b8912b2e51af71780c2e8617a79"
 BRANCH = "main"
 SRC_URI = "git://github.com/DanielMartensson/ImWebBrowser.git;protocol=https;branch=${BRANCH}"
-
-EXTRA_OECMAKE = "-DIMWEBBROWSER_BACKEND_VULKAN=ON -DIMWEBBROWSER_BACKEND_OPENGL_ES=OFF"
 
 S = "${WORKDIR}/git"
 PV = "1.0.0"
