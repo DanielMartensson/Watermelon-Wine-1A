@@ -21,7 +21,8 @@ DEPENDS += " \
     wayland wayland-protocols wayland-native libxkbcommon \
     systemd libdrm virtual/libgbm \
     gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-bad \
-    vulkan-volk lcms libbacktrace libavif libjxl \
+    vulkan-headers vulkan-loader vulkan-volk \
+    lcms libbacktrace libavif libjxl \
 "
 
 EXTRA_OECMAKE = " \
@@ -60,12 +61,12 @@ EXTRA_OECMAKE:remove:armv6 = "-DENABLE_JIT=ON"
 EXTRA_OECMAKE:append:armv6 = "-DENABLE_JIT=OFF"
 
 DEBUG_FLAGS:append = "${@oe.utils.vartrue('DEBUG_BUILD', '', ' -g1', d)}"
-CXXFLAGS += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', '', '-DEGL_NO_X11=1', d)}"
+CXXFLAGS += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', '', ' -DEGL_NO_X11=1', d)}"
 SECURITY_CFLAGS:remove:aarch64 = "-fpie"
 SECURITY_CFLAGS:append:aarch64 = " -fPIE"
 
 FILES:${PN} += "${libdir}/wpe-*/ ${libexecdir}/wpe-* ${datadir}/wpe-webkit-*/*"
-RRECOMMENDS:${PN} += "ca-certificates"
+RRECOMMENDS:${PN} += "ca-certificates vulkan-loader"
 
 SRC_URI = "https://wpewebkit.org/releases/${BPN}-${PV}.tar.xz"
 SRC_URI[sha256sum] = "a3900b3c0cb1848a192055fa4940f3500f0eca0680079f8aacabc34034a10c2e"

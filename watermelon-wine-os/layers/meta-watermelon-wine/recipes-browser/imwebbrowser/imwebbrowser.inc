@@ -13,15 +13,17 @@ DEPENDS = " \
 	wpebackend-fdo \
 	wpewebkit \
 	virtual/egl \
-	virtual/libgles2 \
 	glib-2.0 \
 	wayland \
 	libxkbcommon \
 "
 
-# Rendering backend: OpenGL ES 3 (default) or Vulkan. The Vulkan backend
-# additionally needs the Vulkan loader/headers at build time.
+# Rendering backend: OpenGL ES 3 (default) or Vulkan. The GLES backend needs
+# the GLES headers; the Vulkan backend needs the Vulkan loader/headers instead
+# (imgui_impl_vulkan carries precompiled SPIR-V, so no shader toolchain).
 VULKAN_BACKEND ??= "0"
+DEPENDS += "${@bb.utils.contains('VULKAN_BACKEND', '1', \
+	'vulkan-headers vulkan-loader', 'virtual/libgles2', d)}"
 EXTRA_OECMAKE += "${@bb.utils.contains('VULKAN_BACKEND', '1', \
 	'-DIMWB_BACKEND_VULKAN=ON', '-DIMWB_BACKEND_VULKAN=OFF', d)}"
 
