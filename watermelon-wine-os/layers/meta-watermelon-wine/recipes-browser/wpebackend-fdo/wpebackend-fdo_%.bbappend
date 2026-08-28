@@ -1,0 +1,9 @@
+# imwebbrowser dlopen:ar "libWPEBackend-fdo-1.0.so" (oversionerad), en symbol
+# som annars bara lever i -dev-paketet. Lägg den i runtime-paketet i stället.
+do_install:append() {
+    ln -sf libWPEBackend-fdo-1.0.so.1 ${D}${libdir}/libWPEBackend-fdo-1.0.so
+}
+
+# Hindra att symbolen sveps med till -dev-paketet (default-FILES lägger
+# lib*.so i FILES_SOLIBSDEV); den måste ligga i runtime-paketet.
+FILES:${PN} += "${libdir}/libWPEBackend-fdo-1.0.so"
