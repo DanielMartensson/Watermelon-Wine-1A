@@ -26,6 +26,7 @@ DEPENDS += "${@bb.utils.contains('VULKAN_BACKEND', '1', \
 	'vulkan-headers vulkan-loader', 'virtual/libgles2', d)}"
 EXTRA_OECMAKE += "${@bb.utils.contains('VULKAN_BACKEND', '1', \
 	'-DIMWB_BACKEND_VULKAN=ON', '-DIMWB_BACKEND_VULKAN=OFF', d)}"
+EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release"
 
 SRCREV = "a51cb2955d936b8912b2e51af71780c2e8617a79"
 BRANCH = "main"

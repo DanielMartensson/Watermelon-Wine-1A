@@ -30,7 +30,7 @@ EXTRA_OECMAKE = " \
     -DENABLE_MINIBROWSER=OFF \
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF \
     -DENABLE_THUNDER=OFF \
-    -DENABLE_JOURNALD_LOG=ON \
+    -DENABLE_JOURNALD_LOG=OFF \
     -DUSE_SYSTEM_SYSPROF_CAPTURE=OFF \
     -DUSE_ATK=OFF \
     -DUSE_AVIF=ON \
@@ -69,7 +69,7 @@ FILES:${PN} += "${libdir}/wpe-*/ ${libexecdir}/wpe-* ${datadir}/wpe-webkit-*/*"
 RRECOMMENDS:${PN} += "ca-certificates vulkan-loader"
 
 SRC_URI = "https://wpewebkit.org/releases/${BPN}-${PV}.tar.xz"
-SRC_URI[sha256sum] = "a3900b3c0cb1848a192055fa4940f3500f0eca0680079f8aacabc34034a10c2e"
+SRC_URI[sha256sum] = "4053ae3386b7f9b1b3b6d4b6e05392a81ee29bbb716776a5a433d7a23bc8f8ec"
 
 # Fix GCC 13.x: _Atomic keyword not available in C++ mode
 do_configure:prepend() {
