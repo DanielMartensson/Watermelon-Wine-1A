@@ -28,7 +28,18 @@ EXTRA_OECMAKE += "${@bb.utils.contains('VULKAN_BACKEND', '1', \
 	'-DIMWB_BACKEND_VULKAN=ON', '-DIMWB_BACKEND_VULKAN=OFF', d)}"
 EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release"
 
-SRCREV = "a51cb2955d936b8912b2e51af71780c2e8617a79"
+# WebRTC (GFN etc.): WebKit maps RTCPeerConnection onto GStreamer's webrtcbin.
+# The runtime image needs the RTP/webrtc plugins + ICE (libnice) in the rootfs;
+# decoding itself then rides on the SoC's GStreamer codecs (STM32 VPU for 1080p).
+RDEPENDS:${PN} += " \
+	gstreamer1.0 \
+	gstreamer1.0-plugins-base \
+	gstreamer1.0-plugins-good \
+	gstreamer1.0-plugins-bad \
+	libnice \
+"
+
+SRCREV = "1b474d170e44302c9fde5bff077c3dfea2aee4a3"
 BRANCH = "main"
 SRC_URI = "git://github.com/DanielMartensson/ImWebBrowser.git;protocol=https;branch=${BRANCH}"
 
