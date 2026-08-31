@@ -48,6 +48,7 @@ EXTRA_OECMAKE = " \
     -DENABLE_SPEECH_SYNTHESIS=OFF \
     -DENABLE_MEDIA_STREAM=ON \
     -DENABLE_WEB_RTC=ON \
+    -DUSE_GSTREAMER_WEBRTC=ON \
     -DENABLE_WEBDRIVER=OFF \
     -DENABLE_WPE_PLATFORM_DRM=OFF \
     -DENABLE_WPE_PLATFORM_WAYLAND=OFF \
@@ -55,6 +56,18 @@ EXTRA_OECMAKE = " \
     -DCMAKE_BUILD_TYPE=Release \
     -DENABLE_JIT=ON \
 "
+
+# WebRTC backend selection:
+#   - USE_GSTREAMER_WEBRTC=ON  (WebKit default) -> RTCPeerConnection is carried
+#     over GStreamer's webrtcbin (the "GstWebRTC" path). This is the normal WPE
+#     config and what this build uses. USE_LIBRICE stays OFF by default (the
+#     dependency only ever FORCES it OFF, never ON), so no librice build-dep is
+#     required here. Requires the gstreamer webrtc component >= 1.20.
+#   - USE_GSTREAMER_WEBRTC=OFF -> WPE falls back to its bundled libwebrtc backend
+#     instead. Only set this if you specifically need libwebrtc.
+# The runtime image adds gstreamer1.0(-plugins-*) + libnice in the imwebbrowser
+# recipe for the actual ICE/RTP media transport (libnice is GStreamer's ICE lib,
+# distinct from the unused librice build option).
 
 EXTRA_OECMAKE:remove:armv4 = "-DENABLE_JIT=ON"
 EXTRA_OECMAKE:append:armv4 = "-DENABLE_JIT=OFF"
