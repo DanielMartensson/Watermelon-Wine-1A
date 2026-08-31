@@ -68,7 +68,8 @@ SECURITY_CFLAGS:append:aarch64 = " -fPIE"
 FILES:${PN} += "${libdir}/wpe-*/ ${libexecdir}/wpe-* ${datadir}/wpe-webkit-*/*"
 RRECOMMENDS:${PN} += "ca-certificates vulkan-loader"
 
-SRC_URI = "https://wpewebkit.org/releases/${BPN}-${PV}.tar.xz"
+SRC_URI = "https://wpewebkit.org/releases/${BPN}-${PV}.tar.xz \
+           file://0002-vulkan-fix-log-channel-when-logging-disabled.patch"
 SRC_URI[sha256sum] = "4053ae3386b7f9b1b3b6d4b6e05392a81ee29bbb716776a5a433d7a23bc8f8ec"
 
 # Fix GCC 13.x: _Atomic keyword not available in C++ mode
