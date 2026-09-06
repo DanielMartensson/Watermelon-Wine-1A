@@ -56,7 +56,7 @@ RDEPENDS:${PN} += " \
 	libnice \
 "
 
-SRCREV = "5cb1cb610da43d8dc69ab0e54e37a32f7e24b205"
+SRCREV = "3d6432b002bbbb2c4937effa84685364c37e08ff"
 BRANCH = "main"
 SRC_URI = "git://github.com/DanielMartensson/ImWebBrowser.git;protocol=https;branch=${BRANCH}"
 
