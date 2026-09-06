@@ -38,7 +38,7 @@ EXTRA_OECMAKE = " \
     -DUSE_WOFF2=OFF \
     -DUSE_LCMS=ON \
     -DUSE_LIBHYPHEN=OFF \
-    -DUSE_LIBBACKTRACE=ON \
+    -DUSE_LIBBACKTRACE=OFF \
     -DUSE_LIBDRM=ON \
     -DUSE_GBM=ON \
     -DUSE_VULKAN=ON \
@@ -49,6 +49,7 @@ EXTRA_OECMAKE = " \
     -DENABLE_MEDIA_STREAM=ON \
     -DENABLE_WEB_RTC=ON \
     -DUSE_GSTREAMER_WEBRTC=ON \
+    -DENABLE_ENCRYPTED_MEDIA=OFF \
     -DENABLE_WEBDRIVER=OFF \
     -DENABLE_WPE_PLATFORM_DRM=OFF \
     -DENABLE_WPE_PLATFORM_WAYLAND=OFF \
@@ -60,14 +61,14 @@ EXTRA_OECMAKE = " \
 # WebRTC backend selection:
 #   - USE_GSTREAMER_WEBRTC=ON  (WebKit default) -> RTCPeerConnection is carried
 #     over GStreamer's webrtcbin (the "GstWebRTC" path). This is the normal WPE
-#     config and what this build uses. USE_LIBRICE stays OFF by default (the
-#     dependency only ever FORCES it OFF, never ON), so no librice build-dep is
-#     required here. Requires the gstreamer webrtc component >= 1.20.
-#   - USE_GSTREAMER_WEBRTC=OFF -> WPE falls back to its bundled libwebrtc backend
-#     instead. Only set this if you specifically need libwebrtc.
-# The runtime image adds gstreamer1.0(-plugins-*) + libnice in the imwebbrowser
-# recipe for the actual ICE/RTP media transport (libnice is GStreamer's ICE lib,
-# distinct from the unused librice build option).
+#     config and what this build uses. Requires the gstreamer webrtc component
+#     >= 1.20. The runtime image adds gstreamer1.0(-plugins-*) + libnice in the
+#     imwebbrowser recipe for the actual ICE/RTP media transport.
+# WPE port patches (ImWebBrowser):
+#   - bwrap: share host network with the web process when WEBKIT_ENABLE_NETWORK_ACCESS
+#     is set, so the WPE web process can gather real ICE candidates for GeForce Now.
+#   - libsoup content sniffer: keep a server-declared JS MIME type for empty-body
+#     responses, so ES module loading/site boot never fails on 0-byte chunks.
 
 EXTRA_OECMAKE:remove:armv4 = "-DENABLE_JIT=ON"
 EXTRA_OECMAKE:append:armv4 = "-DENABLE_JIT=OFF"
@@ -85,13 +86,9 @@ FILES:${PN} += "${libdir}/wpe-*/ ${libexecdir}/wpe-* ${datadir}/wpe-webkit-*/*"
 RRECOMMENDS:${PN} += "ca-certificates vulkan-loader"
 
 SRC_URI = "https://wpewebkit.org/releases/${BPN}-${PV}.tar.xz \
-           file://0002-vulkan-fix-log-channel-when-logging-disabled.patch"
-SRC_URI[sha256sum] = "4053ae3386b7f9b1b3b6d4b6e05392a81ee29bbb716776a5a433d7a23bc8f8ec"
+           file://wpe-webkit-bwrap-unshare-net-webrtc.patch \
+           file://wpe-webkit-empty-body-js-mime.patch"
+SRC_URI[sha256sum] = "b2bafef2751625b7fdf530f230ff0f542ff0eeba3590c3a989d931b2a55c858e"
 
-# Fix GCC 13.x: _Atomic keyword not available in C++ mode
-do_configure:prepend() {
-    sed -i 's|^#include <stdatomic.h>$|#if defined(__cplusplus)\n#include <atomic>\nusing std::atomic_bool;\nusing std::atomic_int;\nusing std::atomic_uint;\nusing std::atomic_long;\nusing std::atomic_ulong;\nusing std::atomic_ullong;\n#else\n#include <stdatomic.h>\n#endif|' \
-        ${S}/Source/bmalloc/libpas/src/libpas/pas_utils.h
-}
-
+# Stable 2.52.6 (WPE WebKit) verified with the ImWebBrowser dev setup.
 S = "${WORKDIR}/${BPN}-${PV}"
