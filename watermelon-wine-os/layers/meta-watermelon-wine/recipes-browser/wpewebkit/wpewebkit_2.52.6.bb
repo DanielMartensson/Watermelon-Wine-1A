@@ -7,6 +7,10 @@ LIC_FILES_CHKSUM = "file://Source/JavaScriptCore/COPYING.LIB;md5=d0c6d6397a5d842
 
 inherit cmake pkgconfig features_check
 
+# Deliberate downgrade from the 2.53.9x development series back to the stable
+# 2.52.6 series; package epoch keeps the package feed ordering correct.
+PE = "1"
+
 REQUIRED_DISTRO_FEATURES = "opengl"
 WARN_QA:remove = "src-uri-bad"
 CCACHE_DISABLE = "1"
